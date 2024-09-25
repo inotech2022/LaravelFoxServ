@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
+@import url('dropdown.css');
+
+
+
+body {
+    margin: 0;
+    font-family: 'Baloo Thambi 2', sans-serif;
+    color: #000;
+    padding-top: 100px;
+    padding-bottom: 0px;
+    max-width: 100%;
+    background-color: #fff;
+}
+
+main{
+    width: 100%;
+    align-items: center;
+}
+
+.naoEncontrada{
+     width:50vw;
+     display: flex;
+     align-items:center;
+     justify-content:center;
+     flex-direction:column;
+ }
+.naoEncontrado-modoClaro{
+    display:flex;
+    align-items:center;
+    width:400px;
+}
+ .naoEncontrado-modoEscuro{
+    display: none;
+}
+.dark .naoEncontrado-modoClaro{
+    display: none;
+}
+.dark .naoEncontrado-modoEscuro{
+     display:flex;
+    align-items:center;
+    width:400px;
+}
+.foxserv {
+    color: #6C618B;
+    font-size: 40px;
+}
+.foxserv:hover {
+    color: #fff;
+    transition: 0.5s;
+}
+
+.container {
+    max-width: 100%;
+    height: 100px;
+    margin: 0 10px;
+}
+
+.logo {
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+
+}
+
+
+.nav {
+  z-index: 1;
+    position: fixed;
+    background-color: #89D0AF;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 13%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  .bi {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 30px;
+  }
+  
+  .bi-moon {
+    display: none;
+  }
+  
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav h1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s ease-in-out;
+    font-size: 40px;
+}
+.nav h1 a:hover{
+  color: #6C618B;
+}
+
+
+.nav.active .container {
+    padding: 10px 0;
+}
+.img_logo{
+    height: 70%;
+    width: 55px;
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+  .logo-header{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  }
+  .logo.current,
+.logo:hover {
+    color: #6C618B;
+}
+.nav a.current,
+.nav a:hover {
+    color: #6C618B;
+}
+
+
+
+.linha>p:hover{
+color: #fff;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+.principal{
+    display: flex;
+    flex-direction: column;
+}
+.topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    margin-right: 50px;
+}
+.img-right-modoClaro{
+    width: 100%;
+  }
+  .img-right-modoEscuro{
+    display: none;
+  }
+
+.titulo{
+  display: flex;
+  width: 100%;
+  margin-left: 50px;
+  margin-top: 50px;
+  flex-direction: column;
+}
+.titulo>h1{
+    color: #6C618B;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+.titulo>p{
+  font-size: 25px;
+  margin-top: 0;
+}
+select{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color:#89d0af6c;
+    border-color: #d8d5d55e;
+    color: #000;
+    outline: none;
+    margin-top: 50px
+}
+option{
+    display: flex;
+    background-color: #fff;
+    box-shadow: #000 ;
+    border-radius: 10px;
+}
+
+
+
+.profissionais{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.contrato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  .card_contrato{
+    flex-direction: column;
+    display: block;
+    height: fit-content;
+    width: 200px;
+    border-radius: 20px;
+    background-color: #6c618b33;
+    align-items: center;
+    padding: 10px 10px;
+    margin: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align-last: center;
+    box-shadow:0px 10px 30px -12px #000;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+.icon{
+    color: #6C618B;
+    width: 20%;
+}
+.icon .material-symbols-outlined{
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+}
+.info-titulo{
+    display: flex;
+    color: #6C618B;
+    font-size: 14px;
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+.info-texto{
+    display: flex;
+    color: #000;
+    font-size: 13px;
+    width: 100%;
+    justify-content: flex-start;
+    word-wrap:break-word;
+}
+.btn-pdf{
+    display: flex;
+    background-color: #6C618B;
+    border-radius: 30px;
+    border: 1px solid #9e91c0;
+    width: 100px;
+    height: 35px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+}
+.btn-flutuante{
+    float:right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:0;
+    position:fixed;
+    bottom:110px;
+    right:55px;
+    background-color: #6C618B;
+    color: #fff;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    -o-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%; 
+    cursor: pointer;
+  }
+.btn-flutuante .material-symbols-outlined{
+  font-size: 40px;
+}
+
+/* dark mode*/
+  .dark{
+    background-color: #201B2C;
+    color: #fff;
+  }
+  .dark .bi-sun {
+    display: none;
+  }
+  
+  .dark .bi-moon {
+    display: block;
+    color:#fff;
+  }
+  
+  .dark .foxserv{
+    color: #00ff88;
+  }
+  .dark .foxserv:hover{
+    color: #fff;
+  }
+  .dark .nav{
+    background-color: #181420;
+  }
+  .dark .nav a.current,
+  .dark .nav a:hover {
+      color: #00ff88;
+  }
+ 
+  .dark .btn-pdf{
+    background-color: #00ff88;
+    border: #00ff88;
+  }
+  .dark select{
+    background-color: #6c618b3b;
+    color: #fff;
+  }
+  .dark option{
+    color: #000;
+  }
+  .dark .titulo>h1{
+    color: #00ff88;
+  }
+.dark .card_contrato{
+    background-color: #6c618b1e;
+}
+.dark .icon{
+    color: #00ff88;
+}
+.dark .info-titulo{
+    color: #00ff88;
+}
+.dark .info-texto{
+    color: #fff;
+}
+  .dark .img-right-modoClaro{
+    display: none;
+    
+  }
+  .dark .img-right-modoEscuro{
+    width: 100%;
+    display: flex;
+  }
+  .dark  .btn-flutuante{
+    background-color: #00ff88;
+  }

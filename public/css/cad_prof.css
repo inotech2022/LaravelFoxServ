@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
+@import url('footer.css');
+@import url('reset.css');
+
+body {
+    margin: 0;
+    font-family: 'Baloo Thambi 2', sans-serif;
+    color: rgb(255, 255, 255);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-height: fit-content;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/* configurações do degradê */
+.main_gradiente {
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to right, #685e85, #9786c475);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* configurações da parte principal */
+.main{
+    display: flex;
+    background: #fff;
+    border-radius: 30px;
+    width: 80%;
+    height: 90%;
+    box-shadow: 0px 10px 40px #00000056;
+}
+/* lado direito e imagens */
+.right {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px ;
+    background-color: #89d0afb0;
+}
+ .img-right-modoClaro{
+    margin-right: 120px;
+    position: fixed;
+    width: 400px;
+ }
+ .img-right-modoEscuro{
+    display: none;
+ }
+/* lado esquerdo */
+.left {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* configurações do cabeçalho */
+.logo-header h1 a {
+    color: #C3B7E3;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s ease-in-out;
+    font-size: 40px;
+}
+
+.logo-header a.current,
+.logo-header a:hover {
+    color: #6C618B;
+}
+.foxserv {
+    color: #6C618B;
+    font-size: 40px;
+}
+
+.foxserv:hover {
+    color: #C3B7E3;
+    transition: 0.5s;
+}
+.logo {
+    font-size: 30px;
+
+}
+.modo_escuro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  .bi {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #6C618B;
+    margin: 0 30px;
+  }
+  
+  .bi-moon {
+    display: none;
+  }
+  .img_logo{
+    height: 80%;
+    width: 95px;
+    margin-right: 10px;
+  }
+  .logo-header{
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 10px;
+  }
+
+
+/* configurações do formulario */
+.card-form>h1{
+    color: #000;
+    font-weight: lighter;
+    margin: 0;
+    width: 90%;
+    
+}
+.card-form{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.required{
+    color: #ff0000;
+    font-weight:bold;
+}
+.linha{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+.textfield {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px ;
+    width: 100%;
+}
+.invisivel{
+    display:none;
+}
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px ;
+    width: 98%;
+    position: relative;
+  }
+  .input-box textarea {
+    max-height: 80px;
+    max-width: 100%;
+    min-height: 80px;
+    min-width: 100%;
+    outline: none;
+    border-radius: 30px;
+    resize: none;
+    padding: 15px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0px 10px 30px -12px #000;
+  }
+  .input-box textarea::placeholder{
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .input-box>label {
+        color: #000;
+        margin-bottom: 5px;
+        font-size: 14px;
+        margin-right: 2px;
+    }
+    .input-box .characters{
+      position: absolute;
+      bottom: 5px;
+      right: 45px;
+      align-items: center;
+      color: #858585;
+      display: none;
+    }
+    .input-box.active .characters{
+      display: block;
+    }
+.textfield>input {
+    height: 20px;
+    width: 99%;
+    border-color: #d8d5d528;
+    border-radius: 30px;
+    padding: 15px;
+    margin-right: 5px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+.textfield>textarea {
+    max-height: 100px;
+    max-width: 100%;
+    min-height: 100px;
+    min-width: 100%;
+    border-color: #d8d5d528;
+    border-radius: 30px;
+    padding: 15px;
+    margin-right: 5px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 30px -12px #000;
+}
+
+.textfield>label {
+    color: #000;
+    margin-bottom: 5px;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.textfield>input::placeholder {
+    color: #858585;
+}
+select {
+    width: 99%;
+    height: 30px;
+    margin-right: 5px;
+    font-size: 14px;
+    border-radius: 30px;
+    padding:5px;
+    color:#000;
+    background-color:#fff;
+    border:solid;
+    border-width:0.5px;
+    border-color: lightgrey;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+.foto_perfil {
+    padding: 5px 5px;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: #d8d5d55e ;
+    border-radius: 30px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius:8px;
+    -ms-border-radius:8px;
+    -o-border-radius:8px;
+    font-size:14px;
+}
+.foto_perfil>label{
+    border-color: #d8d5d55e ;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+/* configurações dos simbolos do google font*/
+.material-symbols-outlined{
+color: #fff;
+height: 35px;
+width: 35px;
+padding: 6px;
+margin-left: 3px;
+align-items: center;
+display: flex;
+justify-content: space-between;
+text-align-last: center;
+background-color: #6c618b;
+border-radius: 0.5rem;
+-webkit-border-radius: 100%;
+-moz-border-radius:100%;
+-ms-border-radius:100%;
+-o-border-radius:100%;
+cursor: pointer;
+}
+input[type="file"] {
+    display: none;
+}
+input[type="submit"] {
+    width: 60%;
+    padding: 16px 0px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fff;
+    background: #6c618bbb;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8021;
+}
+.btn-login{
+    width: 60%;
+    padding: 16px 0px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fff;
+    background: #6c618bbb;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8021;
+}
+.botao{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.btn-login:hover {
+    background-color: #6c618b;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction:row;
+    font-size: 14px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.cadastro>label {
+    color: #2c2c2cde;
+    margin-bottom: 10px;
+}
+
+.cadastrar_se {
+    color: #6c618b;
+    margin-bottom: 10px;
+}
+
+
+
+/* configurações do modo escuro*/
+
+.dark .main_gradiente{
+    background: #201B2C;
+    color: #fff;
+}
+
+.dark .bi-sun {
+    display: none;
+  }
+  
+  .dark .bi-moon {
+    display: block;
+    color:#fff;
+  }
+.dark .main{
+    background-color: #5148698a;
+    color: #fff;
+}
+
+  .dark .logo-header h1 a{
+color: #fff;
+  }
+
+  .dark .foxserv{
+    color: #00ff88;
+  }
+
+  .dark .foxserv:hover{
+    color: #fff;
+  }
+  .dark .logo-header a.current,
+  .dark .logo-header a:hover {
+      color: #00ff88;
+  }
+
+  .dark .right{
+    background-color: #514869;
+  }
+
+  .dark .card-form>h1{
+    color: #fff;
+  }
+
+  .dark .textfield>input {
+    background: #514869;
+    color: #fff;
+  }
+  .dark .textfield>input::placeholder {
+    color: #fff;
+}
+.dark .input-box>textarea {
+    background: #514869;
+    color: #fff;
+  }
+  .dark .input-box>textarea::placeholder {
+    color: #fff;
+}
+.dark .textfield>label, .dark .input-box>label{
+    color: #fff;
+}
+.dark select{
+    background-color: #514869;
+    color: #fff;
+    border:none;
+}
+.dark .material-symbols-outlined{
+    background-color: #00ff88;
+}
+.dark input[type="submit"]{
+    background-color: #00ff88;
+}
+.dark .btn-login{
+    background-color: #00ff88;
+}
+.dark .btn-login:hover {
+    background-color: #018d4c;
+}
+.dark .cadastro>label {
+    color: #fff;
+}
+
+.dark .cadastrar_se {
+    color: #00ff88;
+}
+
+.dark .img-right-modoClaro{
+    display: none;
+ }
+ .dark .img-right-modoEscuro{
+    margin-right: 120px;
+    position: fixed;
+    width: 400px;
+    display: flex;
+ }

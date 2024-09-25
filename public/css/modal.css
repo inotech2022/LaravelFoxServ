@@ -1,0 +1,140 @@
+.modal {
+    background-color: #6c618b5b;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index:40;
+   width: 100vw;
+   height: 100vh;
+   display:none;
+}
+
+
+.alert-modal{
+   margin: 0 auto;
+   margin-top: 5%;
+   width: 600px;
+   max-height:370px;
+   background-color: #6C618B;
+   color:white;
+   padding: 0;
+   border-radius: 20px;
+   box-shadow: 0px 10px 40px #00000056;
+   
+}
+.modal-header {
+    align-items: center;
+   justify-content: center;
+   justify-items: center;
+   flex-direction: row;
+   display: flex;
+   padding-top: 30px;
+   width: 100%;
+   align-content: center ;
+   height: 50px;
+   
+}
+
+
+.modal-body {
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   height: 150px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-bottom: 20px;
+   min-height:130px;
+}
+.form-denuncia {
+   margin-bottom: 20px;
+   min-height:100px;
+   width:70%;
+   display:flex;
+   align-items:center;
+   flex-direction:column;
+}
+.radios {
+   width:100%;
+}
+
+
+textarea {
+   max-height: 30px;
+   max-width: 100%;
+   min-height: 30px;
+   min-width: 100%;
+   border-color: #d8d5d528;
+   border-radius: 30px;
+   padding: 5px;
+   background: #fff;
+   color: #000;
+   font-size: 12px;
+   outline: none;
+   box-sizing: border-box;
+   box-shadow: 0px 10px 30px -12px #000;
+}
+.modal-body h2 {
+   margin: 0;
+   font-size: 20px; /* Reduzindo o tamanho do título */
+}
+
+.modal-footer {
+    width: 100%;
+   padding-bottom: 20px;
+   height: 70px;
+   align-items: center;
+   justify-content:space-around;
+   display: flex;
+}
+.botoes_modal{
+   align-items:center;
+   display:flex;
+   flex-direction:row;
+   
+}
+.btn-modal, .cancelar{
+   text-decoration: none;
+   padding: 5px 5px;
+   height: 35px;
+   width:150px;
+   border-radius: 8px;
+   background-color: #89D0AF;
+   color: white;
+   text-transform: uppercase;
+   text-align: center;
+   align-items:center;
+   justify-content:center;
+   display: flex;
+   cursor: pointer;
+   border:none;
+   margin: 5px;
+   
+}
+
+.btn-modal:hover, .cancelar:hover {
+    background-color: rgb(63, 92, 78); /* Cor de fundo do botão ao passar o mouse */
+}
+
+
+.dark .alert-modal{
+   background-color: #201b2c;
+}
+.dark .btn-modal{
+   background-color: #00ff88;
+}
+.dark .btn-modal:hover {
+   background-color: #008b4a;
+}
+.dark .cancelar{
+   background-color: #00ff88;
+}
+.dark .cancelar:hover {
+   background-color: #008b4a;
+}
+
+.cancelar-cont:hover {
+   background-color: #4d4563;
+}
