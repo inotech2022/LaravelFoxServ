@@ -14,4 +14,9 @@ class Professional extends Model
         'description',
         'userId',
         ];
+
+        public function services()
+    {
+        return $this->hasMany(service_professional::class, 'professionalId');
+    }
 }

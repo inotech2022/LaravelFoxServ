@@ -32,6 +32,7 @@ Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.s
 Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');
 Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('cadastroContrato');
 Route::get('/cadastroProfissional', [CadastroProfissionalController::class, 'create'])->name('cadastroProfissional');
+Route::get('/cadastroProfissional', [CadastroProfissionalController::class, 'store'])->name('cadastroProfissional');
 Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'index'])->name('contratoProfissional');
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');

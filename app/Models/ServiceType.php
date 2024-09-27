@@ -16,3 +16,8 @@ class ServiceType extends Model
         'darkPic'
     ];
 }
+
+class professional_service extends Model
+{
+    protected $fillable = ['professionalId', 'serviceId', 'typeServiceId'];
+}

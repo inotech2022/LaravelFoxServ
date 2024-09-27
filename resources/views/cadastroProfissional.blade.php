@@ -27,7 +27,7 @@
             <div class="left">
                 <div class="logo-header">
 
-                    <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
+                    <h1 class="logo"><a href="{{ route('index') }}"> Fox<span class="foxserv">Serv</span></a></h1>
                     <div class="modo_escuro">
                         <input type="checkbox" name="change-theme" id="change-theme" />
                         <label for="change-theme">
@@ -35,8 +35,8 @@
                             <i class="bi bi-moon"></i></label>
                     </div>
                 </div>
-                <form class="card-form" action="cad_prof.php" method="POST" enctype="multipart/form-data">
-                    <!-- campos do cadastro -->
+                <form class="card-form" action="{{ route('cadastro.store') }}" method="POST" enctype="multipart/form-data">
+                    
                     <h1>Cadastro do Profissional</h1>
                     <div class="linha">
                         <div class="textfield">
