@@ -41,8 +41,8 @@
     <label for="typeServiceId">Categoria</label>
     <select name="typeServiceId[]" id="typeServiceId">
         <option value="" selected disabled>Escolha a Categoria</option>
-        @foreach($serviceType as $type)
-            <option value="{{ $type->serviceType }}">{{ $type->serviceTypeName }}</option>
+        @foreach($serviceTypes as $type)
+            <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
         @endforeach
     </select>
 

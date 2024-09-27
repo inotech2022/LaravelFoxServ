@@ -9,7 +9,7 @@ class CadastroProfissionalController extends Controller
 {
     public function create()
     {
-        $servicesTypes = serviceType::orderBy('serviceTypeName')->get();
+        $serviceTypes = serviceType::orderBy('serviceTypeName')->get();
         return view('cadastroProfissional', compact('serviceTypes'));
     }
 
