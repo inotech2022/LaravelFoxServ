@@ -62,7 +62,7 @@
                 
             </div>
             <div class="right">
-                <img src="image/cadastro-modoClaro.png" class="img-right-modoClaro"> <!-- mudar a imagem em 'src' -->
+                <img src="image/cadastro-modoClaro.png" class="img-right-modoClaro">
                 <img src="image/cadastro-modoEscuro.png" class="img-right-modoEscuro">
             </div>
         </div>

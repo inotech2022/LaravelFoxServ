@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ServiceType;
 
 class CadastroProfissionalController extends Controller
 {
     public function create()
     {
         $servicesTypes = serviceType::orderBy('serviceTypeName')->get();
-        return view('cadastroProfissional.create', compact('serviceType'));
+        return view('cadastroProfissional', compact('serviceTypes'));
     }
 
     public function store(Request $request)
