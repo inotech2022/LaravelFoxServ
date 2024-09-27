@@ -8,8 +8,8 @@ class CadastroProfissionalController extends Controller
 {
     public function create()
     {
-        $tiposServicos = TipoServico::orderBy('serviceTypeName')->get();
-        return view('cadastroProfissional', compact('serviceType'));
+        $servicesTypes = serviceType::orderBy('serviceTypeName')->get();
+        return view('cadastroProfissional.create', compact('serviceType'));
     }
 
     public function store(Request $request)
