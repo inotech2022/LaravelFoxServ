@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\ServiceType;
+use App\Controllers\AuthController;
 
 class CadastroProfissionalController extends Controller
 {
     public function create()
     {
         $serviceTypes = serviceType::orderBy('serviceTypeName')->get();
-        return view('cadastroProfissional', compact('serviceTypes'));
+        $userId = Auth::id(); 
+        return view('cadastroProfissional', compact('serviceTypes','userId'));
     }
 
     public function store(Request $request)

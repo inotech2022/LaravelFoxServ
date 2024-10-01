@@ -55,7 +55,7 @@
     <label for="description">Descrição</label>
     <textarea name="description" maxlength="100"></textarea>
 
-    <input type="hidden" name="userId" value="{{ auth()->user()->id }}">
+    
 
     <button type="submit" class="btn-login">Cadastrar</button>
 </form>
