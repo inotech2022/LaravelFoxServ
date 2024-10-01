@@ -33,7 +33,7 @@ Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('con
 Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('cadastroContrato');
 Route::get('/cadastroProfissional', [CadastroProfissionalController::class, 'create'])->name('cadastroProfissional');
 Route::post('/cadastroProfissional', [CadastroProfissionalController::class, 'store'])->name('cadastroProfissional');
-Route::get('/get-subcategorias/{idTipoServico}', [ServicoController::class, 'getSubcategorias']);
+Route::get('/subcategorias/{id}', [CadastroProfissionalController::class, 'getSubcategories'])->name('subcategorias.get');
 Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'index'])->name('contratoProfissional');
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');

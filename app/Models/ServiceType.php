@@ -16,6 +16,10 @@ class ServiceType extends Model
         'lightPic',
         'darkPic'
     ];
+    public function service()
+    {
+        return $this->hasOne(Service::class);
+    }
 }
 
 class service_professional extends Model

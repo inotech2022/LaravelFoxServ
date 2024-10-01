@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service; 
 use Illuminate\Http\Request;
+use App\Models\Service; 
 
 class ServicoController extends Controller
 {
-    public function getSubcategorias($typeServiceId)
+    public function getSubcategories($id)
     {
-        $subcategorias = Subcategoria::where('typeServiceId', $typeServiceId)->get();
-        return response()->json($subcategorias);
+        $subcategories = Subcategory::where('typeServiceId', $id)->get();
+        return response()->json($subcategories);
     }
 }

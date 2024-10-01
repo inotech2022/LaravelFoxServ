@@ -14,4 +14,8 @@ class Service extends Model
         'serviceName',
         'serviceTypeId'
     ];
+    public function serviceType()
+    {
+        return $this->belongsTo(ServiceType::class);
+    }
 }

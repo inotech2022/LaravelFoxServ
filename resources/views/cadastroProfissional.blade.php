@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/cad_prof.css') }}">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="{{ asset('logo/lilas-2.PNG') }}">
-	<script src="{{ asset('js/modo_escuro.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
+    <script src="{{ asset('js/subcategoria.js') }}" defer></script>
     <script src="{{ asset('js/limiteTexto.js') }}" defer></script>
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <title>Cadastro</title>
 </head>
@@ -27,46 +23,151 @@
         <div class="main">
             <div class="left">
                 <div class="logo-header">
-
                     <h1 class="logo"><a href="{{ route('index') }}"> Fox<span class="foxserv">Serv</span></a></h1>
                     <div class="modo_escuro">
                         <input type="checkbox" name="change-theme" id="change-theme" />
                         <label for="change-theme">
                             <i class="bi bi-sun"></i>
-                            <i class="bi bi-moon"></i></label>
+                            <i class="bi bi-moon"></i>
+                        </label>
                     </div>
                 </div>
-                <form action="{{ route('cadastro.store') }}" method="POST">
-    @csrf
-    <label for="typeServiceId">Categoria</label>
-    <select name="typeServiceId[]" id="typeServiceId">
-        <option value="" selected disabled>Escolha a Categoria</option>
-        @foreach($serviceTypes as $type)
-            <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
-        @endforeach
-    </select>
-
-    <label for="serviceId">Subcategoria</label>
-    <select name="serviceid[]" id="serviceId">
+                <form class="card-form" action="{{ route('cadastro.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                    <h1>Cadastro do Profissional</h1>
+                    
+                    <!-- Categoria e Subcategoria 1 -->
+                    <div class="linha">
+                        <div class="textfield">
+                            <label for="typeServiceId1">Categoria 1<span class="required"> * </span></label>
+                            <select name="typeServiceId[]" id="typeServiceId1">
+                                <option value="" selected disabled>Escolha a Categoria</option>
+                                @foreach($serviceTypes as $type)
+                                    <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                        <div class="textfield">
+    <label for="serviceId1">Subcategoria 1</label>
+    <select name="serviceId[]" id="serviceId1">
         <option value="" selected disabled>Escolha a Subcategoria</option>
-        
     </select>
+    <span class="carregando1" style="display: none;">Aguarde, carregando...</span>
+</div>
+                    </div>
 
-    <label for="description">Descrição</label>
-    <textarea name="description" maxlength="100"></textarea>
+                    <!-- Categoria e Subcategoria 2 -->
+                    <div class="linha">
+                        <div class="textfield">
+                            <label for="typeServiceId2">Categoria 2</label>
+                            <select name="typeServiceId[]" id="typeServiceId2">
+                                <option value="" selected disabled>Escolha a Categoria</option>
+                                @foreach($serviceTypes as $type)
+                                    <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                        <div class="textfield">
+                            <label for="serviceId2">Subcategoria 2</label>
+                            <select name="serviceId[]" id="serviceId2">
+                                <option value="" selected disabled>Escolha a Subcategoria</option>
+                            </select>
+                            <span class="carregando2" style="display: none;">Aguarde, carregando...</span>
+                        </div>
+                    </div>
 
-    
+                    <!-- Categoria e Subcategoria 3 -->
+                    <div class="linha">
+                        <div class="textfield">
+                            <label for="typeServiceId3">Categoria 3</label>
+                            <select name="typeServiceId[]" id="typeServiceId3">
+                                <option value="" selected disabled>Escolha a Categoria</option>
+                                @foreach($serviceTypes as $type)
+                                    <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                        <div class="textfield">
+                            <label for="serviceId3">Subcategoria 3</label>
+                            <select name="serviceId[]" id="serviceId3">
+                                <option value="" selected disabled>Escolha a Subcategoria</option>
+                            </select>
+                            <span class="carregando3" style="display: none;">Aguarde, carregando...</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="linha">
+                        <div class="input-box">
+                            <label for="description">Descrição <span class="required"> * </span></label>
+                            <textarea id="description" name="descricao" placeholder="Descrição dos serviços, habilidades, idiomas..." required maxlength="100"></textarea>
+                            <div class="characters">
+                                <span class="min_num">0</span>
+                                <span class="limit_num">/100</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <button type="submit" class="btn-login">Cadastrar</button>
-</form>
-                
+                    <!-- Botão de envio -->
+                    <div class="botao">
+                        <input type="submit" name="submit" class="btn-login" id="submit" value="Cadastrar">
+                    </div>
+
+                    <!-- Link para login -->
+                    <div class="cadastro">
+                        <label for="cadastro"> Já é profissional?</label>
+                        <a class="cadastrar_se" href="login.php">Entrar</a>
+                    </div>
+
+                </form>
+                <script>
+$(document).ready(function() {
+    function loadSubcategories(selectElement, targetSelect) {
+        const typeServiceId = $(selectElement).val();
+        if (typeServiceId) {
+            $(targetSelect).empty().append('<option value="" selected disabled>Escolha a Subcategoria</option>'); // Limpa e adiciona opção padrão
+            $('.carregando' + targetSelect.id.slice(-1)).show(); 
+
+            $.ajax({
+                url: '/subcategorias/' + typeServiceId,
+                method: 'GET',
+                success: function(data) {
+                    $.each(data, function(index, subcategory) {
+                        $(targetSelect).append('<option value="' + subcategory.id + '">' + subcategory.serviceName + '</option>');
+                    });
+                },
+                complete: function() {
+                    $('.carregando' + targetSelect.id.slice(-1)).hide(); 
+                }
+            });
+        }
+    }
+
+    $('#typeServiceId1').change(function() {
+        loadSubcategories(this, '#serviceId1');
+    });
+    $('#typeServiceId2').change(function() {
+        loadSubcategories(this, '#serviceId2');
+    });
+    $('#typeServiceId3').change(function() {
+        loadSubcategories(this, '#serviceId3');
+    });
+});
+</script>
+
             </div>
+
             <div class="right">
                 <img src="image/cadastro-modoClaro.png" class="img-right-modoClaro">
                 <img src="image/cadastro-modoEscuro.png" class="img-right-modoEscuro">
             </div>
         </div>
     </div>
-	<script src="{{ asset('js/subcategorias.js') }}"></script>
+
+    <script src="{{ asset('js/subcategorias.js') }}"></script>
 </body>
+
 </html>
