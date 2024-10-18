@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="profissionais.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="/css/profissionais.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="icon" href="logo/lilas-2.PNG">
     <script src="/resources/js/modo_escuro.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -154,7 +154,7 @@
     </ul>
 </div>
                     </div>
-                    <button onclick="document.location='FeedUsuario.php?idProfissional=<?php echo $idProfissional[$i]; ?>'" class="btn-perfil">Ver perfil</button>
+                    <button onclick="document.location='FeedUsuario.php?idProfissional=#'" class="btn-perfil">Ver perfil</button>
 
                 </div>
             </div>
