@@ -11,7 +11,6 @@ class ServicosController extends Controller
     {
         // Aqui que procuramos os dados dos serviços
         $service = ServiceType::where('serviceTypeId', $id)->get();
-        return $service;
-        return view('servicos', ['service' => $service]); // View para o formulário de cadastro
+        return view('servicos', ['service' => $service]); 
     }
 }
