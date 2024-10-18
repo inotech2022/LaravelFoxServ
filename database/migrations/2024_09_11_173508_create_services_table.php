@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('services', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('serviceId');
+            $table->string('serviceName');
+            $table->unsignedBigInteger('serviceTypeId');
+            $table->foreign('serviceTypeId')->references('serviceTypeId')->on('serviceTypes')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/cad_prof.css') }}">
+    <link rel="stylesheet" href="/css/cad_prof.css">
     <link rel="icon" href="{{ asset('logo/lilas-2.PNG') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
-    <script src="{{ asset('js/subcategoria.js') }}" defer></script>
     <script src="{{ asset('js/limiteTexto.js') }}" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -43,7 +42,7 @@
                             <select name="typeServiceId[]" id="typeServiceId1">
                                 <option value="" selected disabled>Escolha a Categoria</option>
                                 @foreach($serviceTypes as $type)
-                                    <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
+                                    <option value="{{ $type->serviceTypeId }}">{{ $type->serviceTypeName }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -64,7 +63,7 @@
                             <select name="typeServiceId[]" id="typeServiceId2">
                                 <option value="" selected disabled>Escolha a Categoria</option>
                                 @foreach($serviceTypes as $type)
-                                    <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
+                                    <option value="{{ $type->serviceTypeId }}">{{ $type->serviceTypeName }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -85,7 +84,7 @@
                             <select name="typeServiceId[]" id="typeServiceId3">
                                 <option value="" selected disabled>Escolha a Categoria</option>
                                 @foreach($serviceTypes as $type)
-                                    <option value="{{ $type->serviceTypes }}">{{ $type->serviceTypeName }}</option>
+                                    <option value="{{ $type->serviceTypeId }}">{{ $type->serviceTypeName }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -123,40 +122,6 @@
                     </div>
 
                 </form>
-                <script>
-$(document).ready(function() {
-    function loadSubcategories(selectElement, targetSelect) {
-        const typeServiceId = $(selectElement).val();
-        if (typeServiceId) {
-            $(targetSelect).empty().append('<option value="" selected disabled>Escolha a Subcategoria</option>'); // Limpa e adiciona opção padrão
-            $('.carregando' + targetSelect.id.slice(-1)).show(); 
-
-            $.ajax({
-                url: '/subcategorias/' + typeServiceId,
-                method: 'GET',
-                success: function(data) {
-                    $.each(data, function(index, subcategory) {
-                        $(targetSelect).append('<option value="' + subcategory.id + '">' + subcategory.serviceName + '</option>');
-                    });
-                },
-                complete: function() {
-                    $('.carregando' + targetSelect.id.slice(-1)).hide(); 
-                }
-            });
-        }
-    }
-
-    $('#typeServiceId1').change(function() {
-        loadSubcategories(this, '#serviceId1');
-    });
-    $('#typeServiceId2').change(function() {
-        loadSubcategories(this, '#serviceId2');
-    });
-    $('#typeServiceId3').change(function() {
-        loadSubcategories(this, '#serviceId3');
-    });
-});
-</script>
 
             </div>
 
@@ -167,7 +132,7 @@ $(document).ready(function() {
         </div>
     </div>
 
-    <script src="{{ asset('js/subcategorias.js') }}"></script>
+    <script src="/js/subcategoria.js"></script>
 </body>
 
 </html>
