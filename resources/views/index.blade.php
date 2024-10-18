@@ -42,7 +42,7 @@ não sei
                         </div>
                         <h3>Família</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=1"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 1) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>

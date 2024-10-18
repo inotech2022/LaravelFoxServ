@@ -24,7 +24,8 @@ return new class extends Migration
             $table->string('profilePic')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('type', ['admin', 'user']); 
+            $table->string('token');
+            $table->enum('type', ['admin', 'user', 'comum']); 
             $table->boolean('status')->default(true);
         });
         

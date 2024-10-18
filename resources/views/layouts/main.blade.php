@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
-     
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}"> 
-    <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
-    <script src="{{ asset('js/faq.js') }}" defer></script>
+    <link rel="stylesheet" href="/css/footer.css"> 
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/logo/lilas-2.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <script src="js/modo_escuro.js" defer></script>
+    <script src="js/faq.js" defer></script>
+    
         <title>@yield('title', 'FoxServ')</title>
 </head>
 

@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId')->constrained('users'); // Fazendo referência à tabela users
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
+            // $table->foreignId('userId')->constrained('users'); // Fazendo referência à tabela users
             $table->string('zipCode');
             $table->string('uf');
             $table->string('city');
             $table->string('district');
-            $table->string('address');
+            $table->string('street');
             $table->string('number')->nullable();
             $table->timestamps(); // Se quiser usar timestamps
         });
@@ -34,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adresses');
+        Schema::dropIfExists('addresses');
     }
 };
