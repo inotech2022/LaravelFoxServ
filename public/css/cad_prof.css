@@ -142,9 +142,6 @@ input[type="checkbox"] {
     color: #ff0000;
     font-weight:bold;
 }
-.carregando{
-    display:none;
-}
 .linha{
     display: flex;
     flex-direction: row;
