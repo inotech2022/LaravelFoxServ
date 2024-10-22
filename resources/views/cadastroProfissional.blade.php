@@ -31,7 +31,7 @@
                         </label>
                     </div>
                 </div>
-                <form class="card-form" action="{{ route('cadastro.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="card-form" action="{{ route('cadastroProfissional.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <h1>Cadastro do Profissional</h1>
                     
@@ -102,7 +102,7 @@
                     <div class="linha">
                         <div class="input-box">
                             <label for="description">Descrição <span class="required"> * </span></label>
-                            <textarea id="description" name="descricao" placeholder="Descrição dos serviços, habilidades, idiomas..." required maxlength="100"></textarea>
+                            <textarea id="description" name="description" placeholder="Descrição dos serviços, habilidades, idiomas..." required maxlength="100"></textarea>
                             <div class="characters">
                                 <span class="min_num">0</span>
                                 <span class="limit_num">/100</span>
