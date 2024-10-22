@@ -53,7 +53,7 @@ class CadastroController extends Controller
         $userId = User::orderBy('userId', 'DESC')->first()->userId;
 
 
-   
+
         Address::create([
             'userId' => $userId,
             'zipCode' => $request->cep,
@@ -64,12 +64,12 @@ class CadastroController extends Controller
             'number' => $request->numero,
         ]);
 
-        
+
 Auth::login($user);
         return redirect('/')->with('success', 'Registro realizado com sucesso.');
-        
+
     }
-    
+
         function home(Request $request) {
             return view('index');
         }

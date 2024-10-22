@@ -55,18 +55,18 @@ main{
 input[type="checkbox"] {
     display: none;
   }
-  
+
   .bi {
     font-size: 1.3rem;
     cursor: pointer;
     color: #fff;
     margin: 0 30px;
   }
-  
+
   .bi-moon {
     display: none;
   }
-  
+
 .nav .container {
     display: flex;
     justify-content: space-between;
@@ -104,7 +104,7 @@ input[type="checkbox"] {
     align-content:center;
 }
 .sejaProf .material-symbols-outlined{
-    
+
     margin-right: 10px;
 }
 .sejaProf:hover{
@@ -150,7 +150,7 @@ input[type="checkbox"] {
   text-align-last: center;
   justify-content: space-between;
   padding: 0 8px;
-  
+
 }
 
 .login:hover{
@@ -174,7 +174,7 @@ color: #fff;
     text-align: center;
     text-decoration: none;
   }
-  
+
 
 
   .inicio{
@@ -251,11 +251,11 @@ color: #6C618B;
   background-color: #fff;
   border-radius: 50px;
   }
-  
+
   .inicio-left .pesquisa input::placeholder {
   color: #969696;
   }
-  
+
   .inicio-left .pesquisa button {
   outline: none;
   border: none;
@@ -271,7 +271,7 @@ color: #6C618B;
   margin-left: 5px;
   border-radius: 100px;
   }
-  
+
   .inicio-left .pesquisa button:hover {
   background-color:#436656;
   }
@@ -309,7 +309,7 @@ width: 40%;
     border-radius: 20px;
     height: 180px;
     margin:50px 20px;
-    
+
   }
   .acessar{
     font-size: 10px;
@@ -321,7 +321,7 @@ width: 40%;
     margin-right: 10px;
     justify-content: flex-end;
     cursor: pointer;
-    
+
   }
 
   .acessar>a{
@@ -331,7 +331,7 @@ width: 40%;
     text-decoration: none;
     color: black;
     }
- 
+
   .acessar>a:hover{
     text-decoration-line: underline;
   }
@@ -397,7 +397,7 @@ width: 40%;
   align-items:center;
   justify-content:center;
   }
-  
+
   .sugestao input[type="submit"]:hover {
   background-color:#436656;
   }
@@ -410,7 +410,7 @@ width: 40%;
   .avaliacoes>h2{
     font-size: 30px;
     color: #342f44;
-    
+
     width: 100%;
     text-align-last: center ;
   }
@@ -440,7 +440,7 @@ button{
     background: #89d0af;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff8021;
-   
+
 }
   .left-img{
     display: flex;
@@ -543,7 +543,7 @@ button{
   justify-content: space-between;
   align-items: flex-start;
   text-align-last:left;
-  
+
 }
 .star-icon::before {
   content: "\2605";
@@ -598,7 +598,7 @@ button{
 .resposta{
   display: none;
   width: 80%;
-  
+
 }
 .resposta>p{
 font-size: 16px;
@@ -689,7 +689,7 @@ hr {
 }
 .dark #img-right-modoClaro{
   display: none;
-  
+
 }
 .dark #img-right-modoEscuro{
   width: 70%;
@@ -708,7 +708,7 @@ hr {
 
 .dark .img-avaliacao-modoClaro{
   display: none;
-  
+
 }
 .dark .img-avaliacao-ModoEscuro{
 display: flex;
@@ -719,11 +719,3 @@ width: 360px;
 .dark button{
     background-color: #00ff88;
 }
-
-
-
-
-
-
-
-

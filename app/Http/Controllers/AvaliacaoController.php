@@ -8,7 +8,6 @@ class AvaliacaoController extends Controller
 {
     public function create()
     {
-        
         return view('avaliacao');
     }
 }

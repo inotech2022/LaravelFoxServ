@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <div class="main_gradiente"> 
+    <div class="main_gradiente">
         <div class="main">
-            <div class="left"> 
+            <div class="left">
                 <div class="logo-header">
                     <h1 class="logo">
                         <a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a>
@@ -39,7 +39,7 @@
         </ul>
     </div>
 @endif
-                <form class="card-form" action="{{ route('login') }}" method="POST"> 
+                <form class="card-form" action="{{ route('login') }}" method="POST">
                     @csrf
                     <h1>Login</h1>
                     <div class="linha">
@@ -54,7 +54,7 @@
                             <input type="password" name="password" placeholder="Insira sua senha" required maxlength="30">
                         </div>
                     </div>
-                     
+
                     <div class="cadastro">
                         <a class="esqueceu_a_senha" href="{{ route('esqueceuSenha') }}">Esqueceu a senha?</a>
                     </div>
@@ -67,8 +67,8 @@
                     </div>
                 </form>
             </div>
-            <div class="right"> 
-                <img src="{{ asset('image/login-modoClaro.png') }}" class="img-right-modoClaro"> 
+            <div class="right">
+                <img src="{{ asset('image/login-modoClaro.png') }}" class="img-right-modoClaro">
                 <img src="{{ asset('image/login-modoEscuro.png') }}" class="img-right-modoEscuro">
             </div>
         </div>

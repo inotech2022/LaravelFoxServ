@@ -4,7 +4,7 @@ $(document).ready(function() {
         const typeServiceId = $(selectElement).val();
         if (typeServiceId) {
             $(targetSelect).empty().append('<option value="" selected disabled>Escolha a Subcategoria</option>'); // Limpa e adiciona opção padrão
-            $('.carregando' + targetSelect.id.slice(-1)).show(); 
+            $('.carregando' + targetSelect.id.slice(-1)).show();
 
             $.ajax({
                 url: '/subcategorias/' + typeServiceId,

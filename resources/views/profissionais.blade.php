@@ -22,10 +22,10 @@
     <!-- cabeçalho -->
     <nav class="nav">
         <div class="container">
-                   <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>           
+                   <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
             <ul>
-                            
-                <div class="dropdown">                
+
+                <div class="dropdown">
                 <button class="menu"><img class="foto_menu" src="upload/"> Olá,<span
                         class="material-symbols-outlined">
                         expand_more
@@ -43,7 +43,7 @@
                                 <a href="telaEstatica.html"><span class="material-symbols-outlined">
                                 person
                                 </span>Seja um Profissional</a>
-                                
+
                             <a class="sair" href="sair.php"><span class="material-symbols-outlined">
                                 logout
                             </span>Sair</a></ul>
@@ -57,13 +57,13 @@
                             <a href="contratos.php"><span class="material-symbols-outlined">
                                     description
                                 </span>Meus Contratos</a>
-                            
-                            
+
+
                                 <li><span class="material-symbols-outlined">
                                     notifications
                                 </span>Notificações
                                 <ul>
-                                    
+
                                     <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação<span class="material-symbols-outlined">
                                             favorite
                                         </span></li>
@@ -84,7 +84,7 @@
                                             favorite
                                         </span></li>
                                     <hr>
-                                  
+
                                 </ul>
                             </li>
                             <a class="sair" href="sair.php"><span class="material-symbols-outlined">
@@ -102,8 +102,8 @@
             </ul>
         </div>
     </nav>
-    
-   
+
+
     <main>
         <div class="principal">
             <div class="topo">
@@ -127,9 +127,9 @@
         <option value="3">3 estrelas</option>
         <option value="4">4 estrelas</option>
         <option value="5">5 estrelas</option>
-        
+
     </select>
-    
+
 </div>
 </form>
             </div>

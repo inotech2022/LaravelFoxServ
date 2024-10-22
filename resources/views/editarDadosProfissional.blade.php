@@ -32,9 +32,9 @@
                         <i class="bi bi-sun"></i>
                         <i class="bi bi-moon"></i></label>
                 </div>
-            </div> 
+            </div>
             <form class="card-form" action="editarDados.php" method="POST" enctype="multipart/form-data" >
-                
+
                 <h1>Editar Dados</h1>
                 <div class="linha">
                     <div class="textfield">
@@ -66,8 +66,8 @@
                         <label for="cidade">Cidade</label>
                         <input type="text" name="cidade" id="cidade" placeholder="Cidade" required maxlength="50" value="">
                     </div>
-                    
-                    
+
+
                 </div>
                 <div class="linha">
                     <div class="textfield">
@@ -81,13 +81,13 @@
                     <div class="textfield">
                         <label for="bairro">Número</label>
                         <input type="text"  id="numero" name="numero" placeholder="00" value="">
-                    </div>                    
+                    </div>
                 </div>
                 <div class="linha">
                     <div class="input-box">
                         <label for="descricao">Descrição</label>
                         <textarea name="descricao" placeholder="Descrição dos serviços, habilidades, idiomas..." required maxlength="100"></textarea>
-                        
+
                         <div class="characters">
                           <span class="min_num">0</span>
                           <span class="limit_num">/100</span>

@@ -34,7 +34,7 @@
             <div class="servicos">
                 <h1>Qual serviço de  você está precisando?</h1>
                 <div class="botoes">
-            
+
                     <button class="servico" onclick="document.location='profissionais.php?idServico=<?php echo $idServico[$i]; ?>'"> <?php echo $nomeServico[$i];?> <span class="material-symbols-outlined">
                         arrow_forward
                     </span> </button>

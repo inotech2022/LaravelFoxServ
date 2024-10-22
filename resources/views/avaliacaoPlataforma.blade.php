@@ -23,7 +23,7 @@
 
     <div class="main">
         <div class="left">
-            <div class="logo-header">                
+            <div class="logo-header">
                 <div class="modo_escuro">
                     <input type="checkbox" name="change-theme" id="change-theme" />
                     <label for="change-theme">
@@ -32,10 +32,10 @@
                 </div>
             </div>
             <form class="card-form" method="POST" enctype="multipart/form-data">
-   
+
                 <h1>Avalie a plataforma</h1>
                 <p>O que você está achando da nossa plataforma?</p>
-                <div class="linha"> 
+                <div class="linha">
                     <div class="textfield">
                     <label for="avaliacao">Avaliação <span class="required"> * </span></label>
                 <div class="estrelas">
@@ -63,7 +63,7 @@
                     <div class="input-box">
                         <label for="comentario">Comentário <span class="required"> * </span></label>
                         <textarea name="comentario" placeholder="Comentário referente à avaliação" required maxlength="100"></textarea>
-                        
+
                         <div class="characters">
                           <span class="min_num">0</span>
                           <span class="limit_num">/100</span>

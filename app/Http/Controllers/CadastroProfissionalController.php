@@ -26,7 +26,7 @@ class CadastroProfissionalController extends Controller
 
         $professional = Professional::create([
             'description' => $request->description,
-            'userId' => Auth::id(), 
+            'userId' => Auth::id(),
         ]);
 
         $user = User::find($request->userId);
@@ -43,7 +43,7 @@ class CadastroProfissionalController extends Controller
     }
     public function getSubcategories($id)
 {
-    $subcategories = \App\Models\Service::where('typeServiceId', $id)->get(['serviceId', 'serviceName']); // Ajuste os campos conforme seu banco de dados
+    $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']); // Ajuste os campos conforme seu banco de dados
 
     return response()->json($subcategories);
 }

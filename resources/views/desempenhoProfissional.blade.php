@@ -51,15 +51,15 @@ reviews
 </span>
 </div>
                     </div>
-                    
+
                 </section>
 
 <div class="linha">
     <div class="coluna">
-        
+
    <h3>Média de Avaliação</h3>
                 <section class="reviews">
-                    
+
                     <ul>
                         <li>Julho <span>⭐ 4.8</span></li>
                         <li>Agosto <span>⭐ 4.7</span></li>

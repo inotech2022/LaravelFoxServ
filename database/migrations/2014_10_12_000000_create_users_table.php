@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('userId'); 
-         
+            $table->bigIncrements('userId');
+
             $table->string('name');
             $table->string('lastName');
             $table->string('phone');
@@ -24,10 +24,10 @@ return new class extends Migration
             $table->string('profilePic')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('type', ['admin', 'user']); 
+            $table->enum('type', ['admin', 'user']);
             $table->boolean('status')->default(true);
         });
-        
+
     }
 
     /**

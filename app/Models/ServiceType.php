@@ -9,7 +9,7 @@ class ServiceType extends Model
 {
     use HasFactory;
     protected $table = 'serviceTypes';
-    
+
     protected $fillable = [
         'serviceTypeId',
         'serviceTypeName',

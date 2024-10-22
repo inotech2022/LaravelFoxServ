@@ -18,7 +18,7 @@
     padding: 0;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
-    
+
 }
 
 
@@ -58,7 +58,7 @@
     align-items: center;
     justify-content:space-around;
     display: flex;
-    
+
 
 }
 .btn-modal-cont{
@@ -77,7 +77,7 @@
     cursor: pointer;
     border:none;
     margin: 5px;
-    
+
 }
 .cancelar-cont{
     text-decoration: none;
@@ -129,5 +129,3 @@ a{
 .dark .btn-modal-cont:hover {
     background-color: #008b4a;
 }
-
-

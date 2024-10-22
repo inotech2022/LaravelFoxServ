@@ -43,8 +43,8 @@ Route::get('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'index']
 Route::get('/esqueceuSenha', [EsqueceuSenhaController::class, 'index'])->name('esqueceuSenha');
 Route::get('/homeProfissional', [HomeProfissionalController::class, 'index'])->name('homeProfissional');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form'); 
-Route::post('/login', [AuthController::class, 'login'])->name('login'); 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('mePerfil');
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');

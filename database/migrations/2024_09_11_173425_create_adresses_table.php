@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('number')->nullable();
             $table->timestamps(); // Se quiser usar timestamps
         });
-        
+
     }
 
     /**

@@ -6,8 +6,8 @@ não sei
 @endsection
 <link rel="stylesheet" href="{{ asset('css/contratoUsuario.css') }}">
 @section('content')
-    
-   
+
+
         <div class="principal">
             <div class="topo">
                 <div class="titulo">
@@ -27,10 +27,10 @@ não sei
                     <img src="image/contratos-modoEscuro.png" class="img-right-modoEscuro">
                 </div>
             </div>
-            
-            
+
+
             <div class="profissionais">
-                
+
 <div class="naoEncontrada">
                 <h1>Você ainda não possui nenhum contrato</h1>
                 <img src="image/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
@@ -102,7 +102,7 @@ não sei
                                 </div>
                             </div>
                         </div>
-                    
+
                    <button class="btn-pdf" onclick="document.location='{{ route('avaliacao') }}'">Avaliar</button>
                    <button class="btn-pdf" disabled>Contrato Avaliado</button>
         </div>

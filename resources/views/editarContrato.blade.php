@@ -36,8 +36,8 @@
                     <div class="textfield">
                         <label for="nome">Cliente</label>
                         <input type="text" id="nome" name="nome" placeholder="000.000.000-00"value = "" disabled>
-                    </div>                   
-                    
+                    </div>
+
                 </div>
                 <div class="linha">
                    <div class="textfield">
@@ -50,7 +50,7 @@
                     <div class="textfield">
                         <label for="valor">Valor do Serviço</label>
                         <input type="text" name="valor" placeholder="Digite o valor"value = "">
-                    </div>                    
+                    </div>
                 </div>
                 <div class="linha">
                     <div class="textfield">
@@ -66,7 +66,7 @@
                     <div class="input-box">
                         <label for="descricao">Descrição</label>
                         <textarea placeholder="Descreva serviço realizado..." name="descricao"required maxlength="100"></textarea>
-                        
+
                         <div class="characters">
                           <span class="min_num">0</span>
                           <span class="limit_num">/100</span>

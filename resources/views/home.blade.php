@@ -13,7 +13,7 @@ não sei
     <form class="card-form" action="profissionais2.php" method="GET">
         <div class="pesquisa">
             <input type="text" id="servico" name="nomeServico" placeholder="Buscar serviço...">
-            
+
             <button type="submit" name="submit" id="submit">
                 <span class="material-symbols-outlined">
                     search
@@ -361,4 +361,3 @@ não sei
             </div>
         </div>
         @endsection
-

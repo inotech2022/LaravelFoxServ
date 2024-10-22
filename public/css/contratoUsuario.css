@@ -82,18 +82,18 @@ main{
 input[type="checkbox"] {
     display: none;
   }
-  
+
   .bi {
     font-size: 1.3rem;
     cursor: pointer;
     color: #fff;
     margin: 0 30px;
   }
-  
+
   .bi-moon {
     display: none;
   }
-  
+
 .nav .container {
     display: flex;
     justify-content: space-between;
@@ -338,7 +338,7 @@ option{
     border-radius: 100%;
     -o-border-radius: 100%;
     -webkit-border-radius: 100%;
-    -moz-border-radius: 100%; 
+    -moz-border-radius: 100%;
     cursor: pointer;
   }
 .btn-flutuante .material-symbols-outlined{
@@ -353,12 +353,12 @@ option{
   .dark .bi-sun {
     display: none;
   }
-  
+
   .dark .bi-moon {
     display: block;
     color:#fff;
   }
-  
+
   .dark .foxserv{
     color: #00ff88;
   }
@@ -372,7 +372,7 @@ option{
   .dark .nav a:hover {
       color: #00ff88;
   }
- 
+
   .dark .btn-pdf{
     background-color: #00ff88;
     border: #00ff88;
@@ -401,7 +401,7 @@ option{
 }
   .dark .img-right-modoClaro{
     display: none;
-    
+
   }
   .dark .img-right-modoEscuro{
     width: 100%;

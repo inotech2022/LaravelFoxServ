@@ -13,7 +13,7 @@ async function carregar_servico(valor){
         html += "<li class='list-group-item disabled'>" +resposta ['msg'] + "</li>";
     }else {
         for(i = 0; i < resposta['dados'].length; i++){
-        html +="<li class='list-group-item list-group-item-action'onlick='get_id_servico("+ resposta ['dados'][i].idTipoServico + "," + JSON.stringify + ")'>" + resposta ['dados'][i].nomeServico + "</li>";    
+        html +="<li class='list-group-item list-group-item-action'onlick='get_id_servico("+ resposta ['dados'][i].idTipoServico + "," + JSON.stringify + ")'>" + resposta ['dados'][i].nomeServico + "</li>";
         }
 
     }

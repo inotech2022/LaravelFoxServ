@@ -11,9 +11,9 @@ class WebsiteRating extends Model
 
     protected $fillable = [
         'websiteRatingId',
-        'starAmount', 
+        'starAmount',
         'comment',
         'ratingDate',
-        'userId' 
+        'userId'
     ];
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Service; 
+use App\Models\Service;
 
 class ServicoController extends Controller
 {

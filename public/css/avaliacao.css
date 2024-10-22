@@ -68,14 +68,14 @@ body * {
 input[type="checkbox"] {
     display: none;
   }
-  
+
   .bi {
     font-size: 1.3rem;
     cursor: pointer;
     color: #6C618B;
     margin: 0 30px;
   }
-  
+
   .bi-moon {
     display: none;
   }
@@ -227,7 +227,7 @@ select {
     border-color: #d8d5d55e ;
     border-radius: 30px;
     background-color: #fff;
-    
+
 }
 
 .input-box {
@@ -302,7 +302,7 @@ input[type="submit"] {
     text-align-last:center;
     font-size:30px;
     height:50px;
-    
+
 }
 input[type="radio"]{
 	display: none;
@@ -361,7 +361,7 @@ input[type="radio"]{
 .dark .bi-sun {
     display: none;
   }
-  
+
   .dark .bi-moon {
     display: block;
     color:#fff;

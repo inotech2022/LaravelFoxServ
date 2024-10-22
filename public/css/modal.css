@@ -20,7 +20,7 @@
    padding: 0;
    border-radius: 20px;
    box-shadow: 0px 10px 40px #00000056;
-   
+
 }
 .modal-header {
     align-items: center;
@@ -32,7 +32,7 @@
    width: 100%;
    align-content: center ;
    height: 50px;
-   
+
 }
 
 
@@ -93,7 +93,7 @@ textarea {
    align-items:center;
    display:flex;
    flex-direction:row;
-   
+
 }
 .btn-modal, .cancelar{
    text-decoration: none;
@@ -111,7 +111,7 @@ textarea {
    cursor: pointer;
    border:none;
    margin: 5px;
-   
+
 }
 
 .btn-modal:hover, .cancelar:hover {

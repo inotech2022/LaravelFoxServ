@@ -36,16 +36,16 @@
                     <label class="picture" for="picture__input" tabIndex="0">
                         <span class="picture__image"></span>
                       </label>
-                      
+
                       <input type="file" name="picture__input" id="picture__input">
                 </div>
-                
+
 
                 <div class="linha">
                     <div class="input-box">
                         <label for="legenda">Legenda</label>
                         <textarea name="descricao" placeholder="Escreva a sua legenda..." required maxlength="100"></textarea>
-                        
+
                         <div class="characters">
                           <span class="min_num">0</span>
                           <span class="limit_num">/100</span>
@@ -66,7 +66,7 @@
             <img src="image/novaPub-modoEscuro.png" class="img-right-modoEscuro">
         </div>
     </div>
-   
+
 
 
 </body>

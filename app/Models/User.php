@@ -18,13 +18,13 @@ class User extends Authenticatable
 
     protected $primaryKey = 'userId';
     protected $keyType = 'string';
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [ 
+    protected $fillable = [
         'name',
         'lastName',
         'phone',
@@ -48,7 +48,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-   
+
 
     public function address()
     {

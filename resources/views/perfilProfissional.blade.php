@@ -220,7 +220,7 @@
                         <a><button class="btn-modal"><span class="material-symbols-outlined">
                                     phone
                                 </span>
-                               
+
                             </button></a>
                         <a><button class="btn-modal" href="mailto:"><span
                                     class="material-symbols-outlined">

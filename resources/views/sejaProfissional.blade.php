@@ -30,11 +30,11 @@
                         <i class="bi bi-sun"></i>
                         <i class="bi bi-moon"></i></label>
                 </div>
-            </div> 
+            </div>
             <div class="estatica">
                 <div class="texto">
                     <h1>
-                        Seja um profissional <br> e faça parte da nossa equipe 
+                        Seja um profissional <br> e faça parte da nossa equipe
                     </h1>
                     <p>Complete seu cadastro e desfrute dos benefícios</p>
                 </div>
@@ -44,19 +44,19 @@
                             <span class="material-symbols-outlined">
                                 work_history
                                 </span>
-                                
+
                         </div>
                         <div class="beneficio">
                             <p>Trabalhe no horário desejado</p>
                         </div>
-                        
+
                     </div>
                     <div class="card2">
                         <div class="icone">
                             <span class="material-symbols-outlined">
                                 payments
                                 </span>
-                               
+
                         </div>
                         <div class="beneficio">
                             <p>Negocie valores direto com seu cliente</p>
@@ -67,13 +67,13 @@
                             <span class="material-symbols-outlined">
                                 star
                                 </span>
-                                
+
                         </div>
                         <div class="beneficio">
                             <p>Receba avaliações e divulgue serviços</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

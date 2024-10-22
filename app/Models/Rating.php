@@ -11,7 +11,7 @@ class Rating extends Model
 
     protected $fillable = [
         'ratingId',
-        'starAmount', 
+        'starAmount',
         'comment',
         'ratingDate',
         'userId',

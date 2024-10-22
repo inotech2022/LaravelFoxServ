@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     favoriteIcons.forEach(function(icon) {
         icon.addEventListener("click", function(event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
             this.classList.toggle("selected");
         });
     });

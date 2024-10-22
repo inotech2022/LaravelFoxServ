@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
-     
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}"> 
+
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
     <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
     <script src="{{ asset('js/faq.js') }}" defer></script>
@@ -24,8 +24,8 @@
           <nav class="nav">
         <div class="container">
         <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
-        @auth   
-        <ul>           
+        @auth
+        <ul>
                 <div class="dropdown">
 <button class="menu"><img class="foto_menu" src="image/upload/"> Olá, {{Auth::user()->name}}<span
                         class="material-symbols-outlined">
@@ -47,7 +47,7 @@
                                 <a href="{{ route('sejaProfissional') }}"><span class="material-symbols-outlined">
                                 person
                                 </span>Seja um Profissional</a>
-                                
+
                             <a class="sair" href="{{ route('logout')}}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="material-symbols-outlined">
                                 logout
                             </span>Sair</a>
@@ -60,13 +60,13 @@
                         login
                     </span> Sair </a>
 
-                            
-                    @else 
+
+                    @else
                     <a class="sejaProf" href="{{ route('index') }}" class="current">Home</a>
                 <a class="sejaProf" href="{{ route('cadastro') }}">Cadastre-se</a>
-                
+
                     <p class="linha"> | </p>
-                
+
                 <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
                         login
                     </span> Entrar </a>
@@ -87,7 +87,7 @@
 
     @yield('content')
     </main>
-   
+
 
    </body>
    <!-- rodapé -->
@@ -108,13 +108,13 @@
                </a>
            </div>
        </div>
-   
-   
+
+
        <div class="footer_center">
            <div onclick="document.location='home.php'" class="footer__image">
-   
+
                <img src="image/logo/foxserv-branco.PNG" alt="FoxServ" class="footer_image">
-   
+
                <div class="logo-header">
                    <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
                </div>
@@ -133,7 +133,7 @@
                </a>
            </div>
        </div>
-   
+
    </footer>
-   
+
    </html>

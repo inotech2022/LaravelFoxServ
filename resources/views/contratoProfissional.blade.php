@@ -9,7 +9,7 @@ não sei
     <link rel="stylesheet" href="{{ asset('css/contratoProfissional.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <script src="{{ asset('js/modal.js') }}" defer></script>
-    
+
 
     <main>
         <div class="principal">
@@ -35,12 +35,12 @@ não sei
     <h1>Você ainda não possui nenhum contrato</h1>
     <img src="image/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
                 <img src="image/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
-    
+
 </div>
             <div class="contrato">
-                  
+
                 <div class="card_contrato">
-                    
+
                     <div class="info">
                         <div class="icon">
                             <span class="material-symbols-outlined">
@@ -52,7 +52,7 @@ não sei
                                    Status do Contrato
                             </div>
                             <div class="info-texto">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ não sei
                                 Nome do Cliente
                             </div>
                             <div class="info-texto">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ não sei
                                 Serviço Realizado
                             </div>
                             <div class="info-texto">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -119,43 +119,43 @@ não sei
                     </div>
                     <div class="info">
                         <div class="icon">
-                            
+
                                 <span class="material-symbols-outlined">
                                     format_align_center
                                 </span>
-                            
+
                         </div>
                         <div class="texto">
                             <div class="info-titulo">
                                 Descrição
                             </div>
                             <div class="info-texto">
-                               
+
                             </div>
                         </div>
                     </div>
                     <div class="info">
                         <div class="icon">
-                            
+
                                 <span class="material-symbols-outlined">
                                     fact_check
                                 </span>
-                           
+
                         </div>
                         <div class="texto">
                             <div class="info-titulo">
                                 Número do Contrato
                             </div>
                             <div class="info-texto">
-                                
+
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
-                
+
                 <div class="contrato-pdf">
-                    
+
     <form method="post" action="#">
     <input type="hidden" name="protocolo" value="">
     <button type="submit" class="btn-pdf" name="gerar_pdf">Gerar PDF </button>
@@ -167,8 +167,8 @@ não sei
                                 <button class="editar" onclick="document.location='{{ route('editarContrato') }}'"><span class="material-symbols-outlined" >
                                     edit
                                 </span></button>
-                
-                              
+
+
                 </div>
                <div id="modal-" class="modal">
                     <div class="alert-modal">
@@ -177,7 +177,7 @@ não sei
                         </div>
                         <div class="modal-body">
                             <h2>Tem certeza que deseja excluir esse contrato ?</h2>
-                            
+
                             <form id="form_excluir_contrato-" method="post" action="excluir_contrato.php">
                                 <input type="hidden" name="protocolo" value="">
                             </form>

@@ -45,11 +45,11 @@
 @endif
 
                 <form class="card-form" action="{{ route('cadastro.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf    
+                @csrf
                 <h1>Cadastro </h1>
                     <div class="linha">
                         <div class="textfield">
-                            <label for="nome">Nome <span class="required"> * </span></label> 
+                            <label for="nome">Nome <span class="required"> * </span></label>
                             <input type="text" name="nome" id="nome" placeholder="Nome" required maxlength="50">
                         </div>
                         <div class="textfield">
@@ -100,7 +100,7 @@
 
                         <div class="textfield">
                             <label for="endereco">Endereço <span class="required"> * </span></label>
-                            <input type="text" id="endereco" name="endereco" placeholder="Endereço" 
+                            <input type="text" id="endereco" name="endereco" placeholder="Endereço"
                                 maxlength="80">
                         </div>
                         <div class="textfield">
@@ -133,7 +133,7 @@
                                 minlength="8">
                         </div>
                     </div>
-                
+
                     <div class="botao">
                         <input  type="submit" name="submit" class="btn-login" id="submit" value="Cadastrar">
                     </div>

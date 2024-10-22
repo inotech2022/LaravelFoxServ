@@ -54,18 +54,18 @@ main{
 input[type="checkbox"] {
     display: none;
   }
-  
+
   .bi {
     font-size: 1.3rem;
     cursor: pointer;
     color: #fff;
     margin: 0 30px;
   }
-  
+
   .bi-moon {
     display: none;
   }
-  
+
 .nav .container {
     display: flex;
     justify-content: space-between;
@@ -134,14 +134,14 @@ input[type="checkbox"] {
     align-items:flex-start;
     justify-content:space-between;
     width:90vw;
-    
+
 }
 .linha-2{
     display:flex;
     flex-direction:row;
     align-items:center;
     justify-content:space-between;
-    
+
 }
 .coluna{
     display:flex;
@@ -320,7 +320,7 @@ h3{
 .dark .bi-sun {
     display: none;
   }
-  
+
   .dark .bi-moon {
     display: block;
     color:#fff;
@@ -340,7 +340,7 @@ h3{
   .dark .nav a.current:hover {
       color: #00ff88;
   }
-  
+
 
  .dark .columnchart_values{
 background-color: #201B2C;

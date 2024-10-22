@@ -68,14 +68,14 @@ body * {
 input[type="checkbox"] {
     display: none;
   }
-  
+
   .bi {
     font-size: 1.3rem;
     cursor: pointer;
     color: #6C618B;
     margin: 0 30px;
   }
-  
+
   .bi-moon {
     display: none;
   }
@@ -349,7 +349,7 @@ input[type="submit"] {
 .dark .bi-sun {
     display: none;
   }
-  
+
   .dark .bi-moon {
     display: block;
     color:#fff;

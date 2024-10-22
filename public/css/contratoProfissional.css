@@ -82,18 +82,18 @@ main{
 input[type="checkbox"] {
     display: none;
   }
-  
+
   .bi {
     font-size: 1.3rem;
     cursor: pointer;
     color: #fff;
     margin: 0 30px;
   }
-  
+
   .bi-moon {
     display: none;
   }
-  
+
 .nav .container {
     display: flex;
     justify-content: space-between;
@@ -183,7 +183,7 @@ color: #fff;
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
-  
+
 }
 .fa {
     padding: 20px;
@@ -248,7 +248,7 @@ select{
     color: #000;
     outline: none;
     margin-top: 50px;
-    
+
 }
 option{
     display: flex;
@@ -338,7 +338,7 @@ option{
     word-wrap: break-word;
 }
 .contrato-pdf{
-    display: flex;    
+    display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
@@ -378,7 +378,7 @@ option{
     border-radius: 100%;
     -o-border-radius: 100%;
     -webkit-border-radius: 100%;
-    -moz-border-radius: 100%; 
+    -moz-border-radius: 100%;
     cursor: pointer;
   }
 .btn-flutuante .material-symbols-outlined{
@@ -393,12 +393,12 @@ option{
   .dark .bi-sun {
     display: none;
   }
-  
+
   .dark .bi-moon {
     display: block;
     color:#fff;
   }
-  
+
   .dark .foxserv{
     color: #00ff88;
   }
@@ -411,7 +411,7 @@ option{
   .dark .nav a.current:hover {
       color: #00ff88;
   }
-  
+
   .dark .btn-pdf{
     background-color: #00ff88;
     border: #00ff88;
@@ -440,7 +440,7 @@ option{
 }
   .dark .img-right-modoClaro{
     display: none;
-    
+
   }
   .dark .img-right-modoEscuro{
     width: 100%;

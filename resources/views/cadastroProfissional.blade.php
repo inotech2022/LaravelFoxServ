@@ -35,7 +35,7 @@
                 <form class="card-form" action="{{ route('cadastro.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <h1>Cadastro do Profissional</h1>
-                    
+
                     <!-- Categoria e Subcategoria 1 -->
                     <div class="linha">
                         <div class="textfield">
@@ -47,7 +47,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        
+
                         <div class="textfield">
     <label for="serviceId1">Subcategoria 1</label>
     <select name="serviceId[]" id="serviceId1">
@@ -68,7 +68,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        
+
                         <div class="textfield">
                             <label for="serviceId2">Subcategoria 2</label>
                             <select name="serviceId[]" id="serviceId2">
@@ -89,7 +89,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        
+
                         <div class="textfield">
                             <label for="serviceId3">Subcategoria 3</label>
                             <select name="serviceId[]" id="serviceId3">
@@ -98,8 +98,8 @@
                             <span class="carregando3" style="display: none;">Aguarde, carregando...</span>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="linha">
                         <div class="input-box">
                             <label for="description">Descrição <span class="required"> * </span></label>
@@ -129,7 +129,7 @@ $(document).ready(function() {
         const typeServiceId = $(selectElement).val();
         if (typeServiceId) {
             $(targetSelect).empty().append('<option value="" selected disabled>Escolha a Subcategoria</option>'); // Limpa e adiciona opção padrão
-            $('.carregando' + targetSelect.id.slice(-1)).show(); 
+            $('.carregando' + targetSelect.id.slice(-1)).show();
 
             $.ajax({
                 url: '/subcategorias/' + typeServiceId,
@@ -140,7 +140,7 @@ $(document).ready(function() {
                     });
                 },
                 complete: function() {
-                    $('.carregando' + targetSelect.id.slice(-1)).hide(); 
+                    $('.carregando' + targetSelect.id.slice(-1)).hide();
                 }
             });
         }
