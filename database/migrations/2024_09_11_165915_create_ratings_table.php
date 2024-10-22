@@ -14,8 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ratings', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('ratingId');
+            $table->string('starAmount');
+            $table->strinng('comment');
+            $table->date('ratingDate');
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('protocol');
+            $table->foreign('protocol')->references('protocol')->on('contracts')->onDelete('cascade');
             $table->timestamps();
+
         });
     }
 
