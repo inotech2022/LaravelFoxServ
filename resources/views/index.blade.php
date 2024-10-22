@@ -13,7 +13,7 @@ não sei
     <form class="card-form" action="profissionais2.php" method="GET">
         <div class="pesquisa">
             <input type="text" id="servico" name="nomeServico" placeholder="Buscar serviço...">
-
+            
             <button type="submit" name="submit" id="submit">
                 <span class="material-symbols-outlined">
                     search
@@ -42,7 +42,7 @@ não sei
                         </div>
                         <h3>Família</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=1"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 1) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -361,3 +361,4 @@ não sei
             </div>
         </div>
         @endsection
+

@@ -43,13 +43,13 @@ Route::get('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'index']
 Route::get('/esqueceuSenha', [EsqueceuSenhaController::class, 'index'])->name('esqueceuSenha');
 Route::get('/homeProfissional', [HomeProfissionalController::class, 'index'])->name('homeProfissional');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form'); 
+Route::post('/login', [AuthController::class, 'login'])->name('login'); 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('mePerfil');
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
 Route::get('/perfilProfissional', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
-Route::get('/profissionais', [ProfissionaisController::class, 'index'])->name('profissionais');
+Route::get('/profissionais/{id}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
-Route::get('/servicos', [ServicosController::class, 'index'])->name('servicos');
+Route::get('/servicos/{id}', [ServicosController::class, 'index'])->name('servicos');

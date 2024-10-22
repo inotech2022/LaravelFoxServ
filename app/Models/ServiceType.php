@@ -9,13 +9,14 @@ class ServiceType extends Model
 {
     use HasFactory;
     protected $table = 'serviceTypes';
-
+    
     protected $fillable = [
         'serviceTypeId',
         'serviceTypeName',
         'lightPic',
         'darkPic'
     ];
+    
     public function service()
     {
         return $this->hasOne(Service::class);

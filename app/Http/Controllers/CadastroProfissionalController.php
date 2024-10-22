@@ -26,7 +26,7 @@ class CadastroProfissionalController extends Controller
 
         $professional = Professional::create([
             'description' => $request->description,
-            'userId' => Auth::id(),
+            'userId' => Auth::id(), 
         ]);
 
         $user = User::find($request->userId);
