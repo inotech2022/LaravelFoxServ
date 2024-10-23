@@ -23,7 +23,6 @@ return new class extends Migration
             $table->unsignedBigInteger('protocol');
             $table->foreign('protocol')->references('protocol')->on('contracts')->onDelete('cascade');
             $table->timestamps();
-
         });
     }
 

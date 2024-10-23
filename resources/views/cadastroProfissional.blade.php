@@ -31,10 +31,21 @@
                         </label>
                     </div>
                 </div>
-                <form class="card-form" action="{{ route('cadastroProfissional.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                    <h1>Cadastro do Profissional</h1>
-                    
+                <form action="{{ route('cadastroProfissional.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+
+
+    <h1>Cadastro do Profissional</h1>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
                     <!-- Categoria e Subcategoria 1 -->
                     <div class="linha">
                         <div class="textfield">

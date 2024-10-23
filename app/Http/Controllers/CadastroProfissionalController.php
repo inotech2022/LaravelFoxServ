@@ -1,4 +1,5 @@
-<?PHP
+<?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
@@ -17,34 +18,36 @@ class CadastroProfissionalController extends Controller
 
     public function store(Request $request)
     {
+        // Validação dos dados enviados
         $validated = $request->validate([
-            'typeServiceId' => 'required|array',
-            'serviceId' => 'required|array',
+            'serviceId' => 'required|array', // Apenas array de serviços
             'description' => 'required|max:100',
-            'userId' => 'required|exists:users,userId',
         ]);
 
+        // Obter o ID do usuário logado
+        $userId = Auth::id(); // Captura o ID do usuário logado
+
+        // Criação de um novo profissional
         $professional = Professional::create([
             'description' => $request->description,
-            'userId' => Auth::id(), 
+            'userId' => $userId, // Usa o ID do usuário logado
         ]);
 
-        $user = User::find($request->userId);
+        // Atualizar o usuário para "profissional"
+        $user = User::find($userId);
         $user->update(['type' => 'profissional']);
 
-        foreach ($request->typeServiceId as $index => $typeServiceId) {
-            $professional->services()->create([
-                'serviceId' => $request->serviceId[$index],
-                'typeServiceId' => $typeServiceId,
-            ]);
-        }
+        // Associar os serviços ao profissional
+        $professional->services()->attach($request->serviceId); // Simplesmente anexamos o array de serviços
 
-        return redirect()->route('index')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');
+        // Redirecionar com mensagem de sucesso
+        return redirect()->route('homeProfissional')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');
     }
-    public function getSubcategories($id)
-{
-    $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']); // Ajuste os campos conforme seu banco de dados
 
-    return response()->json($subcategories);
+    public function getSubcategories($id)
+    {
+        $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']);
+        return response()->json($subcategories);
+    }
 }
-}
+

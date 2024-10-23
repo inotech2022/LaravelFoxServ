@@ -4,15 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens; 
 
 class Professional extends Model
-{   
-    public $timestamps = false;
-    use HasApiTokens, HasFactory, Notifiable;
-    use Notifiable;
+{
+    use HasFactory;
 
+    public $timestamps = false;
     protected $primaryKey = 'professionalId';
     protected $keyType = 'string';
 
@@ -20,10 +17,11 @@ class Professional extends Model
         'professionalId',
         'description',
         'userId',
-        ];
+    ];
 
-        public function services()
+    // Relacionamento muitos-para-muitos com a tabela Service
+    public function services()
     {
-        return $this->hasMany(service_professional::class, 'professionalId');
+        return $this->belongsToMany(Service::class, 'service_professional', 'professionalId', 'serviceId');
     }
 }

@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('serviceTypes', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('serviceTypeId');
+            $table->string('serviceTypeName');
+            $table->string('lightPic');
+            $table->string('darkPic');
             $table->timestamps();
         });
     }

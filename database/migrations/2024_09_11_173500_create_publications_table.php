@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('publications', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('publicationId');
+            $table->date('date');
+            $table->string('image');
+            $table->string('caption');
+            $table->unsignedBigInteger('professionalId');
+            $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
+            $table->timestamps();    
         });
     }
 
