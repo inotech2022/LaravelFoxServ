@@ -32,21 +32,27 @@
                     </div>
                 </div>
                 <form action="{{ route('cadastroProfissional.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
+                    @csrf
 
+                    <h1>Cadastro do Profissional</h1>
 
+                    <!-- Msg pra possiveis erros -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-    <h1>Cadastro do Profissional</h1>
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
                     <!-- Categoria e Subcategoria 1 -->
                     <div class="linha">
                         <div class="textfield">
@@ -60,12 +66,12 @@
                         </div>
                         
                         <div class="textfield">
-    <label for="serviceId1">Subcategoria 1</label>
-    <select name="serviceId[]" id="serviceId1">
-        <option value="" selected disabled>Escolha a Subcategoria</option>
-    </select>
-    <span class="carregando1" style="display: none;">Aguarde, carregando...</span>
-</div>
+                            <label for="serviceId1">Subcategoria 1</label>
+                            <select name="serviceId[]" id="serviceId1">
+                                <option value="" selected disabled>Escolha a Subcategoria</option>
+                            </select>
+                            <span class="carregando1" style="display: none;">Aguarde, carregando...</span>
+                        </div>
                     </div>
 
                     <!-- Categoria e Subcategoria 2 -->
@@ -110,7 +116,6 @@
                         </div>
                     </div>
                     
-                    
                     <div class="linha">
                         <div class="input-box">
                             <label for="description">Descrição <span class="required"> * </span></label>
@@ -145,6 +150,7 @@
     </div>
 
     <script src="/js/subcategoria.js"></script>
+    
 </body>
 
 </html>
