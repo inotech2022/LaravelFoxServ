@@ -35,6 +35,7 @@
     @csrf
 
 
+
     <h1>Cadastro do Profissional</h1>
 
     @if ($errors->any())

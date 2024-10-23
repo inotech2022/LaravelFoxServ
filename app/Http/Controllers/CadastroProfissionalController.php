@@ -24,8 +24,12 @@ class CadastroProfissionalController extends Controller
             'description' => 'required|max:100',
         ]);
 
-        // Obter o ID do usuário logado
+        // Obter o ID do usuário logado diretamente no backend
         $userId = Auth::id(); // Captura o ID do usuário logado
+
+        if (!$userId) {
+            return redirect()->route('index')->with('error', 'Você precisa estar logado para se cadastrar como profissional.');
+        }
 
         // Criação de um novo profissional
         $professional = Professional::create([
@@ -38,7 +42,7 @@ class CadastroProfissionalController extends Controller
         $user->update(['type' => 'profissional']);
 
         // Associar os serviços ao profissional
-        $professional->services()->attach($request->serviceId); // Simplesmente anexamos o array de serviços
+        $professional->services()->attach($request->serviceId);
 
         // Redirecionar com mensagem de sucesso
         return redirect()->route('homeProfissional')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');
@@ -50,4 +54,3 @@ class CadastroProfissionalController extends Controller
         return response()->json($subcategories);
     }
 }
-
