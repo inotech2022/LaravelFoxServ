@@ -9,14 +9,19 @@ class Professional extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $primaryKey = 'professionalId';
+    protected $keyType = 'string';
+
     protected $fillable = [
         'professionalId',
         'description',
         'userId',
-        ];
+    ];
 
-        public function services()
+    // Relacionamento muitos-para-muitos com a tabela Service
+    public function services()
     {
-        return $this->hasMany(service_professional::class, 'professionalId');
+        return $this->belongsToMany(Service::class, 'service_professional', 'professionalId', 'serviceId');
     }
 }

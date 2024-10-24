@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('service_professional', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('servProfId');
+            $table->unsignedBigInteger('professionalId');
+            $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
+            $table->unsignedBigInteger('serviceId');
+            $table->foreign('serviceId')->references('serviceId')->on('services')->onDelete('cascade');
             $table->timestamps();
         });
     }

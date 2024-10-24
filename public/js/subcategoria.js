@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     function loadSubcategories(selectElement, targetSelect) {
         const typeServiceId = $(selectElement).val();
@@ -11,8 +10,12 @@ $(document).ready(function() {
                 method: 'GET',
                 success: function(data) {
                     $.each(data, function(index, subcategory) {
-                        $(targetSelect).append('<option value="' + subcategory.id + '">' + subcategory.serviceName + '</option>');
+                        $(targetSelect).append('<option value="' + subcategory.serviceId + '">' + subcategory.serviceName + '</option>'); // Altere aqui
                     });
+                },
+                error: function(xhr, status, error) {
+                    console.error("Erro ao carregar subcategorias: ", error);
+                    alert("Ocorreu um erro ao carregar as subcategorias. Tente novamente.");
                 },
                 complete: function() {
                     $('.carregando' + targetSelect.slice(-1)).hide();
