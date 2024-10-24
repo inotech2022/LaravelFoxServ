@@ -43,7 +43,7 @@ class CadastroProfissionalController extends Controller
     }
     public function getSubcategories($id)
 {
-    $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']); // Ajuste os campos conforme seu banco de dados
+    $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']); 
 
     return response()->json($subcategories);
 }
