@@ -53,3 +53,11 @@ Route::get('/profissionais/{id}', [ProfissionaisController::class, 'index'])->na
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
 Route::get('/servicos/{id}', [ServicosController::class, 'index'])->name('servicos');
+Route::get('/confirmar-email/{token}', function ($token) {
+    $user = User::where('token', $token)->firstOrFail();
+    $user->email_verified_at = now();
+    $user->token = null; // Limpar o token após a confirmação
+    $user->save();
+
+    return redirect('/')->with('success', 'E-mail confirmado com sucesso!');
+});

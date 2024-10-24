@@ -8,6 +8,8 @@ use App\Models\Address;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\ConfirmacaoCadastro;
+use Illuminate\Support\Facades\Mail;
 
 
 class CadastroController extends Controller
@@ -65,12 +67,8 @@ class CadastroController extends Controller
         ]);
 
 
-Auth::login($user);
-        return redirect('/')->with('success', 'Registro realizado com sucesso.');
+        Mail::to($user->email)->send(new ConfirmacaoCadastro($user));
 
-    }
-
-        function home(Request $request) {
-            return view('index');
-        }
-}
+        Auth::login($user);
+        return redirect('/')->with('success', 'Registro realizado com sucesso. Por favor, confirme seu e-mail.');
+    }}
