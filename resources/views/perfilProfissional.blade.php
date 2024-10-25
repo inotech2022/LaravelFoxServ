@@ -1,75 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@section('title', 'Meu Perfil')
+@section('content')
+
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="FeedUsuario.css">
     <link rel="stylesheet" href="contatos.css">
-    <link rel="stylesheet" href="footer.css">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="/resources/js/modo_escuro.js" defer></script>
     <script src="/resources/js/avali-publi.js" defer></script>
     <script src="/resources/js/coracao.js"></script>
     <script src="/resources/js/modal.js" defer></script>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    <title>Feed</title>
-</head>
 
 <body>
-    <!-- cabeçalho -->
-    <nav class="nav">
-        <div class="container">
-            <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
-            <ul>
-                <div class="dropdown">
-                    <button class="menu"><img class="foto_menu" src="upload/<?php echo $fotoPerfil[$i]; ?>"> Olá,
-                        <?php echo $nome[$i]; ?>
-                        <?php echo $_SESSION['idUsuario']; ?> <span class="material-symbols-outlined">
-                            expand_more
-                        </span>
-                    </button>
-                    <div class="dropdown-content">
-                        <ul><a href="home.php"><span class="material-symbols-outlined">
-                                    home
-                                </span>Home</a>
-                            <a href="contrato_cliente.php"><span class="material-symbols-outlined">
-                                    description
-                                </span>Serviços Contratados</a>
-                            <a href="editarCliente.php"><span class="material-symbols-outlined">
-                                    edit
-                                </span>Editar Dados</a>
-                            <a href="redSenha.php"><span class="material-symbols-outlined">
-                                    lock_reset
-                                </span>Redefinir Senha</a>
-                            <a href="telaEstatica.html"><span class="material-symbols-outlined">
-                                    person
-                                </span>Seja um Profissional</a>
-
-                            <a class="sair" href="sair.php"><span class="material-symbols-outlined">
-                                    logout
-                                </span>Sair</a>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" name="change-theme" id="change-theme" />
-                    <label for="change-theme">
-                        <i class="bi bi-sun"></i>
-                        <i class="bi bi-moon"></i></label>
-                </div>
-            </ul>
-        </div>
-    </nav>
+    
 
     <main>
         <!-- parte principal -->
@@ -79,42 +23,49 @@
             <div class="usuario">
 
                 <div class="foto">
-                    <img class="foto-perfil" src="upload/">
+                    <img class="foto-perfil" src="image/upload/{{ $vw_feedProf->profilePic }}">
                 </div>
                 <div class="informacoes">
 
-                    <h1 class="username"><span class="material-symbols-outlined">
+                    <h1 class="username">{{ $vw_feedProf->name }} {{ $vw_feedProf->lastName }}<span class="material-symbols-outlined">
                             check_circle
                         </span></h1>
                     <div class="infos-extras">
                         <p class="localizacao">
                             <span class="material-symbols-outlined">
                                 location_on
-                            </span>
+                            </span>{{ $vw_feedProf->city }} , {{ $vw_feedProf->uf }}
                         </p>
                         <p class="tip-serv"> | </p>
                         <p class="idade">
                             <span class="material-symbols-outlined">
                                 perm_contact_calendar
-                            </span>anos
+                            </span> {{ $vw_feedProf->age }} anos
                         </p>
                         <p class="tip-serv"> | </p>
                         <p class="idade">
                             <span class="material-symbols-outlined">
                                 contract
-                            </span> Contrato(s)
+                            </span>{{ $vw_feedProf->totalContracts }} Contrato(s)
                         </p>
                     </div>
                     <div class="serv-tip">
-                        <p class="tip-serv"></p>
+                        <p class="tip-serv">{{ $vw_feedProf->serviceTypeName }}</p>
                     </div>
 
-                    <p class="descricao"></p>
+                    <p class="descricao"> {{ $vw_feedProf->description }} </p>
                 </div>
 
                 <div class="estrelas">
                     <ul class="avaliacao">
-                        <label class="media"></label>
+                        @for ($j = 1; $j <= 5; $j++)
+                            @if ($j <= $mediaRedonda)
+                                <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
+                            @else
+                                <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
+                            @endif
+                        @endfor
+                        <label class="media">{{ number_format($media, 1, ',', '.') }}</label>
                     </ul>
                     <div class="botao2">
                         <button class="contratos" onclick="openModal('dv-modal')"> <span
@@ -276,4 +227,3 @@
 </body>
 
 
-</html>

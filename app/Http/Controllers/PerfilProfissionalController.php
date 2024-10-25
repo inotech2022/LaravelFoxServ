@@ -11,14 +11,20 @@ class PerfilProfissionalController extends Controller
 {
     public function index()
     {
-     $userId = Auth::id(); 
 
-     $profissional = vw_feedProf::where('professionalId', $userId)->first();
+        $userId = Auth::id(); 
 
-     if (!$profissional) {
-         return redirect()->back()->with('error', 'Profissional não encontrado.');
-     }
-     return view('perfilProfissional', compact('profissional'));
-}
+        $profissional = vw_feedProf::where('professionalId', $userId)->first();
+
+        if (!$profissional) {
+            return redirect()->back()->with('error', 'Profissional não encontrado.');
+        }
+
+        $media = $profissional->average ?? 0;
+        $mediaRedonda = round($media);
+
+        return view('perfilProfissional', compact('profissional', 'media', 'mediaRedonda'));
+
+    }
 
 }
