@@ -1,0 +1,23 @@
+name: Laravel Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/php-action@v2
+      with:
+        php-version: '8.0'  # Altere para a versão PHP que você está usando
+        extensions: mbstring, xml, json, sqlite, bcmath  # Adicione outras extensões se necessário
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+    - name: Run tests
+      run: php artisan test

@@ -25,7 +25,7 @@ use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
 
 // Define a rota principal
-Route::get('/', [IndexController::class, 'index'])-> name('index')->middleware('auth');
+Route::get('/', [IndexController::class, 'index'])-> name('index');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
