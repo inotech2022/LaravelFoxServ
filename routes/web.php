@@ -56,7 +56,7 @@ Route::get('/servicos/{id}', [ServicosController::class, 'index'])->name('servic
 Route::get('/confirmar-email/{token}', function ($token) {
     $user = User::where('token', $token)->firstOrFail();
     $user->email_verified_at = now();
-    $user->token = null; // Limpar o token após a confirmação
+    $user->token = null; 
     $user->save();
 
     return redirect('/')->with('success', 'E-mail confirmado com sucesso!');
