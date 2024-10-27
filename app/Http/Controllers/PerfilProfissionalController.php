@@ -14,7 +14,8 @@ class PerfilProfissionalController extends Controller
 
         $userId = Auth::id(); 
 
-        $profissional = vw_feedProf::where('professionalId', $userId)->first();
+        $profissional = vw_feedProf::where('userId', $userId)->first();
+        
 
         if (!$profissional) {
             return redirect()->back()->with('error', 'Profissional não encontrado.');

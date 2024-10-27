@@ -5,12 +5,13 @@
 
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="FeedUsuario.css">
-    <link rel="stylesheet" href="contatos.css">
+    <link rel="stylesheet" href="{{ asset('css/FeedUsuario.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/contatos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="/resources/js/avali-publi.js" defer></script>
-    <script src="/resources/js/coracao.js"></script>
-    <script src="/resources/js/modal.js" defer></script>
+    <script src="js/avali-publi.js"></script>
+    <script src="js/coracao.js"></script>
+    <script src="js/modal.js"></script>
 
 <body>
     
@@ -23,37 +24,37 @@
             <div class="usuario">
 
                 <div class="foto">
-                    <img class="foto-perfil" src="image/upload/{{ $vw_feedProf->profilePic }}">
+                    <img class="foto-perfil" src="image/upload/{{ $profissional->profilePic }}">
                 </div>
                 <div class="informacoes">
 
-                    <h1 class="username">{{ $vw_feedProf->name }} {{ $vw_feedProf->lastName }}<span class="material-symbols-outlined">
+                    <h1 class="username">{{ $profissional ->name }} {{ $profissional->lastName }}<span class="material-symbols-outlined">
                             check_circle
                         </span></h1>
                     <div class="infos-extras">
                         <p class="localizacao">
                             <span class="material-symbols-outlined">
                                 location_on
-                            </span>{{ $vw_feedProf->city }} , {{ $vw_feedProf->uf }}
+                            </span>{{ $profissional->city }} , {{ $profissional->uf }}
                         </p>
                         <p class="tip-serv"> | </p>
                         <p class="idade">
                             <span class="material-symbols-outlined">
                                 perm_contact_calendar
-                            </span> {{ $vw_feedProf->age }} anos
+                            </span> {{ $profissional->age }} anos
                         </p>
                         <p class="tip-serv"> | </p>
                         <p class="idade">
                             <span class="material-symbols-outlined">
                                 contract
-                            </span>{{ $vw_feedProf->totalContracts }} Contrato(s)
+                            </span>{{ $profissional->totalContracts }} Contrato(s)
                         </p>
                     </div>
                     <div class="serv-tip">
-                        <p class="tip-serv">{{ $vw_feedProf->serviceTypeName }}</p>
+                        <p class="tip-serv">{{ $profissional->serviceTypeName }}</p>
                     </div>
 
-                    <p class="descricao"> {{ $vw_feedProf->description }} </p>
+                    <p class="descricao"> {{ $profissional->description }} </p>
                 </div>
 
                 <div class="estrelas">
@@ -227,3 +228,4 @@
 </body>
 
 
+@endsection

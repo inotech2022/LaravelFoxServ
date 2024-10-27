@@ -8,6 +8,21 @@ class MeuPerfilController extends Controller
 {
     public function index()
     {
-        return view('meu_perfil'); // View para exibir o perfil do usuário
+
+        $userId = Auth::id(); 
+
+        $profissional = vw_feedProf::where('userId', $userId)->first();
+        
+
+        if (!$profissional) {
+            return redirect()->back()->with('error', 'Profissional não encontrado.');
+        }
+
+        $media = $profissional->average ?? 0;
+        $mediaRedonda = round($media);
+
+        return view('perfilProfissional', compact('profissional', 'media', 'mediaRedonda'));
+
     }
+
 }
