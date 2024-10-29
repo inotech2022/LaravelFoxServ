@@ -20,7 +20,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('home'); // Redireciona o usuário para a home ou outra rota
+            return redirect()->intended('home'); 
         }
 
         return back()->withErrors([
@@ -35,6 +35,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');  // Redireciona para a página de login após o logout
+        return redirect('/login');  
     }
 }
