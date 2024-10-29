@@ -46,7 +46,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form'); 
 Route::post('/login', [AuthController::class, 'login'])->name('login'); 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('mePerfil');
+Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('meuPerfil');
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
 Route::get('/perfilProfissional', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
 Route::get('/profissionais/{id}', [ProfissionaisController::class, 'index'])->name('profissionais');
