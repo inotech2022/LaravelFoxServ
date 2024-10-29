@@ -1,9 +1,7 @@
 @extends('layouts.main')
 
 @section('title', 'Home')
-@section('nome')
-não sei
-@endsection
+
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
         <div class="inicio">
