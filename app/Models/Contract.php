@@ -10,14 +10,6 @@ class Contract extends Model
     use HasFactory;
 
     protected $fillable = [
-        'protocol',
-        'registrationDate',
-        'startDate',
-        'endDate',
-        'price',
-        'description',
-        'userId',
-        'professionalId',
-        'serviceId'
+        
     ];
 }
