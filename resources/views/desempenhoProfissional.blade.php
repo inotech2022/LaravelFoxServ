@@ -1,8 +1,7 @@
 @extends('layouts.main')
 
-@section('title', 'Meus Contratos')
-@section('nome')
-não sei
+@section('title', 'Meu Desempenho')
+
 @endsection
 <link rel="stylesheet" href="{{ asset('css/desempenho.css') }}">
 @section('content')

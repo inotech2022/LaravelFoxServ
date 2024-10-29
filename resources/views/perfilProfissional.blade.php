@@ -1,6 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.header')
 
 @section('title', 'Meu Perfil')
+
 @section('content')
 
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />

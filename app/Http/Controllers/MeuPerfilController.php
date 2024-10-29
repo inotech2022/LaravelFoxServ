@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\vw_feedProf;
+use App\Models\User;
 
 class MeuPerfilController extends Controller
 {
@@ -21,7 +24,7 @@ class MeuPerfilController extends Controller
         $media = $profissional->average ?? 0;
         $mediaRedonda = round($media);
 
-        return view('perfilProfissional', compact('profissional', 'media', 'mediaRedonda'));
+        return view('meuPerfil', compact('profissional', 'media', 'mediaRedonda'));
 
     }
 
