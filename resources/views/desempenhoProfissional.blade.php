@@ -1,8 +1,6 @@
 @extends('layouts.main')
 
 @section('title', 'Meu Desempenho')
-
-@endsection
 <link rel="stylesheet" href="{{ asset('css/desempenho.css') }}">
 @section('content')
             <div class="dashboard">
