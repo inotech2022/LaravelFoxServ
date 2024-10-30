@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,8 +28,15 @@
         <div class="container">
 
             
-            <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
+        @if (session('tipo') === 'comum')
+    <h1 class="logo"><a href="{{ route('home') }}">Fox<span class="foxserv">Serv</span></a></h1>
+@elseif (session('tipo') === 'profissional')
+    <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
+@else
+    <h1 class="logo"><a href="{{ route('login') }}">Fox<span class="foxserv">Serv</span></a></h1>
+@endif
             @auth
+            
             <ul>
                 <div class="dropdown">
                     <button class="menu"><img class="foto_menu" src="image/upload/"> Olá, {{Auth::user()->name}}<span
@@ -36,6 +44,7 @@
                             expand_more
                         </span> </button>
                     <div class="dropdown-content">
+                    @if (session('tipo') === 'comum')
                         <ul><a href="{{ route('home') }}"><span class="material-symbols-outlined">
                                     home
                                 </span>Home</a>
@@ -60,7 +69,58 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+                        </ul>                        
+                        @elseif (session('tipo') === 'profissional')
+                        <ul>
+                        <a href="{{ route('meuPerfil')}}"><span class="material-symbols-outlined">
+                                    person
+                                </span>Meu Perfil</a>
+                            <a href="{{ route('homeProfissional')}}"><span class="material-symbols-outlined">
+                                    home
+                                </span>Home</a>
+                            <a href="{{ route('contratoProfissional')}}"><span class="material-symbols-outlined">
+                                    description
+                                </span>Meus Contratos</a>
+                            
+                            
+                                <li><span class="material-symbols-outlined">
+                                    notifications
+                                </span>Notificações
+                                <ul>
+                                    
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação<span class="material-symbols-outlined">
+                                            favorite
+                                        </span></li>
+                                    <hr>
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu serviço<span class="material-symbols-outlined">
+                                            star
+                                        </span></li>
+                                    <hr>
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação<span class="material-symbols-outlined">
+                                            favorite
+                                        </span></li>
+                                    <hr>
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu serviço<span class="material-symbols-outlined">
+                                            star
+                                        </span></li>
+                                    <hr>
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação <span class="material-symbols-outlined">
+                                            favorite
+                                        </span></li>
+                                    <hr>
+                                  
+                                </ul>
+                            </li>
+                            <a class="sair" href="{{ route('logout')}}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
+                                    class="material-symbols-outlined">
+                                    logout
+                                </span>Sair</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </ul>
+                        @endif
                         @endauth
                         @auth
                         <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
