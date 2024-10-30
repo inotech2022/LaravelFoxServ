@@ -6,7 +6,7 @@
 
         <h2>Preencha os campos para gerar o contrato do serviço</h2>
         
-        <form action="{{ route('contratos.store') }}" method="POST">
+        <form action="{{ route('contratos.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
             <div class="linha">
                 <div class="textfield">
@@ -56,7 +56,7 @@
 
             <div class="botao">
             <input type="submit" name="submit" class="btn-login" id="submit" value="Cadastrar">
-        </div>
+            </div>
 
             <a class="voltar" href="{{ route('contratoProfissional.index') }}">Voltar</a>
         </form>
