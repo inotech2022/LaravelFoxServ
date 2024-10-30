@@ -10,7 +10,7 @@ class ContratoProfissionalController extends Controller
 {
     public function index()
     {
-        $contratos = Contract::all(); 
-        return view('contratoProfissional', compact('contratos')); 
+        
+        return view('contratoProfissional'); 
     }
 }

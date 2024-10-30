@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/FeedProf.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="js/avali-publi.js"></script>
+    <script src="js/avali-publi.js" defer></script>
     <script src="js/modal.js"></script>
     @endsection
 
@@ -22,18 +22,18 @@
                 <img class="foto-perfil" src="upload/" alt="Foto do perfil">
             </div>
             <div class="informacoes">
-                <h1 class="username"><span class="material-symbols-outlined">check_circle</span></h1>
+                <h1 class="username">Nome Sobrenome<span class="material-symbols-outlined">check_circle</span></h1>
                 <div class="infos-extras">
                     <p class="localizacao">
-                        <span class="material-symbols-outlined">location_on</span>
+                        <span class="material-symbols-outlined">location_on</span> Votorantim
                     </p>
                     <p class="tip-serv"> | </p>
                     <p class="idade">
-                        <span class="material-symbols-outlined">perm_contact_calendar</span> anos
+                        <span class="material-symbols-outlined">perm_contact_calendar</span> 32 anos
                     </p>
                     <p class="tip-serv"> | </p>
                     <p class="idade">
-                        <span class="material-symbols-outlined">contract</span> Contrato(s)
+                        <span class="material-symbols-outlined"> contract</span>10 Contrato(s)
                     </p>
                 </div>
                 <div class="serv-tip">
@@ -44,7 +44,7 @@
             </div>
             <div class="estrelas">
                 <ul class="avaliacao">
-                <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
+                <li class="star-icon ativo" data-avaliacao=""><i class="fa fa-star"></i></li>
                 <label class="media"></label>
                 </ul>
                 <div class="botao">
@@ -64,14 +64,14 @@
 
               <div class="feed">
                 <div class="botoes">
-                    <button onclick="funcaoAparecerPublicacoes()" class="publi">Publicações </button>
-                    <button onclick="funcaoAparecerAvaliacoes()" class="avali">Avaliações </button>
+                    <button onclick="funcaoAparecerPublicacoes()" class="publi" id="publi">Publicações </button>
+                    <button onclick="funcaoAparecerAvaliacoes()" class="avali" id="avali">Avaliações </button>
 
                 </div>
 
 
 
-                <div class="publicacoes">
+                <div class="publicacoes" id="publicacoes">
                     
                  <div class="naoEncontrada">
     <h1>Faça a sua primeira publicação</h1>
@@ -87,7 +87,7 @@
                             <p class="legenda">Legenda</p>
                             <div class="data_like">
                                 <p class="data">13/09/2024</p>
-                                <img class="lixo" src="image/trash_icon_213986.svg">
+                                <span class="material-symbols-outlined lixo"> delete</span>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                     
                 </div>
 
-                <div class="avaliacoes">
+                <div class="avaliacoes" id="avaliacoes">
                     <!-- avaliações dos clientes -->
                     <!-- cada 'card-av' é um comentário -->
                     <!-- essa parte NAO está visivel (display:none) -->
@@ -122,7 +122,7 @@
             </div>
                         <div class="estrela">
                             <ul class="avaliacao">
-    <li class="star-icon ativo" data-avaliacao="'.$j.'"><i class="fa fa-star"></i></li>
+    <li class="star-icon ativo" data-avaliacao=""><i class="fa fa-star"></i></li>
 
     <label class="media">5</label>
 </ul>
@@ -138,10 +138,12 @@
                 <!-- rodapé -->
 
             </div>
-            <div onclick="document.location='novoPost.php'" class="btn-flutuante">
+            <div  class="btn-flutuante">
+                <a class="btn-flutuante"  href="{{ route('novaPublicacao') }}">
                 <span class="material-symbols-outlined">
                     add
                 </span>
+                </a>
             </div>
 <div id="dv-modal" class="modal">
     

@@ -44,6 +44,6 @@ class CadastroContratoController extends Controller
             'professionalId' => $request->professionalId, 
         ]);
 
-        return redirect()->route('contratoProfissional.index')->with('success', 'Contrato cadastrado com sucesso!');
+        return redirect()->route('contratoProfissional')->with('success', 'Contrato cadastrado com sucesso!');
     }
 }

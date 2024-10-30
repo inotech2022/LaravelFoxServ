@@ -22,7 +22,11 @@
     <!-- cabeçalho -->
           <nav class="nav">
         <div class="container">
-        <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
+        @if (session('tipo') === 'comum')
+    <h1 class="logo"><a href="{{ route('home') }}">Fox<span class="foxserv">Serv</span></a></h1>
+@elseif (session('tipo') === 'profissional')
+    <h1 class="logo"><a href="{{ route('home.prof') }}">Fox<span class="foxserv">Serv</span></a></h1>
+@endif
         @auth   
         <ul>           
                 <div class="dropdown">

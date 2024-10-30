@@ -614,6 +614,7 @@ flex-direction: column;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     cursor: pointer;
+    text-decoration: none;
   }
 .btn-flutuante .material-symbols-outlined{
   font-size: 40px;
