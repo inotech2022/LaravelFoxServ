@@ -30,11 +30,12 @@ Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliaca
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');
-Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('cadastroContrato');
+Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('contratos.create');
+Route::post('/cadastroContrato', [CadastroContratoController::class, 'store'])->name('contratos.store');
 Route::get('/cadastroProfissional', [CadastroProfissionalController::class, 'create'])->name('cadastroProfissional');
 Route::post('/cadastroProfissional', [CadastroProfissionalController::class, 'store'])->name('cadastroProfissional.store');
 Route::get('/subcategorias/{id}', [CadastroProfissionalController::class, 'getSubcategories'])->name('subcategorias.get');
-Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'index'])->name('contratoProfissional');
+Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'index'])->name('contratoProfissional.index');
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');
 Route::get('/editarContrato', [EditarContratoController::class, 'index'])->name('editarContrato');

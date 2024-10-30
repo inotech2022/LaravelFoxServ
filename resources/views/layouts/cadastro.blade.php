@@ -30,7 +30,7 @@
                         <i class="bi bi-moon"></i></label>
                 </div>
             </div>
-            <form class="card-form" action="cad_servico.php" method="POST" enctype="multipart/form-data">
+            <form class="card-form" action= method="POST" enctype="multipart/form-data">
                 <h1> @yield('cadastro', 'Formulário')</h1>
                 @yield('content')
                 </form>

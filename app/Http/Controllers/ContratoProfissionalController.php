@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\Contract;
 
 class ContratoProfissionalController extends Controller
 {
     public function index()
     {
-        return view('contratoProfissional'); // View para o formulário de cadastro
+        $contratos = Contract::all(); 
+        return view('contratoProfissional', compact('contratos')); 
     }
 }
