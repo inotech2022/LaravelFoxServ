@@ -1,9 +1,9 @@
     @extends('layouts.cadastro')
 
     @section('title', 'Novo Contrato')
-    @section('cadastro', 'Cadastro de Contrato')
     @section('content')
-
+    <h1> Cadastro de Contrato</h1>
+   
         <h2>Preencha os campos para gerar o contrato do serviço</h2>
         
         <form action="{{ route('contratos.store') }}" method="POST">
@@ -58,7 +58,7 @@
             <input type="submit" name="submit" class="btn-login" id="submit" value="Cadastrar">
         </div>
 
-            <a class="voltar" href="{{ route('contratoProfissional.index') }}">Voltar</a>
+            <a class="voltar" href="{{ route('contratoProfissional') }}">Voltar</a>
         </form>
 
     @endsection

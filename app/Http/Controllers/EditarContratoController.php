@@ -13,10 +13,7 @@ class EditarContratoController extends Controller
 {
     public function index()
     {
-        $email = Auth::user()->email;
-        
-        $servicos = vw_feedProf::where('email', $email)->get();
 
-        return view('editarContrato', compact('servicos'));
+        return view('editarContrato');
     }
 }

@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\AvaliacaoPlataformaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\CadastroContratoController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\ServicosController;
 // Define a rota principal
 Route::get('/', [IndexController::class, 'index'])-> name('index');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
+Route::get('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'create'])->name('avaliacaoPlataforma');
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');

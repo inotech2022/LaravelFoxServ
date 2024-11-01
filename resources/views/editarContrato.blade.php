@@ -1,10 +1,11 @@
 @extends('layouts.cadastro')
 
     @section('title', 'Novo Contrato')
-    @section('cadastro', 'Editar Contrato')
+    
+    <link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
     @section('content')
             <form class="card-form" action="{{ route('editarContrato') }}" method="POST" enctype="multipart/form-data" >
-                
+            <h1>Editar Contrato</h1>
                 <h2>Altere os campos que você deseja atualizar </h2>
                 <div class="linha">
                     <div class="textfield">
@@ -18,9 +19,7 @@
                             <label for="idServico">Serviço Realizado <span class="required"> * </span></label>
                             <select name="idServico" id="idServico" size="1">
                             <option value="" selected disabled>Escolha o serviço</option>
-                            @foreach($servicos as $servico)
-                            <option value="{{ $servico->serviceId }}">{{ $servico->serviceName }}</option>
-                        @endforeach
+                            
 </select>
 
                         </div>
@@ -62,6 +61,12 @@
                 <a class="voltar" href="contratos.php">Voltar</a>
 
 
-            </form>
+                </form>
+        </div>
+        <div class="right">
+            <img src="image/novoServ-modoClaro.png" class="img-right-modoClaro">
+            <img src="image/novoServ-modoEscuro.png" class="img-right-modoEscuro">
+        </div>
+    </div>
 
     @endsection

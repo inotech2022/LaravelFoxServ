@@ -151,13 +151,7 @@
                 <!-- rodapé -->
 
             </div>
-            <div  class="btn-flutuante">
-                <a class="btn-flutuante"  href="{{ route('novaPublicacao') }}">
-                <span class="material-symbols-outlined">
-                    add
-                </span>
-                </a>
-            </div>
+            
 <div id="dv-modal" class="modal">
     
             <div class="alert-modal">

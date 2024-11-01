@@ -31,7 +31,7 @@
                         </label>
                     </div>
                 </div>
-                <form action="{{ route('cadastroProfissional.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="card-form" action="{{ route('cadastroProfissional.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <h1>Cadastro do Profissional</h1>
