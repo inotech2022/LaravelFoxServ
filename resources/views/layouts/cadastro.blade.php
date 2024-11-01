@@ -33,9 +33,22 @@
                         <i class="bi bi-moon"></i></label>
                 </div>
             </div>
+<<<<<<< HEAD
                 
                 @yield('content')
                
+=======
+            <!-- <form class="card-form" action= method="POST" enctype="multipart/form-data"> -->
+                <h1> @yield('cadastro', 'Formulário')</h1>
+                @yield('content')
+                <!-- </form> -->
+        </div>
+        <div class="right">
+            <img src="image/novoServ-modoClaro.png" class="img-right-modoClaro">
+            <img src="image/novoServ-modoEscuro.png" class="img-right-modoEscuro">
+        </div>
+    </div>
+>>>>>>> origin/cadastro-contrato
 </body>
 
 </html>
