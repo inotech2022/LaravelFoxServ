@@ -1,28 +1,23 @@
-function openModal(mn){
-let modal = document.getElementById(mn);
+function openModal(modalId) {
+    let modal = document.getElementById(modalId);
+    
+    if (typeof modal === 'undefined' || modal === null) return;
 
-if (typeof modal == 'undefined || modal === null')
-return;
-
-modal.style.display = 'block';
+    modal.style.display = 'block';
 }
 
-
-
-function closeModal(mn){
-    let modal = document.getElementById(mn);
-
-if (typeof modal == 'undefined || modal === null')
-return;
-modal.style.display = 'none';
+function closeModal(modalId) {
+    let modal = document.getElementById(modalId);
+    
+    if (typeof modal === 'undefined' || modal === null) return;
+    
+    modal.style.display = 'none';
 }
-
-
 
 function abreModal(protocolo) {
-document.getElementById('modal-' + protocolo).style.display = 'block';
+    openModal('modal-' + protocolo);
 }
 
 function fechaModal(modalId) {
-document.getElementById(modalId).style.display = 'none';
+    closeModal(modalId);
 }

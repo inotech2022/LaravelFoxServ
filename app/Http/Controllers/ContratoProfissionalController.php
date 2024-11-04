@@ -15,7 +15,6 @@ class ContratoProfissionalController extends Controller
     public function index(Request $request)
     {
         $userId = Auth::id();
-
         $professional = Professional::where('userId', $userId)->first();
         
         if (!$professional) {
@@ -23,7 +22,6 @@ class ContratoProfissionalController extends Controller
         }
 
         $professionalId = $professional->professionalId;
-
         $filtro = $request->get('filtro');
         $contratos = vw_contracts::where('professionalId', $professionalId);
 
@@ -36,7 +34,7 @@ class ContratoProfissionalController extends Controller
         $contratos = $contratos->get();
         $dataAtual = now();
 
-        // lógica pra ver o status do contrato
+        // Define o status do contrato
         foreach ($contratos as $contrato) {
             if ($contrato->endDate < $dataAtual) {
                 $contrato->statusContrato = 'Finalizado';
@@ -49,4 +47,17 @@ class ContratoProfissionalController extends Controller
 
         return view('contratoProfissional', compact('contratos'));
     }
+
+    public function destroy($protocol)
+{
+    // Busca o contrato usando o 'protocol'
+    $contrato = Contract::where('protocol', $protocol)->first();
+
+    if ($contrato) {
+        $contrato->delete();
+        return redirect()->route('contratoProfissional.index')->with('success', 'Contrato excluído com sucesso!');
+    }
+
+    return redirect()->route('contratoProfissional.index')->with('error', 'Contrato não encontrado.');
+}
 }

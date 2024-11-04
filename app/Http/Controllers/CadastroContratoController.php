@@ -22,7 +22,6 @@ class CadastroContratoController extends Controller
         
     public function store(Request $request)
     {
-        // Validação dos dados recebidos
         $request->validate([
             'cpf' => 'required|string|max:14', 
             'idServico' => 'required|integer',
@@ -32,18 +31,26 @@ class CadastroContratoController extends Controller
             'descricao' => 'required|string|max:100',
         ]);
 
-        // Criando o contrato
+
+        $user = User::where('cpf', $request->cpf)->first();
+
+        if (!$user) {
+            return redirect()->back()->withErrors(['cpf' => 'Cliente não encontrado.']);
+        }
+
+
         Contract::create([
-            'cpf' => $request->cpf,
             'serviceId' => $request->idServico,
             'price' => $request->valor,
             'startDate' => $request->dataInicial,
             'endDate' => $request->dataFinal,
             'description' => $request->descricao,
-            'userId' => auth()->id(), 
-            'professionalId' => $request->professionalId, 
+            'userId' => $user->id,
+            'professionalId' => auth()->id(),
         ]);
+        
 
         return redirect()->route('contratoProfissional.index')->with('success', 'Contrato cadastrado com sucesso!');
+
     }
 }

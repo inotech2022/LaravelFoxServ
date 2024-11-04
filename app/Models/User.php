@@ -17,13 +17,7 @@ class User extends Authenticatable
     protected $table = 'users';
 
     protected $primaryKey = 'userId';
-    protected $keyType = 'string';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'lastName',
@@ -38,16 +32,10 @@ class User extends Authenticatable
         'status'
         ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
-
 
 
     public function address()

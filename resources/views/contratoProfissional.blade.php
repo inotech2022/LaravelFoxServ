@@ -17,8 +17,8 @@
                 <form method="GET">
                     <select name="filtro" onchange="this.form.submit()">
                         <option value="" selected disabled> Ordenar por </option>
-                        <option value="nome"> Cliente </option>
-                        <option value="dataInicial"> Data </option>
+                        <option value="name"> Cliente </option>
+                        <option value="startDate"> Data </option>
                     </select>
                 </form>
             </div>
@@ -72,7 +72,10 @@
                                 </div>
                                 <div class="texto">
                                     <div class="info-titulo">Data do Serviço</div>
-                                    <div class="info-texto">{{ \Carbon\Carbon::parse($contrato->startDate)->format('d/m/Y') }} - {{ \Carbon\Carbon::parse($contrato->endDate)->format('d/m/Y') }}</div>
+                                    <div class="info-texto">
+                                        {{ \Carbon\Carbon::parse($contrato->startDate)->format('d/m/Y') }} - 
+                                        {{ \Carbon\Carbon::parse($contrato->endDate)->format('d/m/Y') }}
+                                    </div>
                                 </div>
                             </div>
                             <div class="info">
@@ -109,10 +112,33 @@
                                 <input type="hidden" name="protocolo" value="{{ $contrato->protocol }}">
                                 <button type="submit" class="btn-pdf" name="gerar_pdf">Gerar PDF</button>
                             </form>
+                            
+                            <!-- Exemplo de um botão que abre o modal -->
                             <button class="lixeira" onclick="abreModal('{{ $contrato->protocol }}')">
                                 <span class="material-symbols-outlined">delete</span>
                             </button>
-                            <button class="editar" onclick="document.location='{{ route('editarContrato', ['id' => $contrato->id]) }}'">
+
+                            <!-- Modal de Confirmação -->
+                            <div class="modal" id="modal-{{ $contrato->protocol }}">
+                                <div class="modal-content">
+                                    <h2>Confirmação</h2>
+                                    <p>Tem certeza de que deseja excluir este contrato?</p>
+                                    <form method="POST" action="{{ route('contrato.destroy', ['protocol' => $contrato->protocol]) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn-confirmar">Sim</button>
+                                        <button type="button" class="btn-cancelar" onclick="fechaModal('modal-{{ $contrato->protocol }}')">Não</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Formulário de exclusão oculto -->
+                            <form id="deleteForm-{{ $contrato->protocol }}" method="POST" action="{{ route('contrato.destroy', ['protocol' => $contrato->protocol]) }}" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+
+                            <button class="editar" onclick="document.location='{{ route('editarContrato', ['protocol' => $contrato->protocol]) }}'">
                                 <span class="material-symbols-outlined">edit</span>
                             </button>
                         </div>
@@ -121,8 +147,12 @@
             @endif
         </div>
 
-        <div onclick="document.location='cad_servico.php'" class="btn-flutuante">
-            <span class="material-symbols-outlined">add</span>
+        <div  class="btn-flutuante">
+                <a class="btn-flutuante"  href="">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+                </a>
         </div>
     </div>
 </main>

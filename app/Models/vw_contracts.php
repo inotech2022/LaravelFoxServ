@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class vw_contracts extends Model
 {
+    use HasFactory;
+
     protected $table = 'vw_contracts';
 
-    protected $dates = ['dataInicial', 'dataFinal'];
+    protected $dates = ['startDate', 'endDate'];
+
+    public $incrementing = true; 
+    protected $primaryKey = 'protocol';
+
+    public $timestamps = false;
 }
