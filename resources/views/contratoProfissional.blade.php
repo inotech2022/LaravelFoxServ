@@ -148,7 +148,7 @@
         </div>
 
         <div  class="btn-flutuante">
-                <a class="btn-flutuante"  href="{{ route('cadastroProfissional.store') }}">
+                <a class="btn-flutuante"  href="{{ route('contratos.store') }}">
                 <span class="material-symbols-outlined">
                     add
                 </span>

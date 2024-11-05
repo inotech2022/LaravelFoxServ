@@ -43,6 +43,8 @@
                         </div>
                       </div>
                </div>
+               <input type="hidden" name="protocolo" value="{{ request('protocolo') }}">
+
                 <div class="botao">
                     <input type="submit" name="submit" class="btn-login" id="submit" value="Avaliar">
                 </div>
