@@ -126,7 +126,9 @@ input[type="checkbox"] {
     flex-direction: column;
 
 }
-
+.botoes a{
+  text-decoration: none;
+}
 .botoes{
     display: flex; 
     text-decoration: none;

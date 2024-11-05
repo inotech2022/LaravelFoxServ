@@ -9,7 +9,12 @@ class ServiceType extends Model
 {
     use HasFactory;
     protected $table = 'serviceTypes';
-    
+    protected $primaryKey = 'serviceTypeId';
+
+    public $incrementing = true; 
+
+    protected $keyType = 'int';
+
     protected $fillable = [
         'serviceTypeId',
         'serviceTypeName',
@@ -17,9 +22,9 @@ class ServiceType extends Model
         'darkPic'
     ];
     
-    public function service()
+    public function services()
     {
-        return $this->hasOne(Service::class);
+        return $this->hasMany(Service::class, 'serviceTypeId', 'serviceTypeId');
     }
 }
 

@@ -1,6 +1,6 @@
 @extends('layouts.header')
-
-@section('title', 'Meu Perfil')
+ 
+@section('title', 'Perfil de ' . $profissional->name)
 
 @section('content')
 
@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/contatos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="js/avali-publi.js" defer></script>
-    <script src="js/modal.js"></script>
-    <script src="js/coracao.js"></script>
+    <script src="/js/avali-publi.js" defer></script>
+    <script src="/js/modal.js"></script>
 
 <body>
     

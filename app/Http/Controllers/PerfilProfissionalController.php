@@ -9,23 +9,18 @@ use App\Models\User;
 
 class PerfilProfissionalController extends Controller
 {
-    public function index()
-    {
-
-        $userId = Auth::id(); 
-
-        $profissional = vw_feedProf::where('userId', $userId)->first();
-        
-
-        if (!$profissional) {
-            return redirect()->back()->with('error', 'Profissional não encontrado.');
-        }
-
-        $media = $profissional->average ?? 0;
-        $mediaRedonda = round($media);
-
-        return view('perfilProfissional', compact('profissional', 'media', 'mediaRedonda'));
-
+    public function index($professionalId)
+{
+    $profissional = vw_feedProf::where('professionalId', $professionalId)->first(); 
+    if (!$profissional) {
+        return redirect()->back()->with('error', 'Profissional não encontrado.');
     }
+
+   
+    $media = $profissional->average ?? 0; 
+    $mediaRedonda = round($media);
+
+    return view('perfilProfissional', compact('profissional', 'media', 'mediaRedonda'));
+}
 
 }
