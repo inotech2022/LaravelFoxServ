@@ -69,7 +69,8 @@
                             </div>
                             <div class="texto">
                                 <div class="info-titulo">Data do Serviço</div>
-                                <div class="info-texto">{{ \Carbon\Carbon::parse($contrato->startDate)->format('d/m/Y') }}</div>
+                                <div class="info-texto">{{ \Carbon\Carbon::parse($contrato->startDate)->format('d/m/Y') }} - 
+                                {{ \Carbon\Carbon::parse($contrato->endDate)->format('d/m/Y') }}</div>
                             </div>
                         </div>
                         <div class="info">

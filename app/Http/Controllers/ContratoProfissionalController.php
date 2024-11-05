@@ -45,6 +45,16 @@ class ContratoProfissionalController extends Controller
             }
         }
 
+        if ($request->has('filtro')) {
+            $filtro = $request->input('filtro');
+            
+            if ($filtro === 'name') {
+                $contratos = $contratos->sortBy('name')->values();
+            } elseif ($filtro === 'startDate') {
+                $contratos = $contratos->sortBy('startDate')->values();
+            }
+        }
+
         return view('contratoProfissional', compact('contratos'));
     }
 
