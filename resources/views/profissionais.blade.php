@@ -2,7 +2,7 @@
 
 @section('title', 'Profissionais')
 
-<script src="js/modo_escuro.js" defer></script>
+<script src="/js/modo_escuro.js" defer></script>
 <link rel="stylesheet" href="/css/profissionais.css">
 @section('content')
     

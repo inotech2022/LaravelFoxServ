@@ -32,8 +32,8 @@ Route::get('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'creat
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');
-Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('contratos.create');
-Route::post('/cadastroContrato', [CadastroContratoController::class, 'store'])->name('contratos.store');
+Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('cadastroContrato');
+Route::post('/cadastroContrato', [CadastroContratoController::class, 'store'])->name('cadastroContrato.store');
 Route::get('/cadastroProfissional', [CadastroProfissionalController::class, 'create'])->name('cadastroProfissional');
 Route::post('/cadastroProfissional', [CadastroProfissionalController::class, 'store'])->name('cadastroProfissional.store');
 Route::get('/subcategorias/{id}', [CadastroProfissionalController::class, 'getSubcategories'])->name('subcategorias.get');
