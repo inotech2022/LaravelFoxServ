@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/avaliacao.css') }}">
     @section('content')
             <form class="card-form" action="{{ route('avaliacao') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <h1>Avalie o profissional</h1>
                 <p>Sua avaliação estará visível para outras pessoas verem</p>
                 <div class="linha">
@@ -43,13 +44,13 @@
                         </div>
                       </div>
                </div>
-               <input type="hidden" name="protocolo" value="{{ request('protocolo') }}">
+               <input type="hidden" name="protocol" value="{{ request('protocol') }}">
 
                 <div class="botao">
                     <input type="submit" name="submit" class="btn-login" id="submit" value="Avaliar">
                 </div>
 
-                <a class="voltar" href="contrato_cliente.php">Voltar</a>
+                <a class="voltar" href="{{ route('contratoUsuario') }}">Voltar</a>
             </form>
         </div>
         <div class="right">
