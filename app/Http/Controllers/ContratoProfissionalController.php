@@ -14,10 +14,6 @@ class ContratoProfissionalController extends Controller
 {
     public function index(Request $request)
     {
-
-        
-        return view('contratoProfissional'); 
-
         $userId = Auth::id();
         $professional = Professional::where('userId', $userId)->first();
         
@@ -50,7 +46,6 @@ class ContratoProfissionalController extends Controller
         }
 
         return view('contratoProfissional', compact('contratos'));
-
     }
 
     public function destroy($protocol)

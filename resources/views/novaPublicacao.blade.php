@@ -1,36 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="novoPost.css">
-    <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="/resources/js/novoPost.js" defer></script>
-    <script src="/resources/js/limiteTexto.js" defer></script>
-    <script src="/resources/js/modo_escuro.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+@extends('layouts.cadastro')
 
-    <title>Nova Publicação</title>
-</head>
-
-<body>
-
-    <div class="main">
-        <div class="left">
-            <div class="logo-header">
-
-                <h1 class="logo"><a href="homeProf.php"> Fox<span class="foxserv">Serv</span></a></h1>
-                <div class="modo_escuro">
-                    <input type="checkbox" name="change-theme" id="change-theme" />
-                    <label for="change-theme">
-                        <i class="bi bi-sun"></i>
-                        <i class="bi bi-moon"></i></label>
-                </div>
-            </div>
-            <form class="card-form" method="POST" enctype="multipart/form-data">
+    @section('title', 'Nova Publicação')
+    
+<link rel="stylesheet" href="{{ asset('css/novoPost.css') }}">
+    @section('content')
+    <script src="/js/novoPost.js" defer></script>
+    <script src="/js/limiteTexto.js" defer></script>
+    
+   
+            <form action="{{ route('novaPublicacao') }}" class="card-form" method="POST" enctype="multipart/form-data">
                 <h1>Nova Publicação </h1>
                 <div class="foto-publicacao">
                     <label class="picture" for="picture__input" tabIndex="0">
@@ -58,7 +36,7 @@
                 <div class="botao">
                     <input type="submit" name="submit" class="btn-login" id="submit" value="Publicar">
                 </div>
-                <a class="voltar" href="FeedProf.php">Voltar</a>
+                <a class="voltar" href="{{ route('homeProfissional') }}">Voltar</a>
             </form>
         </div>
         <div class="right">
@@ -68,7 +46,4 @@
     </div>
 
 
-
-</body>
-
-</html>
+@endsection

@@ -22,7 +22,7 @@
             <div class="logo-header">
 
             @if (session('tipo') === 'comum')
-    <h1 class="logo"><a href="{{ route('home') }}">Fox<span class="foxserv">Serv</span></a></h1>
+    <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
 @elseif (session('tipo') === 'profissional')
     <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
 @endif
@@ -33,22 +33,7 @@
                         <i class="bi bi-moon"></i></label>
                 </div>
             </div>
-<<<<<<< HEAD
-                
                 @yield('content')
-               
-=======
-            <!-- <form class="card-form" action= method="POST" enctype="multipart/form-data"> -->
-                <h1> @yield('cadastro', 'Formulário')</h1>
-                @yield('content')
-                <!-- </form> -->
-        </div>
-        <div class="right">
-            <img src="image/novoServ-modoClaro.png" class="img-right-modoClaro">
-            <img src="image/novoServ-modoEscuro.png" class="img-right-modoEscuro">
-        </div>
-    </div>
->>>>>>> origin/cadastro-contrato
 </body>
 
 </html>

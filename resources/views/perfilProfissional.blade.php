@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{{ asset('css/contatos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="js/avali-publi.js"></script>
-    <script src="js/coracao.js"></script>
+    <script src="js/avali-publi.js" defer></script>
     <script src="js/modal.js"></script>
+    <script src="js/coracao.js"></script>
 
 <body>
     
@@ -89,7 +89,7 @@
                     <button onclick="funcaoAparecerPublicacoes()" class="publi">Publicações </button>
                     <button onclick="funcaoAparecerAvaliacoes()" class="avali">Avaliações </button>
                 </div>
-                <div class="publicacoes">
+                <div class="publicacoes" id="publicacoes">
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma publicação</h1>
                         <img src="image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="avaliacoes">
+                <div class="avaliacoes" id="avaliacoes">
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma avaliação</h1>
                         <img src="image/avali-modoClaro.png" class="naoEncontrado-modoClaro">

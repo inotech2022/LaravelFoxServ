@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('title', 'Home')
-
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
         <div class="inicio">
@@ -52,7 +51,7 @@
                         </div>
                         <h3>Educação</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=2"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 2) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -64,7 +63,7 @@
                         </div>
                         <h3>Tecnologia</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=3"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 3) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -76,7 +75,7 @@
                         </div>
                         <h3>Reparos</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=4"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 4) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -88,7 +87,7 @@
                         </div>
                         <h3>Ass. Técnica</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=5"> Acessar </a> <span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 5) }}"> Acessar </a> <span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -100,7 +99,7 @@
                         </div>
                         <h3>Moda</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=6"> Acessar </a> <span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 6) }}"> Acessar </a> <span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -112,7 +111,7 @@
                         </div>
                         <h3>Saúde</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=7"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 7) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -124,7 +123,7 @@
                         </div>
                         <h3>Artesanato</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=8"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 8) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -136,7 +135,7 @@
                         </div>
                         <h3>Beleza</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=9"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 9) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -148,13 +147,13 @@
                         </div>
                         <h3>Eventos</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=10"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 10) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
                     </div>
                 </div>
-                <form class="sugestao" action="home.php" method="POST" enctype="multipart/form-data">
+                <form class="sugestao" action="{{route('index')}}" method="POST" enctype="multipart/form-data">
                     <p>Não encontrou o serviço que está procurando?</p>
                     <input type="text" class="sugestao" id="sugestao" name="sugestao" placeholder="Deixe aqui a sua sugestão...">
                     <input type="submit" class="submit" name="submit" value=">"></input>
@@ -168,7 +167,7 @@
                     <img src="image/comentarios-modoClaro.png" class="img-avaliacao-modoClaro">
                     <img src="image/comentario-modoEscuro.png" class="img-avaliacao-ModoEscuro">
                     <div class="botao">
-                <button onclick="document.location='avaliPlat.php'">Avalie a plataforma</button>
+                <button onclick="document.location='{{route('avaliacaoPlataforma')}}'">Avalie a plataforma</button>
             </div>
                 </div>
                 <div class="right-av">

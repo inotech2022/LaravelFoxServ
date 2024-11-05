@@ -1,12 +1,15 @@
-    @extends('layouts.cadastro')
+@extends('layouts.cadastro')
 
     @section('title', 'Novo Contrato')
+    
+<link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
     @section('content')
-    <h1> Cadastro de Contrato</h1>
-   
-        <h2>Preencha os campos para gerar o contrato do serviço</h2>
+
+
         
         <form action="{{ route('contratos.store') }}" method="POST" enctype="multipart/form-data">
+        <h1>Avalie a plataforma</h1>
+        <h2>Preencha os campos para gerar o contrato do serviço</h2>
         @csrf
             <div class="linha">
                 <div class="textfield">
@@ -60,5 +63,10 @@
 
             <a class="voltar" href="{{ route('contratoProfissional') }}">Voltar</a>
         </form>
-
+        </div>
+        <div class="right">
+            <img src="image/avaliaçao-modoClaro.png" class="img-right-modoClaro">
+            <img src="image/avaliaçao-modoEscuro.png" class="img-right-modoEscuro">
+        </div>
+    </div>
     @endsection

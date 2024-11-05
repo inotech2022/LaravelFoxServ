@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/resources/css/esqueci_senha.css">
+    <link rel="stylesheet" href="/css/esqueci_senha.css">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="/resources/js/modo_escuro.js" defer></script>
+    <script src="/js/modo_escuro.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -21,7 +21,7 @@
         <div class="left">
             <div class="logo-header">
 
-                <h1 class="logo"><a href="index.php"> Fox<span class="foxserv">Serv</span></a></h1>
+                <h1 class="logo"><a href="{{route('index')}}"> Fox<span class="foxserv">Serv</span></a></h1>
                 <div class="modo_escuro">
                     <input type="checkbox" name="change-theme" id="change-theme" />
                     <label for="change-theme">
@@ -30,7 +30,7 @@
                     ></label>
                   </div>
             </div>
-            <form class="card-form" action="esqueci_senha.php" method="POST" enctype="multipart/form-data" >
+            <form class="card-form" action="{{route ('esqueceuSenha')}}" method="POST" enctype="multipart/form-data" >
                 <h1>Esqueci a senha </h1>
                 <h2> Enviaremos uma nova senha para o seu e-mail</h2>
                 <div class="linha">

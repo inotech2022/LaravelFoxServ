@@ -149,7 +149,7 @@ não sei
                         </div>
                     </div>
                 </div>
-                <form class="sugestao" action="home.php" method="POST" enctype="multipart/form-data">
+                <form class="sugestao" action="{{route('index')}}" method="POST" enctype="multipart/form-data">
                     <p>Não encontrou o serviço que está procurando?</p>
                     <input type="text" class="sugestao" id="sugestao" name="sugestao" placeholder="Deixe aqui a sua sugestão...">
                     <input type="submit" class="submit" name="submit" value=">"></input>

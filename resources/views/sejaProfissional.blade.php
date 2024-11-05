@@ -23,7 +23,7 @@
         <div class="left">
             <div class="logo-header">
 
-                <h1 class="logo"><a href="{{ route('home') }}"> Fox<span class="foxserv">Serv</span></a></h1>
+                <h1 class="logo"><a href="{{route('index')}}"> Fox<span class="foxserv">Serv</span></a></h1>
                 <div class="modo_escuro">
                     <input type="checkbox" name="change-theme" id="change-theme" />
                     <label for="change-theme">
@@ -82,7 +82,7 @@
             <img src="image/telaEstatica-modoEscuro.svg" class="img-right-modoEscuro">
             <div class="botao">
                 <button onclick="document.location='{{ route('cadastroProfissional') }}'">Quero ser profissional!</button>
-                <a href="{{ route('home') }}">Não, obrigado.</a>
+                <a href="{{route('index')}}">Não, obrigado.</a>
             </div>
         </div>
     </div>

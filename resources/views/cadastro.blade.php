@@ -26,7 +26,7 @@
             <div class="left">
                 <div class="logo-header">
 
-                    <h1 class="logo"><a href="index.php"> Fox<span class="foxserv">Serv</span></a></h1>
+                    <h1 class="logo"><a href="{{route('index')}}"> Fox<span class="foxserv">Serv</span></a></h1>
                     <div class="modo_escuro">
                         <input type="checkbox" name="change-theme" id="change-theme" />
                         <label for="change-theme">

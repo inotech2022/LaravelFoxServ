@@ -46,7 +46,7 @@
                     <input type="submit" name="submit" class="btn-login" id="submit" value="Avaliar">
                 </div>
 
-                <a class="voltar" href="home.php">Voltar</a>
+                <a class="voltar" href="{{route('index')}}">Voltar</a>
 
 
             </form>

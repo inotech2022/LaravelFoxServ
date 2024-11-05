@@ -23,7 +23,7 @@
           <nav class="nav">
         <div class="container">
         @if (session('tipo') === 'comum')
-    <h1 class="logo"><a href="{{ route('home') }}">Fox<span class="foxserv">Serv</span></a></h1>
+    <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
 @elseif (session('tipo') === 'profissional')
     <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
 @else

@@ -55,6 +55,7 @@ Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name
 Route::get('/perfilProfissional', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
 Route::get('/profissionais/{id}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
+Route::post('/redefinirSenha', [RedefinirSenhaController::class, 'updatePassword'])->name('redefinirSenha.update');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
 Route::get('/servicos/{id}', [ServicosController::class, 'index'])->name('servicos');
 Route::get('/confirmar-email/{token}', function ($token) {

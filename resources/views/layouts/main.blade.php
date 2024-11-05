@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/home.css">
+
     <link rel="icon" href="/logo/lilas-2.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
@@ -29,7 +29,7 @@
 
             
         @if (session('tipo') === 'comum')
-    <h1 class="logo"><a href="{{ route('home') }}">Fox<span class="foxserv">Serv</span></a></h1>
+    <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
 @elseif (session('tipo') === 'profissional')
     <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
 @else
@@ -45,7 +45,7 @@
                         </span> </button>
                     <div class="dropdown-content">
                     @if (session('tipo') === 'comum')
-                        <ul><a href="{{ route('home') }}"><span class="material-symbols-outlined">
+                        <ul><a href="{{ route('index') }}"><span class="material-symbols-outlined">
                                     home
                                 </span>Home</a>
                             <a href="{{ route('contratoUsuario') }}"><span class="material-symbols-outlined">
@@ -184,12 +184,12 @@
 
 
     <div class="footer_center">
-        <div onclick="document.location='home.php'" class="footer__image">
+        <div onclick="document.location='{{route('index')}}'" class="footer__image">
 
             <img src="image/logo/foxserv-branco.PNG" alt="FoxServ" class="footer_image">
 
             <div class="logo-header">
-                <h1 class="logo"><a href="home.php"> Fox<span class="foxserv">Serv</span></a></h1>
+                <h1 class="logo"><a href="{{route('index')}}"> Fox<span class="foxserv">Serv</span></a></h1>
             </div>
         </div>
         <div class="bottom">Criado por INOTECH </div>

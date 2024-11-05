@@ -148,7 +148,6 @@
         @endforeach
         @endif
                 </div>
-                <!-- rodapé -->
 
             </div>
             
