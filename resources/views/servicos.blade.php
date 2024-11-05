@@ -46,9 +46,9 @@
 
         </div>
         <div class="right">
-        <img src="{{ asset('/image/upload/' . $category->lightPic) }}" class="img-right-modoClaro"
+        <img src="{{ asset('/image/' . $category->lightPic) }}" class="img-right-modoClaro"
             alt="Imagem da categoria em modo claro">
-        <img src="image/upload/familia-modoEscuro.png" class="img-right-modoEscuro"
+        <img src="{{ asset('/image/' . $category->darkPic) }}" class="img-right-modoEscuro"
             alt="Imagem da categoria em modo escuro">
     </div>
     </div>

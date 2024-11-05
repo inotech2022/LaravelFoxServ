@@ -26,7 +26,7 @@ use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
 
 // Define a rota principal
-Route::get('/', [IndexController::class, 'index'])-> name('index');
+Route::get('/index', [IndexController::class, 'index'])-> name('index');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
 Route::get('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'create'])->name('avaliacaoPlataforma');
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
@@ -53,7 +53,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('meuPerfil');
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
 Route::get('/perfilProfissional', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
-Route::get('/profissionais/{id}', [ProfissionalController::class, 'index'])->name('profissionais');
+Route::get('/profissionais/{serviceId}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
 Route::post('/redefinirSenha', [RedefinirSenhaController::class, 'updatePassword'])->name('redefinirSenha.update');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');

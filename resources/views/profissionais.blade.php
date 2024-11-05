@@ -38,37 +38,35 @@
 </form>
             </div>
             <div class="profissionais">
-                <div  class="card_perfil ">
+            @foreach($professionals as $professional)
+                <div class="card_perfil">
                     <div class="img-perfil">
-                        <img class="img-profile" src="upload/">
+                        <img class="img-profile" src="{{ asset('upload/' . $professional->profile_image) }}" alt="Imagem do profissional">
                     </div>
                     <div class="informacoes">
-                        <h2 class="username">Katia Regina</h2>
-                        <p class="localizacao">Sorocaba, SP
+                        <h2 class="username">{{ $professional->name }} {{ $professional->serviceId }}</h2>
+                        <p class="localizacao">{{ $professional->city }}, {{ $professional->state }}
                             <span class="iconeee">
                                 location_on
                             </span>
                         </p>
-                       <div class="row">
-    <div class="descricao">
-        <p class="profile-desc">abc abc abc abc</p>
-    </div>
-    
-    <ul class="avaliacao">
-    @for ($j = 1; $j <= 5; $j++)
-                            @if ($j <= 1)
-                                <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
-                            @else
-                                <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
-                            @endif
-                        @endfor
-        <label class="media">4.5</label>
-    </ul>
-</div>
+                        <div class="row">
+                            <div class="descricao">
+                                <p class="profile-desc">{{ $professional->description }}</p>
+                            </div>
+                            <ul class="avaliacao">
+                                @for ($j = 1; $j <= 5; $j++)
+                                    <li class="star-icon {{ $j <= $professional->average_rating ? 'ativo' : '' }}" data-avaliacao="{{ $j }}">
+                                        <i class="fa {{ $j <= $professional->average_rating ? 'fa-star' : 'fa-star-o' }}"></i>
+                                    </li>
+                                @endfor
+                                <label class="media">{{ number_format($professional->average_rating, 1) }}</label>
+                            </ul>
+                        </div>
                     </div>
-                    <button onclick="document.location=" class="btn-perfil">Ver perfil</button>
-
+                    <button onclick="document.location='/perfilProfissional/{{ $professional->professionalId }}'" class="btn-perfil">Ver perfil</button>
                 </div>
-            </div>
+            @endforeach
         </div>
- @endsection
+    </div>
+@endsection
