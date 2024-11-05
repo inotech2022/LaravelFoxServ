@@ -4,6 +4,7 @@
     @section('title', 'Avaliação do Profissional')
     
 <link rel="stylesheet" href="{{ asset('css/avaliacao.css') }}">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     @section('content')
             <form class="card-form" action="{{ route('avaliacao') }}" method="POST" enctype="multipart/form-data">
             @csrf
