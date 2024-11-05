@@ -366,6 +366,22 @@ font-size: 12px;
      flex-direction:column;
      
  }
+ .naoEncontrado-modoClaro{
+  display:flex;
+  align-items:center;
+  width:250px;
+}
+.naoEncontrado-modoEscuro{
+  display: none;
+}
+.dark .naoEncontrado-modoClaro{
+  display: none;
+}
+.dark .naoEncontrado-modoEscuro{
+   display:flex;
+  align-items:center;
+  width:250px;
+}
 
 .profissionais{
   display: flex;

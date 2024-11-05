@@ -15,37 +15,43 @@
                     <h1>NOSSOS PROFISSIONAIS</h1>
                     <p>Nossos profissionais disponíveis nessa categoria</p>
                 </div>
-                <form method="GET" >
-                <div class="cidade">
-    <p>cidade</p>
-    <select name="cidade" onchange="this.form.submit()">
-        <option value="" selected disabled>Escolha a cidade</option>
-    </select>
-</div>
-<div class="estrela">
-    <p>avaliação</p>
-    <select name="media" onchange="this.form.submit()">
-        <option value="" selected disabled>Avaliações</option>
-        <option value="1">1 estrela</option>
-        <option value="2">2 estrelas</option>
-        <option value="3">3 estrelas</option>
-        <option value="4">4 estrelas</option>
-        <option value="5">5 estrelas</option>
-        
-    </select>
-    
-</div>
+                <form method="GET">
+    <div class="cidade">
+        <p>cidade</p>
+        <select name="cidade" onchange="this.form.submit()">
+            <option value="" selected disabled>Escolha a cidade</option>
+        </select>
+    </div>
+    <div class="estrela">
+        <p>avaliação</p>
+        <select name="media" onchange="this.form.submit()">
+            <option value="" selected disabled>Avaliações</option>
+            <option value="1">1 estrela</option>
+            <option value="2">2 estrelas</option>
+            <option value="3">3 estrelas</option>
+            <option value="4">4 estrelas</option>
+            <option value="5">5 estrelas</option>
+        </select>
+    </div>
+    <input type="hidden" name="idServico" value="{{ $serviceId }}">
 </form>
             </div>
             <div class="profissionais">
+            @if($professionals->isEmpty())
+                 <div class="naoEncontrada">
+    <h1>Não existem profissionais disponíveis nessa categoria</h1>
+    <img src="{{ asset('image/publicacao - modoClaro.png') }}" class="naoEncontrado-modoClaro">
+                <img src="{{ asset('image/publicacao - modoEscuro.png') }}" class="naoEncontrado-modoEscuro">
+    
+</div>@else
             @foreach($professionals as $professional)
                 <div class="card_perfil">
                     <div class="img-perfil">
-                        <img class="img-profile" src="{{ asset('upload/' . $professional->profile_image) }}" alt="Imagem do profissional">
+                        <img class="img-profile" src="{{ asset('/image/upload/' . $professional->profile_image) }}" alt="Imagem do profissional">
                     </div>
                     <div class="informacoes">
-                        <h2 class="username">{{ $professional->name }} {{ $professional->serviceId }}</h2>
-                        <p class="localizacao">{{ $professional->city }}, {{ $professional->state }}
+                        <h2 class="username">{{ $professional->name }} </h2>
+                        <p class="localizacao">{{ $professional->city }}, {{ $professional->uf }}
                             <span class="iconeee">
                                 location_on
                             </span>
@@ -67,6 +73,7 @@
                     <button onclick="document.location='/perfilProfissional/{{ $professional->professionalId }}'" class="btn-perfil">Ver perfil</button>
                 </div>
             @endforeach
+            @endif
         </div>
     </div>
 @endsection
