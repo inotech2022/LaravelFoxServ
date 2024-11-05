@@ -53,11 +53,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('meuPerfil');
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
 Route::get('/perfilProfissional', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
-Route::get('/profissionais/{id}', [ProfissionaisController::class, 'index'])->name('profissionais');
+Route::get('/profissionais/{id}', [ProfissionalController::class, 'index'])->name('profissionais');
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
 Route::post('/redefinirSenha', [RedefinirSenhaController::class, 'updatePassword'])->name('redefinirSenha.update');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
-Route::get('/servicos/{id}', [ServicosController::class, 'index'])->name('servicos');
+Route::get('/servicos/{serviceId}', [ServicosController::class, 'index'])->name('servicos');
 Route::get('/confirmar-email/{token}', function ($token) {
     $user = User::where('token', $token)->firstOrFail();
     $user->email_verified_at = now();
