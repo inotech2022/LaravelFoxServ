@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     public $timestamps = false;
@@ -40,6 +41,7 @@ class User extends Authenticatable
 
     public function address()
     {
-        return $this->hasOne(Address::class);
+        
+        return $this->hasOne(Address::class, 'userId', 'userId'); 
     }
 }

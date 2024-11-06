@@ -9,7 +9,7 @@ class Address extends Model
 {
     public $timestamps = false;
     use HasFactory;
-
+    protected $table = 'addresses';
     protected $fillable = [
         'userId',
         'zipCode',

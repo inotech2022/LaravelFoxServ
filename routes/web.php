@@ -44,6 +44,7 @@ Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 
 Route::get('/editarContrato', [EditarContratoController::class, 'index'])->name('editarContrato');
 Route::get('/editarDadosProfissional', [EditarDadosProfissionalController::class, 'index'])->name('editarDadosProfissional');
 Route::get('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'index'])->name('editarDadosUsuario');
+Route::put('/editarDadosUsuario/{userId}', [EditarDadosUsuarioController::class, 'update'])->name('editarDadosUsuario.update');
 Route::get('/esqueceuSenha', [EsqueceuSenhaController::class, 'index'])->name('esqueceuSenha');
 Route::get('/homeProfissional', [HomeProfissionalController::class, 'index'])->name('homeProfissional');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
