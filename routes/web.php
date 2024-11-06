@@ -27,10 +27,12 @@ use App\Http\Controllers\ServicosController;
 
 // Define a rota principal
 Route::get('/index', [IndexController::class, 'index'])-> name('index');
+Route::post('/index', [IndexController::class, 'store'])-> name('index');
 Route::post('/denuncia', [PerfilProfissionalController::class, 'store'])->name('denuncia.store');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
 Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao');
 Route::get('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'create'])->name('avaliacaoPlataforma');
+Route::post('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'store'])->name('avaliacao.salvar');
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');

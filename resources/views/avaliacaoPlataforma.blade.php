@@ -4,7 +4,8 @@
     
 <link rel="stylesheet" href="{{ asset('css/avaliacao.css') }}">
     @section('content')
-            <form class="card-form" method="POST" enctype="multipart/form-data">
+        <form class="card-form" method="POST" action="{{ route('avaliacao.salvar') }}">
+        @csrf
             <h1>Avalie a plataforma</h1>
                 <p>O que você está achando da nossa plataforma?</p>
                 <div class="linha">
