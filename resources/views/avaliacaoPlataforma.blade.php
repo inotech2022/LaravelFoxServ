@@ -3,6 +3,8 @@
     @section('title', 'Avaliação da Plataforma')
     
 <link rel="stylesheet" href="{{ asset('css/avaliacao.css') }}">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
     @section('content')
         <form class="card-form" method="POST" action="{{ route('avaliacao.salvar') }}">
         @csrf
