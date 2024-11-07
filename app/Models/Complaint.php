@@ -17,4 +17,10 @@ class Complaint extends Model
         'userId',
         'professionalId'
     ];
+
+    protected $primaryKey = 'complaintId';
+ 
+    public $incrementing = true;
+
+    public $timestamps = false;
 }

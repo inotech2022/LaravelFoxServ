@@ -1,5 +1,4 @@
-<?php
-
+<?PHP
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
@@ -19,30 +18,33 @@ class CadastroProfissionalController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'serviceId' => 'required|array', 
+            'typeServiceId' => 'required|array',
+            'serviceId' => 'required|array',
             'description' => 'required|max:100',
+            'userId' => 'required|exists:users,userId',
         ]);
-
-       
-        $userId = Auth::id(); 
 
         $professional = Professional::create([
             'description' => $request->description,
-            'userId' => $userId, 
+            'userId' => Auth::id(), 
         ]);
 
-        $user = User::find($userId);
+        $user = User::find($request->userId);
         $user->update(['type' => 'profissional']);
 
-        $professional->services()->attach($request->serviceId);
+        foreach ($request->typeServiceId as $index => $typeServiceId) {
+            $professional->services()->create([
+                'serviceId' => $request->serviceId[$index],
+                'typeServiceId' => $typeServiceId,
+            ]);
+        }
 
-        return redirect()->route('homeProfissional')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');    }
-
-    public function getSubcategories($id)
-    {
-        $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']);
-        return response()->json($subcategories);
+        return redirect()->route('index')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');
     }
+    public function getSubcategories($id)
+{
+    $subcategories = \App\Models\Service::where('serviceTypeId', $id)->get(['serviceId', 'serviceName']); // Ajuste os campos conforme seu banco de dados
+
+    return response()->json($subcategories);
 }
-
-
+}

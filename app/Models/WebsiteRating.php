@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class WebsiteRating extends Model
 {
     use HasFactory;
+    
+    public $timestamps = false; 
+    protected $table = 'websiteRatings';
 
     protected $fillable = [
         'websiteRatingId',

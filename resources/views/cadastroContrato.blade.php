@@ -7,7 +7,7 @@
 
 
         
-        <form action="{{ route('contratos.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('cadastroContrato.store') }}" method="POST" enctype="multipart/form-data">
         <h1>Novo Contrato</h1>
         <h2>Preencha os campos para gerar o contrato do serviço</h2>
         @csrf
