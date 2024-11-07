@@ -43,6 +43,7 @@ Route::post('/cadastroProfissional', [CadastroProfissionalController::class, 'st
 Route::get('/subcategorias/{id}', [CadastroProfissionalController::class, 'getSubcategories'])->name('subcategorias.get');
 Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'index'])->name('contratoProfissional');
 Route::delete('/contrato/{protocol}', [ContratoProfissionalController::class, 'destroy'])->name('contrato.destroy');
+Route::get('/contrato/{protocol}/gerar-pdf', [ContratoProfissionalController::class, 'gerarPdf'])->name('contrato.gerarPdf');
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');
 Route::get('/editarContrato', [EditarContratoController::class, 'index'])->name('editarContrato');

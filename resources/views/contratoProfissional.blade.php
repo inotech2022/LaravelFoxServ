@@ -108,10 +108,9 @@
                         </div>
 
                         <div class="contrato-pdf">
-                            <form method="post" action="#">
-                                <input type="hidden" name="protocolo" value="{{ $contrato->protocol }}">
-                                <button type="submit" class="btn-pdf" name="gerar_pdf">Gerar PDF</button>
-                            </form>
+                        <form method="GET" action="{{ route('contrato.gerarPdf', ['protocol' => $contrato->protocol]) }}">
+                            <button type="submit" class="btn-pdf">Gerar PDF</button>
+                        </form>
                             
                             <!-- Exemplo de um botão que abre o modal -->
                             <button class="lixeira" onclick="abreModal('{{ $contrato->protocol }}')">
