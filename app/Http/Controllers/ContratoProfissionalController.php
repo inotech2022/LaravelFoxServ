@@ -59,15 +59,22 @@ class ContratoProfissionalController extends Controller
     }
 
     public function destroy($protocol)
-{
-    // Busca o contrato usando o 'protocol'
-    $contrato = Contract::where('protocol', $protocol)->first();
+    {
+        // Busca o contrato usando o 'protocol'
+        $contrato = Contract::where('protocol', $protocol)->first();
 
-    if ($contrato) {
-        $contrato->delete();
-        return redirect()->route('contratoProfissional.index')->with('success', 'Contrato excluído com sucesso!');
+        if ($contrato) {
+            // Desassociar as avaliações do contrato (não excluir as avaliações, apenas remover a associação)
+            \DB::table('ratings')
+                ->where('protocol', $protocol)
+                ->update(['protocol' => null]);
+
+            // Excluir o contrato
+            $contrato->delete();
+
+            return redirect()->route('contratoProfissional')->with('success', 'Contrato excluído com sucesso!');
+        }
+
+        return redirect()->route('contratoProfissional')->with('error', 'Contrato não encontrado.');
     }
-
-    return redirect()->route('contratoProfissional.index')->with('error', 'Contrato não encontrado.');
-}
 }
