@@ -88,7 +88,7 @@
 @foreach($publicacoes as $publicacao)
                     <div class="card_perfil">
                          <div class="img-perfil">
-                            <img class="img-profile" src="upload/{{ $publicacao->image }}">
+                            <img class="img-profile" src={{ $publicacao->image }} >
                         </div>
                         <div class="legenda">
                             <p class="legenda">{{ $publicacao->caption }}</p>
@@ -149,6 +149,11 @@
                                             
         </div>                     
         </div>
+        <div onclick="document.location='{{route('novaPublicacao')}}'" class="btn-flutuante">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </div>
         @endforeach
         @endif
                 </div>

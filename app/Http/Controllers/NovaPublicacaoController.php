@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers;
 
 use App\Models\Publication;
@@ -25,16 +25,20 @@ class NovaPublicacaoController extends Controller
         if (!$professional) {
             return redirect()->route('index')->withErrors('Somente profissionais podem criar publicações.');
         }
-        
-
-        
 
         $validatedData = $request->validate([
             'image' => 'required|image|max:2048',
             'caption' => 'required|string|max:100'
         ]);
 
-        $imagePath = $request->file('image')->store('public/image/upload');
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $image = $request->file('image');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('image/upload'), $imageName);
+            $imagePath = $imageName;
+        } else {
+            return redirect()->back()->withErrors('Erro ao carregar a imagem.');
+        }
 
         Publication::create([
             'image' => $imagePath,
@@ -47,4 +51,3 @@ class NovaPublicacaoController extends Controller
             ->with('success', 'Publicação criada com sucesso!');
     }
 }
-
