@@ -24,4 +24,5 @@ class Professional extends Model
     {
         return $this->belongsToMany(Service::class, 'service_professionals', 'professionalId', 'serviceId');
     }
+   
 }

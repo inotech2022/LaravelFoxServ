@@ -17,6 +17,7 @@ class Rating extends Model
         'comment',  
         'ratingDate',
         'userId',
+        'professionalId',
         'protocol'
     ];
 }

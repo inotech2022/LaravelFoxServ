@@ -20,4 +20,6 @@ class Publication extends Model
         'caption',
         'professionalId'
     ];
+
+ 
 }

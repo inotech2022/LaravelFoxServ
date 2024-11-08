@@ -85,16 +85,16 @@
                 <img src="image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
     
 </div>@else
-@foreach($publicacao as $publicacao)
+@foreach($publicacoes as $publicacao)
                     <div class="card_perfil">
                          <div class="img-perfil">
-                            <img class="img-profile" src="upload/">
+                            <img class="img-profile" src="upload/{{ $publicacao->image }}">
                         </div>
                         <div class="legenda">
-                            <p class="legenda">Legenda</p>
+                            <p class="legenda">{{ $publicacao->caption }}</p>
                             <div class="data_like">
-                                <p class="data">13/09/2024</p>
-                                <span class="material-symbols-outlined lixo"> delete</span>
+                                <p class="data">{{ \Carbon\Carbon::parse($publicacao->date)->format('d/m/Y') }}</p>
+                                <span class="material-symbols-outlined lixo" onclick="openModal('dv-modal-post')"> delete</span>
                             </div>
                         </div>
                     </div>
@@ -116,15 +116,15 @@
     
 </div>
 @else
-@foreach($avaliacao as $avaliacao)
+@foreach($avaliacoes as $avaliacao)
         <div class="card-av">
             <div class="av-header">
                         <div class="header-img">
                             <img src="upload/" class="image-header">
                         </div>
                         <div class="header-info">
-                            <h4>nome usuario</h4>
-                            <p>13/09/2024</p>
+                            <h4>{{ $avaliacao->name }} {{ $avaliacao->lastName }} </h4>
+                            <p>{{ \Carbon\Carbon::parse($avaliacao->ratingDate)->format('d/m/Y') }}</p>
                         </div>
                         <div class="aspas">
                             <span class="material-symbols-outlined">
@@ -134,13 +134,17 @@
             </div>
                         <div class="estrela">
                             <ul class="avaliacao">
-    <li class="star-icon ativo" data-avaliacao=""><i class="fa fa-star"></i></li>
-
-    <label class="media">5</label>
+                            @for ($j = 1; $j <= 5; $j++)
+                            @if ($j <= $avaliacao->starAmount) <!-- Use $avaliacao->starAmount -->
+                                <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
+                            @else
+                                <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
+                            @endif
+                        @endfor
 </ul>
                         </div>
                         <div class="comentario">
-                            <p>lalalalala</p>
+                            <p>{{ $avaliacao->comment }}</p>
                         </div>
                                             
         </div>                     
@@ -166,6 +170,26 @@
                 <div class="modal-footer">
                     <button onclick="excluirConta()" class="btn-modal">Sim </button>
                     <button class="btn-modal" onclick="closeModal('dv-modal')">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="dv-modal-post" class="modal">
+    
+            <div class="alert-modal">
+                <div class="modal-header">
+                    <h1><span class="material-symbols-outlined">
+                            warning
+                        </span></h1>
+                </div>
+                <div class="modal-body">
+                    <h2>Tem certeza que deseja excluir esta publicação?</h2>
+
+                </div>
+                <div class="modal-footer">
+                    <button onclick="excluirConta()" class="btn-modal">Sim </button>
+                    <button class="btn-modal" onclick="closeModal('dv-modal-post')">Cancelar</button>
                 </div>
             </div>
         </div>
