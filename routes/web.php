@@ -27,7 +27,7 @@ use App\Http\Controllers\ServicosController;
 
 // Define a rota principal
 Route::get('/', [IndexController::class, 'index'])-> name('index');
-Route::post('/index', [IndexController::class, 'store'])-> name('index');
+Route::post('/', [IndexController::class, 'store'])-> name('sugestao');
 Route::post('/denuncia', [PerfilProfissionalController::class, 'store'])->name('denuncia.store');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
 Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao');
