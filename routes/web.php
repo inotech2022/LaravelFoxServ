@@ -26,7 +26,7 @@ use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
 
 // Define a rota principal
-Route::get('/index', [IndexController::class, 'index'])-> name('index');
+Route::get('/', [IndexController::class, 'index'])-> name('index');
 Route::post('/index', [IndexController::class, 'store'])-> name('index');
 Route::post('/denuncia', [PerfilProfissionalController::class, 'store'])->name('denuncia.store');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
