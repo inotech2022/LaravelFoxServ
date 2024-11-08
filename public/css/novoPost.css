@@ -310,7 +310,7 @@ cursor: pointer;
     .input-box.active .characters{
       display: block;
     }
-input[type="submit"] {
+.btn-login {
     width: 60%;
     padding: 16px 0px;
     margin-top: 0;
@@ -322,7 +322,7 @@ input[type="submit"] {
     font-weight: 800;
     letter-spacing: 3px;
     color: #fff;
-    background: #6c618bbb;
+    background: #00ff88;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff8021;
 }

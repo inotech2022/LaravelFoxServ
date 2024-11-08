@@ -4,8 +4,8 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/contratoProfissional.css') }}">
-<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/contratoProfissional.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/modal.css') }}">
 <script src="{{ asset('js/modal.js') }}" defer></script>
 
 <main>

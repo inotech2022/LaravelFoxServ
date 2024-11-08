@@ -9,6 +9,10 @@ class Publication extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $primaryKey = 'publicationId';
+    protected $keyType = 'string';
+
     protected $fillable = [
         'publicationId',
         'date',
