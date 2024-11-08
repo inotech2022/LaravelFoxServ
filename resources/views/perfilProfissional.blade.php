@@ -199,7 +199,8 @@
 
 
 
-                <form id="form-denuncia" class="form-denuncia" method="POST" action="processarDenuncia.php">
+                <form id="form-denuncia" class="form-denuncia" method="POST" action="{{ route('denuncia.store') }}">
+                @csrf
                     <div class="radios">
                         <input type="radio" name="motivo" value="spam" />Spam<br>
                         <input type="radio" name="motivo" value="conteúdo inapropriado" />Conteúdo Inapropriado<br>
@@ -210,6 +211,8 @@
                         <input type="hidden" name="idUsuario" value="" />
                     </div>
                     <textarea name="outroMotivo" rows="4" cols="50"></textarea>
+                    <input type="hidden" name="professionalId" value="{{ $profissional->professionalId }}">
+                <input type="hidden" name="userId" value="{{ Auth::id() }}">
                     <div class="modal-footer">
                         <div class="botoes_modal">
                             <button type="submit" name="submit" class="btn-modal">Enviar Denúncia</button>
