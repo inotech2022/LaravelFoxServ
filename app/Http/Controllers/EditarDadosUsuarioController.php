@@ -39,9 +39,17 @@ class EditarDadosUsuarioController extends Controller
         if (!$user) {
             return redirect()->route('index')->with('error', 'Usuário não encontrado.');
         }
+        if ($request->hasFile('foto_perfil') && $request->file('foto_perfil')->isValid()) {
+            $image = $request->file('foto_perfil');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('image/upload'), $imageName);
+            $imagePath = 'image/upload/' . $imageName;
+        }
+
 
         $user->update([
             'phone' => $request->input('telefone', $user->phone),
+            'profilePic' => $imagePath,
         ]);
 
         // Atualiza ou cria o endereço
@@ -57,11 +65,7 @@ class EditarDadosUsuarioController extends Controller
             ]
         );
 
-        if ($request->hasFile('foto_perfil')) {
-            $path = $request->file('foto_perfil')->store('profile_pics', 'public');
-            $user->update(['profilePic' => $path]);
-        }
-
+        
         return redirect()->route('index')->with('success', 'Dados atualizados com sucesso!');
     }
 }
