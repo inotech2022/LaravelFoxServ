@@ -35,7 +35,7 @@ class NovaPublicacaoController extends Controller
             $image = $request->file('image');
             $imageName = time() . '-' . $image->getClientOriginalName();
             $image->move(public_path('image/upload'), $imageName);
-            $imagePath = $imageName;
+            $imagePath = 'image/upload/' . $imageName;
         } else {
             return redirect()->back()->withErrors('Erro ao carregar a imagem.');
         }
