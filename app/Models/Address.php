@@ -9,7 +9,11 @@ class Address extends Model
 {
     public $timestamps = false;
     use HasFactory;
+    protected $primaryKey = 'addressId';
 
+    public $incrementing = true;
+
+    protected $keyType = 'int';
     protected $fillable = [
         'userId',
         'zipCode',

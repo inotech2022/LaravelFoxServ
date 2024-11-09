@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="sugestao" action="{{ route('index') }}" method="POST">
+                <form class="sugestao" action="{{ route('sugestao') }}" method="POST">
                     @csrf
                     <p>Não encontrou o serviço que está procurando?</p>
                     <input type="text" class="sugestao" id="sugestao" name="sugestao" placeholder="Deixe aqui a sua sugestão...">
