@@ -38,7 +38,15 @@ class CadastroController extends Controller
             'fotoPerfil' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $profilePicture = $request->file('fotoPerfil')->store('upload', 'public');
+        if ($request->hasFile('fotoPerfil') && $request->file('fotoPerfil')->isValid()) {
+            $image = $request->file('fotoPerfil');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('image/upload'), $imageName);
+            $imagePath = 'image/upload/' . $imageName;
+        }else {
+            return redirect()->back()->withErrors('Erro ao carregar a imagem.');
+        }
+
 
         $user = User::create([
             'name' => $request->nome,
@@ -48,7 +56,7 @@ class CadastroController extends Controller
             'cpf' => $request->cpf,
             'email' => $request->email,
             'password' => Hash::make($request->senha),
-            'profilePic' => $profilePicture,
+            'profilePic' => $imagePath,
             'token' => bin2hex(random_bytes(50)),
             'type' => 'comum',
         ]);
@@ -67,7 +75,7 @@ class CadastroController extends Controller
         ]);
 
 
-        Mail::to($user->email)->send(new ConfirmacaoCadastro($user));
+        //Mail::to($user->email)->send(new ConfirmacaoCadastro($user));
 
         Auth::login($user);
         return redirect('/')->with('success', 'Registro realizado com sucesso. Por favor, confirme seu e-mail.');

@@ -11,34 +11,36 @@
     <link rel="icon" href="/logo/lilas-2.PNG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <script src="js/modo_escuro.js" defer></script>
-    
-        <title>@yield('title', 'FoxServ')</title>
+
+    <title>@yield('title', 'FoxServ')</title>
 </head>
 
 <body>
     <!-- cabeçalho -->
-          <nav class="nav">
+    <nav class="nav">
         <div class="container">
-        @if (session('tipo') === 'comum')
-    <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
-@elseif (session('tipo') === 'profissional')
-    <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
-@else
-    <h1 class="logo"><a href="{{ route('login') }}">Fox<span class="foxserv">Serv</span></a></h1>
-@endif
+            @if (session('tipo') === 'comum')
+            <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
+            @elseif (session('tipo') === 'profissional')
+            <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
+            @else
+            <h1 class="logo"><a href="{{ route('login') }}">Fox<span class="foxserv">Serv</span></a></h1>
+            @endif
             @auth
-            
+
             <ul>
                 <div class="dropdown">
-                    <button class="menu"><img class="foto_menu" src="image/upload/"> Olá, {{Auth::user()->name}}<span
-                            class="material-symbols-outlined">
+                    <button class="menu"><img class="foto_menu" src="/{{ Auth::user()->profilePic }}"> Olá,
+                        {{Auth::user()->name}}<span class="material-symbols-outlined">
                             expand_more
-                        </span> </button>
+                        </span> 
+                    </button>
                     <div class="dropdown-content">
-                    @if (session('tipo') === 'comum')
+                        @if (session('tipo') === 'comum')
                         <ul><a href="{{ route('home') }}"><span class="material-symbols-outlined">
                                     home
                                 </span>Home</a>
@@ -63,10 +65,10 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                        </ul>                        
+                        </ul>
                         @elseif (session('tipo') === 'profissional')
                         <ul>
-                        <a href="{{ route('meuPerfil')}}"><span class="material-symbols-outlined">
+                            <a href="{{ route('meuPerfil')}}"><span class="material-symbols-outlined">
                                     person
                                 </span>Meu Perfil</a>
                             <a href="{{ route('homeProfissional')}}"><span class="material-symbols-outlined">
@@ -75,34 +77,39 @@
                             <a href="{{ route('contratoProfissional')}}"><span class="material-symbols-outlined">
                                     description
                                 </span>Meus Contratos</a>
-                            
-                            
-                                <li><span class="material-symbols-outlined">
+
+
+                            <li><span class="material-symbols-outlined">
                                     notifications
                                 </span>Notificações
                                 <ul>
-                                    
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação<span class="material-symbols-outlined">
+
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua
+                                        Publicação<span class="material-symbols-outlined">
                                             favorite
                                         </span></li>
                                     <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu serviço<span class="material-symbols-outlined">
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu
+                                        serviço<span class="material-symbols-outlined">
                                             star
                                         </span></li>
                                     <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação<span class="material-symbols-outlined">
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua
+                                        Publicação<span class="material-symbols-outlined">
                                             favorite
                                         </span></li>
                                     <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu serviço<span class="material-symbols-outlined">
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu
+                                        serviço<span class="material-symbols-outlined">
                                             star
                                         </span></li>
                                     <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua Publicação <span class="material-symbols-outlined">
+                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua
+                                        Publicação <span class="material-symbols-outlined">
                                             favorite
                                         </span></li>
                                     <hr>
-                                  
+
                                 </ul>
                             </li>
                             <a class="sair" href="{{ route('logout')}}"
@@ -116,38 +123,39 @@
                         </ul>
                         @endif
                         @endauth
-@auth
-<a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
-                        login
-                    </span> Sair </a>
+                        @auth
+                        <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
+                                login
+                            </span> Sair </a>
 
-                            
-                    @else 
-                    <a class="sejaProf" href="{{ route('index') }}" class="current">Home</a>
-                <a class="sejaProf" href="{{ route('cadastro') }}">Cadastre-se</a>
-                
-                    <p class="linha"> | </p>
-                
-                <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
-                        login
-                    </span> Entrar </a>
-                    @endauth
-                <div>
-                                             </div>
+
+                        @else
+                        <a class="sejaProf" href="{{ route('index') }}" class="current">Home</a>
+                        <a class="sejaProf" href="{{ route('cadastro') }}">Cadastre-se</a>
+
+                        <p class="linha"> | </p>
+
+                        <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
+                                login
+                            </span> Entrar </a>
+                        @endauth
+                        
                     </div>
-                <div>
-                    <input type="checkbox" name="change-theme" id="change-theme" />
-                    <label for="change-theme">
-                        <i class="bi bi-sun"></i>
-                        <i class="bi bi-moon"></i></label>
-                </div>
+                    <div>
+                        <input type="checkbox" name="change-theme" id="change-theme" />
+                        <label for="change-theme">
+                            <i class="bi bi-sun"></i>
+                            <i class="bi bi-moon"></i></label>
+                    </div>
+                </div> 
             </ul>
         </div>
     </nav>
-    <main>
+
 
     @yield('content')
-    </main>
 
-   </body>
+
+</body>
+
 </html>

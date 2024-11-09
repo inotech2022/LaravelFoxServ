@@ -3,13 +3,26 @@ namespace App\Http\Controllers;
 
 use App\Models\vw_feedProf;
 use Illuminate\Http\Request;
+use App\Models\Address;
 
 class ProfissionaisController extends Controller
 {
-    public function index($serviceId) 
+    public function index(Request $request, $serviceId) 
     {
-        $professionals = vw_feedProf::where('serviceId', $serviceId)->get();
+        $cidades = Address::select('city')->distinct()->get();
 
-        return view('profissionais', compact('professionals', 'serviceId')); 
+        $query = vw_feedProf::where('serviceId', $serviceId);
+
+        if ($request->filled('cidade')) {
+            $query->where('city', $request->cidade);
+        }
+
+        if ($request->filled('media')) {
+            $query->where('average', '>=', $request->media);
+        }
+
+        $professionals = $query->get();
+
+        return view('profissionais', compact('professionals', 'cidades', 'serviceId'));
     }
 }

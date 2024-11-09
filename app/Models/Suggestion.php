@@ -13,4 +13,7 @@ class Suggestion extends Model
         'suggestionId',
         'suggestion'
     ];
+
+    public $timestamps = false; 
+
 }

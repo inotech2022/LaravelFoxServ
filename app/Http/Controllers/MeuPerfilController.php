@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\vw_feedProf;
 use App\Models\User;
+use App\Models\Publication;
+use App\Models\vw_ratings;
 
 class MeuPerfilController extends Controller
 {
@@ -22,8 +24,17 @@ class MeuPerfilController extends Controller
 
         $media = $profissional->average ?? 0;
         $mediaRedonda = round($media);
-        return view('meuPerfil', compact('profissional', 'media', 'mediaRedonda'));
 
+        $publicacoes = Publication::where('professionalId', $profissional->professionalId)->get();
+        $avaliacoes = vw_ratings::where('professionalId', $profissional->professionalId)->get();
+
+        return view('meuPerfil', [
+            'profissional' => $profissional,
+            'publicacoes' => $publicacoes,
+            'avaliacoes' => $avaliacoes,
+            'media' => $media,
+            'mediaRedonda' => $mediaRedonda,
+        ]);
     }
 
 }

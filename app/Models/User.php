@@ -40,8 +40,7 @@ class User extends Authenticatable
 
 
     public function address()
-    {
-        
-        return $this->hasOne(Address::class, 'userId', 'userId'); 
-    }
+{
+    return $this->hasOne(Address::class, 'userId', 'userId'); // Verifique se as chaves estão corretas
+} 
 }

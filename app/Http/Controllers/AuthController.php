@@ -22,7 +22,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $tipoUsuario = auth()->user()->type; // Captura o tipo
     session(['tipo' => $tipoUsuario]); 
-            return redirect()->intended('/index'); 
+            return redirect()->intended('/'); 
             
         }
 
