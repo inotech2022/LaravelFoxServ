@@ -39,7 +39,7 @@
             
             <ul>
                 <div class="dropdown">
-                    <button class="menu"><img class="foto_menu" src={{ Auth::user()->profilePic }}> Olá, {{Auth::user()->name}}<span
+                    <button class="menu"><img class="foto_menu" src="/{{ Auth::user()->profilePic }}"> Olá, {{Auth::user()->name}}<span
                             class="material-symbols-outlined">
                             expand_more
                         </span> </button>

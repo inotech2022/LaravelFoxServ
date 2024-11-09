@@ -53,7 +53,7 @@
             @foreach($professionals as $professional)
                 <div class="card_perfil">
                     <div class="img-perfil">
-                        <img class="img-profile" src="{{ asset('/image/upload/' . $professional->profile_image) }}" alt="Imagem do profissional">
+                        <img class="img-profile" alt="Imagem do profissional" src="/{{ $professional->profilePic }}" >
                     </div>
                     <div class="informacoes">
                         <h2 class="username">{{ $professional->name }}</h2>

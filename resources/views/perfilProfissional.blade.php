@@ -1,22 +1,29 @@
 @extends('layouts.header')
- 
+
+
 @section('title', 'Perfil de ' . $profissional->name)
-
-@section('content')
-
+@section('css')
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/FeedUsuario.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contatos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
-    <script src="/js/avali-publi.js" defer></script>
-    <script src="/js/modal.js"></script>
-
-<body>
+    
+    <script src="js/avali-publi.js" ></script>
+    
     
 
+@endsection
+
+
+@section('content')
+
     <main>
+    <script src="{{ asset('js/modo_escuro.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/coracao.js') }}"></script>
+    <script src="{{ asset('/js/avali-publi.js') }}"></script> 
         <!-- parte principal -->
         <div class="perfil">
 
@@ -24,11 +31,12 @@
             <div class="usuario">
 
                 <div class="foto">
-                    <img class="foto-perfil" src="image/upload/{{ $profissional->profilePic }}">
+                    <img class="foto-perfil" src="/{{ $profissional->profilePic }}">
                 </div>
                 <div class="informacoes">
 
-                    <h1 class="username">{{ $profissional ->name }} {{ $profissional->lastName }}<span class="material-symbols-outlined">
+                    <h1 class="username">{{ $profissional ->name }} {{ $profissional->lastName }}<span
+                            class="material-symbols-outlined">
                             check_circle
                         </span></h1>
                     <div class="infos-extras">
@@ -59,14 +67,13 @@
 
                 <div class="estrelas">
                     <ul class="avaliacao">
-                        @for ($j = 1; $j <= 5; $j++)
-                            @if ($j <= $mediaRedonda)
-                                <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
+                        @for ($j = 1; $j <= 5; $j++) @if ($j <=$mediaRedonda) <li class="star-icon ativo"
+                            data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
                             @else
-                                <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
+                            <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
                             @endif
-                        @endfor
-                        <label class="media">{{ number_format($media, 1, ',', '.') }}</label>
+                            @endfor
+                            <label class="media">{{ number_format($media, 1, ',', '.') }}</label>
                     </ul>
                     <div class="botao2">
                         <button class="contratos" onclick="openModal('dv-modal')"> <span
@@ -85,24 +92,28 @@
             </div>
             <div class="feed">
                 <div class="botoes">
-                    <button onclick="funcaoAparecerPublicacoes()" class="publi">Publicações </button>
-                    <button onclick="funcaoAparecerAvaliacoes()" class="avali">Avaliações </button>
+                    <button onclick="funcaoAparecerPublicacoes()" class="publi" id="publi">Publicações </button>
+                    <button onclick="funcaoAparecerAvaliacoes()" class="avali" id="avali">Avaliações </button>
                 </div>
+
                 <div class="publicacoes" id="publicacoes">
+                    @if($publicacoes->isEmpty())
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma publicação</h1>
                         <img src="image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
                         <img src="image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
 
                     </div>
+                    @else
+                    @foreach($publicacoes as $publicacao)
                     <div class="card_perfil" id="post_">
                         <div class="img-perfil">
-                            <img class="img-profile" src="upload/">
+                            <img class="img-profile" src="/{{ $publicacao->image }}">
                         </div>
                         <div class="legenda">
-                            <p class="legenda"></p>
+                            <p class="legenda">{{ $publicacao->caption }}</p>
                             <div class="data_like">
-                                <p class="data"></p>
+                                <p class="data">{{ \Carbon\Carbon::parse($publicacao->date)->format('d/m/Y') }}</p>
                                 <span class="material-symbols-outlined favorite-icon" id="favoriteIcon"
                                     onclick="curtir()">
                                     favorite
@@ -113,22 +124,29 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                    @endif
                 </div>
+
+
                 <div class="avaliacoes" id="avaliacoes">
+                    @if($avaliacoes->isEmpty())
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma avaliação</h1>
                         <img src="image/avali-modoClaro.png" class="naoEncontrado-modoClaro">
                         <img src="image/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
 
                     </div>
+                    @else
+                    @foreach($avaliacoes as $avaliacao)
                     <div class="card-av">
                         <div class="av-header">
                             <div class="header-img">
-                                <img src="upload/" class="image-header">
+                                <img src="/{{ $avaliacao->profilePic }}" class="image-header">
                             </div>
                             <div class="header-info">
-                                <h4></h4>
-                                <p></p>
+                                <h4>{{ $avaliacao->name }} {{ $avaliacao->lastName }}</h4>
+                                <p>{{ \Carbon\Carbon::parse($avaliacao->ratingDate)->format('d/m/Y') }}</p>
                             </div>
                             <div class="aspas">
                                 <span class="material-symbols-outlined">
@@ -138,17 +156,27 @@
                         </div>
                         <div class="estrela">
                             <ul class="avaliacao">
-                                <label class="media"></label>
+                                @for ($j = 1; $j <= 5; $j++) @if ($j <=$avaliacao->starAmount)
+                                    <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i>
+                                    </li>
+                                    @else
+                                    <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
+                                    @endif
+                                    @endfor
                             </ul>
                         </div>
                         <div class="comentario">
-                            <p></p>
+                            <p>{{ $avaliacao->comment }}</p>
                         </div>
+
                     </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
+           
         </div>
-        </div>
+        
     </main>
     <div id="dv-modal" class="modal-cont">
         <div class="alert-modal-cont">
@@ -165,8 +193,8 @@
 
                 <div class="botoes_modal-cont">
                     <div class="contato">
-                        <a href="https://api.whatsapp.com/send?phone=5515"><button
-                                class="btn-modal"> <span class="material-symbols-outlined">
+                        <a href="https://api.whatsapp.com/send?phone=5515{{ $profissional->phone }}" ><button class="btn-modal">
+                                <span class="material-symbols-outlined">
                                     message
                                 </span> WhatsApp</button></a>
                         <a><button class="btn-modal"><span class="material-symbols-outlined">
@@ -174,7 +202,7 @@
                                 </span>
 
                             </button></a>
-                        <a><button class="btn-modal" href="mailto:"><span
+                        <a><button class="btn-modal" href="mailto:" {{ $profissional->email }}><span
                                     class="material-symbols-outlined">
                                     email
                                 </span> email</button></a>
@@ -200,7 +228,7 @@
 
 
                 <form id="form-denuncia" class="form-denuncia" method="POST" action="{{ route('denuncia.store') }}">
-                @csrf
+                    @csrf
                     <div class="radios">
                         <input type="radio" name="motivo" value="spam" />Spam<br>
                         <input type="radio" name="motivo" value="conteúdo inapropriado" />Conteúdo Inapropriado<br>
@@ -212,7 +240,7 @@
                     </div>
                     <textarea name="outroMotivo" rows="4" cols="50"></textarea>
                     <input type="hidden" name="professionalId" value="{{ $profissional->professionalId }}">
-                <input type="hidden" name="userId" value="{{ Auth::id() }}">
+                    <input type="hidden" name="userId" value="{{ Auth::id() }}">
                     <div class="modal-footer">
                         <div class="botoes_modal">
                             <button type="submit" name="submit" class="btn-modal">Enviar Denúncia</button>
@@ -227,8 +255,4 @@
             </div>
         </div>
     </div>
-
-</body>
-
-
 @endsection

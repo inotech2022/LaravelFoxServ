@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\vw_feedProf;
 use App\Models\User;
+use App\Models\Publication;
+use App\Models\Rating;
+use App\Models\vw_ratings;
 use App\Models\Complaint;
 
 class PerfilProfissionalController extends Controller
@@ -21,8 +24,18 @@ class PerfilProfissionalController extends Controller
     $media = $profissional->average ?? 0; 
     $mediaRedonda = round($media);
 
-    return view('perfilProfissional', compact('profissional', 'media', 'mediaRedonda'));
+    $publicacoes = Publication::where('professionalId', $profissional->professionalId)->get();
+        $avaliacoes = vw_ratings::where('professionalId', $profissional->professionalId)->get();
+
+        return view('perfilProfissional', [
+            'profissional' => $profissional,
+            'publicacoes' => $publicacoes,
+            'avaliacoes' => $avaliacoes,
+            'media' => $media,
+            'mediaRedonda' => $mediaRedonda,
+        ]);
 }
+
 
 public function store(Request $request)
     {
