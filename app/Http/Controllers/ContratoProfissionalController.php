@@ -9,6 +9,7 @@ use App\Models\Contract;
 use App\Models\Service; 
 use App\Models\Professional; 
 use App\Models\vw_contracts;
+use App\Models\Rating;
 use TCPDF;
 
 class ContratoProfissionalController extends Controller
@@ -46,6 +47,20 @@ class ContratoProfissionalController extends Controller
             }
         }
 
+        $contratados = vw_contracts::where('userId', $userId)->get();
+    
+        foreach ($contratados as $contratado) {
+            if ($contratado->endDate < $dataAtual) {
+                $contratado->statusContrato = 'Finalizado';
+            } elseif ($contratado->startDate <= $dataAtual && $contratado->endDate >= $dataAtual) {
+                $contratado->statusContrato = 'Em Andamento';
+            } else {
+                $contratado->statusContrato = 'Não Iniciado';
+            }
+    
+            $contratado->avaliado = Rating::where('protocol', $contratado->protocol)->exists();
+        }
+
         if ($request->has('filtro')) {
             $filtro = $request->input('filtro');
             
@@ -56,7 +71,7 @@ class ContratoProfissionalController extends Controller
             }
         }
 
-        return view('contratoProfissional', compact('contratos'));
+        return view('contratoProfissional', compact('contratos', 'contratados'));
     }
     public function gerarPdf($protocol)
     {

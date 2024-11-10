@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ asset('/css/contratoProfissional.css') }}">
 <link rel="stylesheet" href="{{ asset('/css/modal.css') }}">
 <script src="{{ asset('js/modal.js') }}" defer></script>
+<script src="{{ asset('js/avali-publi.js') }}" defer></script>
 
 <main>
     <div class="principal">
@@ -29,6 +30,18 @@
         </div>
 
         <div class="profissionais">
+
+        <div class="botoes">
+                <button onclick="funcaoAparecerPublicacoes()" class="publi" id="publi">Meus Contratos </button>
+                <button onclick="funcaoAparecerAvaliacoes()" class="avali" id="avali">Serviços Contratados </button>
+
+        </div>
+
+
+
+
+
+            <div class="publicacoes" id="publicacoes">
             @if($contratos->isEmpty())
                 <div class="naoEncontrada">
                     <h1>Você ainda não possui nenhum contrato</h1>
@@ -144,6 +157,96 @@
                     </div>
                 @endforeach
             @endif
+        </div>
+
+
+        <div class="avaliacoes" id="avaliacoes">
+        @if($contratados->isEmpty())
+            <div class="naoEncontrada">
+                <h1>Você ainda não possui nenhum contrato</h1>
+                <img src="image/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
+                <img src="image/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
+            </div>
+        @else
+            @foreach($contratados as $contratado)
+                <div class="contrato">
+                    <div class="card_contrato">
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">contract</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Status do Contrato</div>
+                                <div class="info-texto">{{ $contratado->statusContrato }}</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">person</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Nome do Profissional</div>
+                                <div class="info-texto">{{ $contratado->professionalName }}</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Serviço Realizado</div>
+                                <div class="info-texto">{{ $contratado->serviceName }}</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Data do Serviço</div>
+                                <div class="info-texto">{{ \Carbon\Carbon::parse($contratado->startDate)->format('d/m/Y') }} - 
+                                {{ \Carbon\Carbon::parse($contratado->endDate)->format('d/m/Y') }}</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">attach_money</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Valor</div>
+                                <div class="info-texto">R$ {{ number_format($contrato->price, 2, ',', '.') }}</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">format_align_center</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Descrição</div>
+                                <div class="info-texto">{{ $contratado->description }}</div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="icon">
+                                <span class="material-symbols-outlined">fact_check</span>
+                            </div>
+                            <div class="texto">
+                                <div class="info-titulo">Número do Contrato</div>
+                                <div class="info-texto">{{ $contratado->protocol }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if($contratado->avaliado)
+                        <button class="btn-pdf" disabled>Contrato Avaliado</button>
+                    @else
+                        <button class="btn-pdf" onclick="document.location='{{ route('avaliacao', ['protocol' => $contratado->protocol]) }}'">Avaliar</button>
+
+                    @endif
+                </div>
+            @endforeach
+        @endif
+        </div>
         </div>
 
         <div  class="btn-flutuante">
