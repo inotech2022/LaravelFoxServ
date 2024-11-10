@@ -59,7 +59,14 @@
                         </p>
                     </div>
                     <div class="serv-tip">
-                        <p class="tip-serv">{{ $profissional->serviceTypeName }}</p>
+                    @foreach ($tipoServicos as $tipoServicos)
+        <p class="tip-serv">{{ $tipoServicos->serviceTypeName }} </p>
+    @endforeach
+                    @foreach ($servicos as $servicos)
+        <p class="tip-serv">{{ $servicos->serviceName }} </p>
+        
+    @endforeach
+    
                     </div>
 
                     <p class="descricao"> {{ $profissional->description }} </p>

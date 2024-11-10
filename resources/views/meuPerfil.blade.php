@@ -29,7 +29,7 @@
                         <span class="material-symbols-outlined">location_on</span> {{ $profissional->city }} , {{
                         $profissional->uf }}
                     </p>
-                    <p class="tip-serv"> | </p>
+                    <p class="tip-serv">  |   </p>
                     <p class="idade">
                         <span class="material-symbols-outlined">perm_contact_calendar</span> {{ $profissional->age }}
                         anos
@@ -41,14 +41,20 @@
                     </p>
                 </div>
                 <div class="serv-tip">
-
+                @foreach ($servicos as $servicos)
+        <p class="tip-serv">{{ $servicos->serviceName }} |</p>
+    @endforeach
+    @foreach ($tipoServicos as $tipoServicos)
+        <p class="tip-serv">{{ $tipoServicos->serviceTypeName }}</p>
+    @endforeach
                 </div>
 
                 <p class="descricao">{{ $profissional->description }}</p>
             </div>
             <div class="estrelas">
                 <ul class="avaliacao">
-                    @for ($j = 1; $j <= 5; $j++) @if ($j <=$mediaRedonda) <li class="star-icon ativo"
+                    @for ($j = 1; $j <= 5; $j++) 
+                    @if ($j <=$mediaRedonda) <li class="star-icon ativo"
                         data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
                         @else
                         <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>

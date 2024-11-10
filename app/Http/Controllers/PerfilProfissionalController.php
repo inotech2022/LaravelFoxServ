@@ -26,6 +26,8 @@ class PerfilProfissionalController extends Controller
 
     $publicacoes = Publication::where('professionalId', $profissional->professionalId)->get();
         $avaliacoes = vw_ratings::where('professionalId', $profissional->professionalId)->get();
+        $servicos = vw_feedProf::getServicosPorProfissional($profissional->professionalId);
+        $tipoServicos = vw_feedProf::getCategoriaPorProfissional($profissional->professionalId);
 
         return view('perfilProfissional', [
             'profissional' => $profissional,
@@ -33,6 +35,8 @@ class PerfilProfissionalController extends Controller
             'avaliacoes' => $avaliacoes,
             'media' => $media,
             'mediaRedonda' => $mediaRedonda,
+            'servicos' => $servicos,
+            'tipoServicos' => $tipoServicos,
         ]);
 }
 
