@@ -29,3 +29,7 @@ function abreModal(publicacaoId) {
 function fechaModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
 }
+
+function openModalAccountDelete() {
+    openModal('dv-modal-account');
+}

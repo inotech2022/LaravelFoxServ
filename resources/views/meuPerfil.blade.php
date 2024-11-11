@@ -72,10 +72,29 @@
                             class="material-symbols-outlined">lock_reset</span>Alterar Senha</button>
                 </div>
                 <div class="botao2">
-                    <button onclick="openModal('dv-modal')" class="excluir">Excluir Conta</button>
+                <button onclick="openModalAccountDelete()" class="excluir">Excluir Conta</button>
                 </div>
             </div>
-
+            <!-- Modal para confirmar a exclusão da conta -->
+            <div id="dv-modal-account" class="modal">
+                <div class="alert-modal">
+                    <div class="modal-header">
+                        <h1><span class="material-symbols-outlined">warning</span></h1>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Tem certeza que deseja excluir sua conta?</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Formulário de exclusão da conta -->
+                        <form id="delete-account-form" action="{{ route('excluirConta') }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-modal">Sim</button>
+                        </form>
+                        <button class="btn-modal" onclick="closeModal('dv-modal-account')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="feed">
