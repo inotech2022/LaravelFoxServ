@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Contract; 
 use App\Models\Service; 
 use App\Models\vw_feedProf;
+use App\Models\Professional;
 
 class CadastroContratoController extends Controller
 {
@@ -22,7 +23,7 @@ class CadastroContratoController extends Controller
         
     public function store(Request $request)
     {
-        $request->validate([
+        $validated_data = $request->validate([
             'cpf' => 'required|string|max:14', 
             'idServico' => 'required|integer',
             'valor' => 'required|numeric',
@@ -38,6 +39,7 @@ class CadastroContratoController extends Controller
             return redirect()->back()->withErrors(['cpf' => 'Cliente não encontrado.']);
         }
 
+        $professional = Professional::where('userId', auth()->id())->first();
 
         Contract::create([
             'serviceId' => $request->idServico,
@@ -45,8 +47,8 @@ class CadastroContratoController extends Controller
             'startDate' => $request->dataInicial,
             'endDate' => $request->dataFinal,
             'description' => $request->descricao,
-            'userId' => $user->id,
-            'professionalId' => auth()->id(),
+            'userId' => $user->userId,
+            'professionalId' => $professional->professionalId
         ]);
         
 
