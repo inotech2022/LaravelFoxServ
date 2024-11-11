@@ -65,13 +65,14 @@
                                 <p class="profile-desc">{{ $professional->description }}</p>
                             </div>
                             <ul class="avaliacao">
-                                @for ($j = 1; $j <= 5; $j++)
-                                    <li class="star-icon {{ $j <= $professional->average_rating ? 'ativo' : '' }}" data-avaliacao="{{ $j }}">
-                                        <i class="fa {{ $j <= $professional->average_rating ? 'fa-star' : 'fa-star-o' }}"></i>
-                                    </li>
-                                @endfor
-                                <label class="media">{{ number_format($professional->average_rating, 1) }}</label>
-                            </ul>
+                        @for ($j = 1; $j <= 5; $j++) @if ($j <=$mediaRedonda) <li class="star-icon ativo"
+                            data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
+                            @else
+                            <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
+                            @endif
+                            @endfor
+                            <label class="media">{{ number_format($media, 1, ',', '.') }}</label>
+                    </ul>
                         </div>
                     </div>
                     <button onclick="document.location='/perfilProfissional/{{ $professional->professionalId }}'" class="btn-perfil">Ver perfil</button>

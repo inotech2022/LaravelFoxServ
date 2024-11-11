@@ -176,7 +176,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/PedroSilva.jpg" class="image-header">
+                                    <img src="image/upload/PedroSilva.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Pedro Silva</h4>
@@ -204,7 +204,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/JuliaGabriele.jpg" class="image-header">
+                                    <img src="image/upload/JuliaGabriele.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Julia Gabriele</h4>
@@ -232,7 +232,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/LucasAlmeida.jpg" class="image-header">
+                                    <img src="image/upload/LucasAlmeida.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Lucas Almeida</h4>
@@ -260,7 +260,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/CamilaSouza.jpg" class="image-header">
+                                    <img src="image/upload/CamilaSouza.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Camila Souza</h4>
