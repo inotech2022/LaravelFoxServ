@@ -200,19 +200,18 @@
 
                 <div class="botoes_modal-cont">
                     <div class="contato">
-                        <a href="https://api.whatsapp.com/send?phone=5515{{ $profissional->phone }}" ><button class="btn-modal">
+                        <a href="https://api.whatsapp.com/send?phone=5515{{ $profissional->phone }}"  class="btn-modal">
                                 <span class="material-symbols-outlined">
                                     message
-                                </span> WhatsApp</button></a>
-                        <a><button class="btn-modal"><span class="material-symbols-outlined">
+                                </span> WhatsApp</a>
+                        <a class="btn-modal"> <span class="material-symbols-outlined">
                                     phone
                                 </span>
-
-                            </button></a>
-                        <a><button class="btn-modal" href="mailto:" {{ $profissional->email }}><span
-                                    class="material-symbols-outlined">
-                                    email
-                                </span> email</button></a>
+                                {{ $profissional->phone }}
+                            </a>
+                            <a class="btn-modal" href="mailto:{{ $profissional->email }}">
+    <span class="material-symbols-outlined">email</span> Enviar Email
+</a>
                     </div>
                     <button class="cancelar-cont" onclick="closeModal('dv-modal')"><span
                             class="material-symbols-outlined">

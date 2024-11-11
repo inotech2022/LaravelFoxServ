@@ -41,7 +41,7 @@
                     </button>
                     <div class="dropdown-content">
                         @if (session('tipo') === 'comum')
-                        <ul><a href="{{ route('home') }}"><span class="material-symbols-outlined">
+                        <ul><a href="{{ route('index') }}"><span class="material-symbols-outlined">
                                     home
                                 </span>Home</a>
                             <a href="{{ route('contratoUsuario') }}"><span class="material-symbols-outlined">
