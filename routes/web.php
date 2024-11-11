@@ -47,6 +47,7 @@ Route::get('/contrato/{protocol}/gerar-pdf', [ContratoProfissionalController::cl
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');
 Route::get('/editarContrato', [EditarContratoController::class, 'index'])->name('editarContrato');
+Route::post('/editarDadosProfissional', [EditarDadosProfissionalController::class, 'update'])->name('editarDadosProfissional.update');
 Route::get('/editarDadosProfissional', [EditarDadosProfissionalController::class, 'index'])->name('editarDadosProfissional');
 Route::get('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'index'])->name('editarDadosUsuario');
 Route::post('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'update'])->name('editarDadosUsuario.update');
