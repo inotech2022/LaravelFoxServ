@@ -40,14 +40,14 @@
                         Contrato(s)
                     </p>
                 </div>
-                <div class="serv-tip">
                 @foreach ($servicos as $servicos)
-        <p class="tip-serv">{{ $servicos->serviceName }} |</p>
-    @endforeach
-    @foreach ($tipoServicos as $tipoServicos)
-        <p class="tip-serv">{{ $tipoServicos->serviceTypeName }}</p>
-    @endforeach
-                </div>
+                    <div class="serv-tip">
+                    
+        <p class="tip-serv">  {{ $servicos->serviceName }}  </p>
+        
+    
+</div>
+@endforeach
 
                 <p class="descricao">{{ $profissional->description }}</p>
             </div>
