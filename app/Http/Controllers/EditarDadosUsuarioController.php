@@ -50,7 +50,7 @@ class EditarDadosUsuarioController extends Controller
 
         $user->update([
             'phone' => $request->input('telefone', $user->phone),
-            'profilePic' => $imagePath,
+            'profilePic' => $imagePath
         ]);
 
         // Atualiza ou cria o endereço

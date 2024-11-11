@@ -10,7 +10,7 @@
             <div class="card total-ganhos">
                 <p>Ganhos Totais</p>
                 <h2>R${{ number_format($ganhosTotais, 2, ',', '.') }}</h2>
-                <span>Desde: {{ \Carbon\Carbon::parse($dataInicio)->format('F/Y') }}</span>
+                <span>Desde: {{ $dataInicio }}</span>
             </div>
             <div class="card avaliacoes">
                 <p>Todos os Contratos</p>
@@ -27,7 +27,7 @@
             <div class="card ganhos-atuais">
                 <p>Ganhos atuais</p>
                 <h2>R${{ number_format($ganhosAtuais, 2, ',', '.') }}</h2>
-                <span>Mês: {{ now()->format('F/Y') }}</span>
+                <span>Mês: {{ $currentDate }}</span>
             </div>
             <div class="card contratos">
                 <p>Contratos</p>
@@ -65,26 +65,26 @@
             <div class="coluna">
                 <h3>Gráfico de Ganhos mensais</h3>
                 <section class="chart">
-                    <div class="grafico-container">
-                        <div class="valores-laterais">
-                            <div>400</div>
-                            <div>300</div>
-                            <div>200</div>
-                            <div>100</div>
-                            <div>0</div>
-                        </div>
-                        <div class="barras">
-                            @foreach (range(1, 12) as $mes)
-                                <div class="barra">
-                                    @php $altura = isset($ganhosMensais[$mes]) ? $ganhosMensais[$mes] * 300 / 400 : 0; @endphp
-                                    <div class="barra-altura" style="height: {{ $altura }}px;">
-                                        <span class="valor-real">{{ $ganhosMensais[$mes] ?? 0 }}</span>
-                                    </div>
-                                    <div class="label">{{ \Carbon\Carbon::create()->month($mes)->format('M') }}</div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+                <div class="grafico-container">
+    <div class="valores-laterais">
+        <div>400</div>
+        <div>300</div>
+        <div>200</div>
+        <div>100</div>
+        <div>0</div>
+    </div>
+    <div class="barras">
+        @foreach (range(1, 12) as $mes)
+            <div class="barra">
+                @php $altura = $ganhosMensaisCompletos[$mes] * 300 / 400; @endphp
+                <div class="barra-altura" style="height: {{ $altura }}px;">
+                    <span class="valor-real">{{ number_format($ganhosMensaisCompletos[$mes], 2, ',', '.') }}</span>
+                </div>
+                <div class="label">{{ \Carbon\Carbon::create()->month($mes)->format('M') }}</div>
+            </div>
+        @endforeach
+    </div>
+</div>
                 </section>
             </div>
         </div>

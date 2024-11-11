@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Rating;
 use App\Models\vw_contracts;
 
-
-
 class AvaliacaoController extends Controller
 {
      public function create()
