@@ -42,12 +42,9 @@
                 </div>
                 @foreach ($servicos as $servicos)
                     <div class="serv-tip">
-                    
-        <p class="tip-serv">  {{ $servicos->serviceName }}  </p>
-        
-    
-</div>
-@endforeach
+                        <p class="tip-serv">  {{ $servicos->serviceName }}  </p>
+                    </div>
+                @endforeach
 
                 <p class="descricao">{{ $profissional->description }}</p>
             </div>
@@ -59,8 +56,8 @@
                         @else
                         <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
                         @endif
-                        @endfor
-                        <label class="media">{{ number_format($media, 1, ',', '.') }}</label>
+                    @endfor
+                    <label class="media">{{ number_format($media, 1, ',', '.') }}</label>
                 </ul>
                 <div class="botao">
                     <button class="editar" onclick="document.location='{{route('desempenhoProfissional')}}'"><span
@@ -85,10 +82,7 @@
             <div class="botoes">
                 <button onclick="funcaoAparecerPublicacoes()" class="publi" id="publi">Publicações </button>
                 <button onclick="funcaoAparecerAvaliacoes()" class="avali" id="avali">Avaliações </button>
-
             </div>
-
-
 
             <div class="publicacoes" id="publicacoes">
                 @if($publicacoes->isEmpty())
@@ -96,8 +90,8 @@
                     <h1>Faça a sua primeira publicação</h1>
                     <img src="image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
                     <img src="image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
-
-                </div>@else
+                </div>
+                @else
                 @foreach($publicacoes as $publicacao)
                 <div class="card_perfil">
                     <div class="img-perfil">
@@ -107,15 +101,15 @@
                         <p class="legenda">{{ $publicacao->caption }}</p>
                         <div class="data_like">
                             <p class="data">{{ \Carbon\Carbon::parse($publicacao->date)->format('d/m/Y') }}</p>
-                            <span class="material-symbols-outlined lixo" onclick="openModal('dv-modal-post')">
-                                delete</span>
+                            <!-- Botão de excluir com acionamento de modal -->
+                            <button class="material-symbols-outlined lixo" onclick="openModalDelete({{ $publicacao->publicationId }})" style="border: none; background: none;">
+                                delete
+                            </button>
                         </div>
                     </div>
                 </div>
                 @endforeach
                 @endif
-
-
             </div>
 
             <div class="avaliacoes" id="avaliacoes">
@@ -124,7 +118,6 @@
                     <h1>Você ainda não possui nenhuma avaliação</h1>
                     <img src="image/avali-modoClaro.png" class="naoEncontrado-modoClaro">
                     <img src="image/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
-
                 </div>
                 @else
                 @foreach($avaliacoes as $avaliacao)
@@ -145,13 +138,13 @@
                     </div>
                     <div class="estrela">
                         <ul class="avaliacao">
-                            @for ($j = 1; $j <= 5; $j++) @if ($j <=$avaliacao->starAmount)
-                                <!-- Use $avaliacao->starAmount -->
+                            @for ($j = 1; $j <= 5; $j++) 
+                            @if ($j <=$avaliacao->starAmount)
                                 <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
-                                @else
+                            @else
                                 <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
-                                @endif
-                                @endfor
+                            @endif
+                            @endfor
                         </ul>
                     </div>
                     <div class="comentario">
@@ -160,57 +153,47 @@
 
                 </div>
                 @endforeach
-            @endif
-            </div>
-            
-            
-            
-
-        </div>
-    </div>
-                <div onclick="document.location='{{route('novaPublicacao')}}'" class="btn-flutuante">
-                            <span class="material-symbols-outlined">
-                                add
-                            </span>
-                </div>
-    </main>
-    <div id="dv-modal" class="modal">
-
-        <div class="alert-modal">
-            <div class="modal-header">
-                <h1><span class="material-symbols-outlined">
-                        warning
-                    </span></h1>
-            </div>
-            <div class="modal-body">
-                <h2>Tem certeza que deseja excluir sua conta?</h2>
-
-            </div>
-            <div class="modal-footer">
-                <button onclick="excluirConta()" class="btn-modal">Sim </button>
-                <button class="btn-modal" onclick="closeModal('dv-modal')">Cancelar</button>
+                @endif
             </div>
         </div>
     </div>
-    
 
-    <div id="dv-modal-post" class="modal">
+    <div onclick="document.location='{{route('novaPublicacao')}}'" class="btn-flutuante">
+        <span class="material-symbols-outlined">
+            add
+        </span>
+    </div>
 
-        <div class="alert-modal">
-            <div class="modal-header">
-                <h1><span class="material-symbols-outlined">
-                        warning
-                    </span></h1>
-            </div>
-            <div class="modal-body">
-                <h2>Tem certeza que deseja excluir esta publicação?</h2>
+</main>
 
-            </div>
-            <div class="modal-footer">
-                <button onclick="excluirConta()" class="btn-modal">Sim </button>
-                <button class="btn-modal" onclick="closeModal('dv-modal-post')">Cancelar</button>
-            </div>
+<!-- Modal para confirmar a exclusão da publicação -->
+<div id="dv-modal-post" class="modal">
+    <div class="alert-modal">
+        <div class="modal-header">
+            <h1><span class="material-symbols-outlined">warning</span></h1>
+        </div>
+        <div class="modal-body">
+            <h2>Tem certeza que deseja excluir esta publicação?</h2>
+        </div>
+        <div class="modal-footer">
+            <!-- Formulário de exclusão com o publicationId -->
+            <form id="delete-form" action="" method="POST" style="display: inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn-modal">Sim</button>
+            </form>
+            <button class="btn-modal" onclick="closeModal('dv-modal-post')">Cancelar</button>
         </div>
     </div>
-    
-    @endsection
+</div>
+
+<script>
+    // Função para abrir o modal de exclusão com o publicationId
+    function openModalDelete(publicationId) {
+        // Define a ação do formulário para a rota de exclusão
+        document.getElementById('delete-form').action = '/publicacao/' + publicationId;
+        openModal('dv-modal-post');
+    }
+</script>
+
+@endsection

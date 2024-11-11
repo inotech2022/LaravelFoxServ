@@ -41,4 +41,24 @@ class MeuPerfilController extends Controller
         ]);
     }
 
+    public function destroy($publicationId)
+    {
+        // Pega o profissional autenticado
+        $userId = Auth::id();
+        $profissional = vw_feedProf::where('userId', $userId)->first();
+    
+        // Verifica se a publicação existe e está associada ao profissional autenticado
+        $publicacao = Publication::where('publicationId', $publicationId)
+            ->where('professionalId', $profissional->professionalId)
+            ->first();
+    
+        // Se a publicação existir, exclui
+        if ($publicacao) {
+            $publicacao->delete();
+            return redirect()->back()->with('success', 'Publicação excluída com sucesso!');
+        }
+    
+        // Caso contrário, retorna erro
+        return redirect()->back()->with('error', 'Publicação não encontrada ou não autorizada.');
+    }
 }
