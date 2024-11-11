@@ -13,6 +13,8 @@ class Service extends Model
     protected $primaryKey = 'serviceId';
     public $incrementing = true; 
     protected $keyType = 'int';
+    public $timestamps = false; 
+
 
     protected $fillable = [
         'serviceId',

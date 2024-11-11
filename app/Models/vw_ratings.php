@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class vw_ratings extends Model
 {
+    use HasFactory;
+
     protected $table = 'vw_rating';
     public $timestamps = false;
 }
