@@ -67,33 +67,40 @@ class DesempenhoProfissionalController extends Controller
             ->count();
     
         // Gráfico de Ganhos Mensais
-        $ganhosMensais = DB::table(DB::raw("(
-                SELECT MONTH(registrationDate) as mes, SUM(price) as total
-                FROM contracts
-                WHERE professionalId = ?
-                AND YEAR(registrationDate) = ?
-                GROUP BY MONTH(registrationDate)
-                ) as ganhosMensais"))
-            ->select('mes', 'total')
-            ->addBinding($professional->professionalId, 'select')
-            ->addBinding($currentYear, 'select')
-            ->get()
-            ->pluck('total', 'mes')
-            ->toArray();
+        $ganhosMensais = DB::table('contracts')
+        ->where('professionalId', $professional->professionalId)
+        ->whereYear('startDate', $currentYear)
+        ->selectRaw('MONTH(startDate) as mes, COALESCE(SUM(price), 0) as total')
+        ->groupBy('mes')
+        ->pluck('total', 'mes')
+        ->toArray();
     
         // Preencher meses sem dados com 0
         $ganhosMensaisCompletos = [];
         foreach (range(1, 12) as $mes) {
-            $ganhosMensaisCompletos[$mes] = $ganhosMensais[$mes] ?? 0;  // Melhor uso de null coalescing
+            $ganhosMensaisCompletos[$mes] = $ganhosMensais[$mes] ?? 0;
         }
-    
         // Formatar a data atual para exibir o nome do mês em português
         $currentDate = Carbon::now()->locale('pt')->isoFormat('MMMM YYYY');
-    
         // Passando todas as variáveis para a view
+       // Obter a quantidade de avaliações para cada valor de estrela
+        $avaliacoesPorEstrela = DB::table('ratings')
+        ->where('professionalId', $professional->professionalId)
+        ->selectRaw('starAmount as estrela, COUNT(*) as quantidade')
+        ->groupBy('estrela')
+        ->pluck('quantidade', 'estrela')
+        ->toArray();
+
+        // Preencher com zero os valores de estrelas que não possuem avaliações
+        for ($i = 1; $i <= 5; $i++) {
+        $avaliacoesPorEstrela[$i] = $avaliacoesPorEstrela[$i] ?? 0;
+        }
+
+        // Passar os dados para a view
         return view('desempenhoProfissional', compact(
-            'ganhosTotais', 'dataInicio', 'totalContratos', 'totalAvaliacoes', 
-            'ganhosAtuais', 'contratosMes', 'avaliacoesMes', 'ganhosMensaisCompletos', 'currentDate'
+        'ganhosTotais', 'dataInicio', 'totalContratos', 'totalAvaliacoes', 
+        'ganhosAtuais', 'contratosMes', 'avaliacoesMes', 'ganhosMensaisCompletos', 
+        'currentDate', 'avaliacoesPorEstrela'
         ));
     }
     
