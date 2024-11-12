@@ -14,7 +14,7 @@ class EditarDadosProfissionalController extends Controller
         // Carrega o usuário com o endereço associado
         $user = User::with('address')->find(Auth::id());
         $professional = Professional::where('userId', $user->userId)->first();
-        $description = Professional::where('professionalId', $professional->professionalId)->first();
+
 
 
         // Verifica se o usuário e o endereço foram carregados
@@ -22,7 +22,7 @@ class EditarDadosProfissionalController extends Controller
             return redirect()->route('index')->with('error', 'Usuário não encontrado.');
         }
         $address = $user->address;
-        return view('editarDadosProfissional', compact('user','address', 'professional', 'description'));
+        return view('editarDadosProfissional', compact('user','address', 'professional'));
     }
 
     public function update(Request $request)
@@ -56,6 +56,11 @@ class EditarDadosProfissionalController extends Controller
         $user->update([
             'phone' => $request->input('telefone', $user->phone),
             'profilePic' => $imagePath,
+        ]);
+        $professional = Professional::where('userId', $user->userId)->first();
+
+        $professional->update([
+            'description' => $request->input('descricao', $professional->description),
         ]);
 
         // Atualiza ou cria o endereço

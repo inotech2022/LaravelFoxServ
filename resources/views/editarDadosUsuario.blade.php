@@ -3,6 +3,8 @@
 @section('title', 'Editar Dados')
 
 <link rel="stylesheet" href="{{ asset('css/editarCliente.css') }}">
+<script src="{{ asset('js/cep.js') }}" defer></script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 @section('content')
 
 <form class="card-form" action="{{ route('editarDadosUsuario.update') }}" method="POST" enctype="multipart/form-data">

@@ -3,6 +3,9 @@
 @section('title', 'Editar Dados')
 
 <link rel="stylesheet" href="{{ asset('css/editarDados.css') }}">
+<script src="{{ asset('js/cep.js') }}" defer></script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
 @section('content')
 
 <form class="card-form" action="{{ route('editarDadosProfissional.update') }}" method="POST" enctype="multipart/form-data">
@@ -62,7 +65,8 @@
         <div class="linha">
                     <div class="input-box">
                         <label for="descricao">Descrição</label>
-                        <textarea name="descricao" placeholder="Descrição dos serviços, habilidades, idiomas..." value="{{ old('description', $professional-> description ?? '') }}" required maxlength="100"></textarea>
+                        <textarea name="descricao" placeholder="Descrição dos serviços, habilidades, idiomas..." required maxlength="100">{{ $professional->description ?? '' }}</textarea>
+ 
 
                         <div class="characters">
                           <span class="min_num">0</span>
