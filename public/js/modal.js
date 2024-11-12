@@ -21,3 +21,15 @@ function abreModal(protocolo) {
 function fechaModal(modalId) {
     closeModal(modalId);
 }
+
+function abreModal(publicacaoId) {
+    document.getElementById('modal-' + publicacaoId).style.display = 'block';
+}
+
+function fechaModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+function openModalAccountDelete() {
+    openModal('dv-modal-account');
+}

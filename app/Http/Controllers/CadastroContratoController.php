@@ -43,6 +43,7 @@ class CadastroContratoController extends Controller
 
         Contract::create([
             'serviceId' => $request->idServico,
+            'registrationDate' => now(),
             'price' => $request->valor,
             'startDate' => $request->dataInicial,
             'endDate' => $request->dataFinal,

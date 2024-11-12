@@ -62,6 +62,8 @@ Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name
 Route::post('/novaPublicacao', [NovaPublicacaoController::class, 'store'])->name('novaPublicacao.store');
 Route::get('/perfilProfissional/{professionalId}', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
 Route::get('/profissionais/{serviceId}', [ProfissionaisController::class, 'index'])->name('profissionais');
+Route::delete('publicacao/{publicationId}', [MeuPerfilController::class, 'destroy'])->name('publicacao.destroy');
+Route::delete('/excluir-conta', [MeuPerfilController::class, 'destroyAccount'])->name('excluirConta');
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
 Route::post('/redefinirSenha', [RedefinirSenhaController::class, 'updatePassword'])->name('redefinirSenha.update');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
