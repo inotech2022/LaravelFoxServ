@@ -28,7 +28,8 @@ class IndexController extends Controller
     // Cria um novo registro na tabela "suggestions"
     $suggestion = new Suggestion();
     $suggestion->suggestion = $request->input('sugestao');
-    $suggestion->userId = $userId; // Associa o userId
+    $suggestion->userId = $userId;
+    $suggestion->suggestionDate = now();
     $suggestion->save();
 
     // Retorna uma resposta, como uma mensagem de sucesso ou redirecionamento

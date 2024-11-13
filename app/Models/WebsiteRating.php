@@ -19,4 +19,9 @@ class WebsiteRating extends Model
         'ratingDate',
         'userId'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'userId', 'userId');
+    }
 }

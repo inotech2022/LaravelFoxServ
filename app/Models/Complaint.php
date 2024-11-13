@@ -23,4 +23,14 @@ class Complaint extends Model
     public $incrementing = true;
 
     public $timestamps = false;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'userId', 'userId');
+    }
+
+    public function professional()
+    {
+        return $this->belongsTo(Professional::class, 'professionalId', 'professionalId');
+    }
 }

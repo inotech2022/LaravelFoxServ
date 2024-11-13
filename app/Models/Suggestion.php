@@ -12,9 +12,14 @@ class Suggestion extends Model
     protected $fillable = [
         'suggestionId',
         'suggestion',
-        'userId'
+        'userId',
+        'suggestionDate'
     ];
 
-    public $timestamps = false; 
+    public $timestamps = false;
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'userId', 'userId');
+    }
 }

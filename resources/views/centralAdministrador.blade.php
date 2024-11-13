@@ -27,17 +27,38 @@
         <div class="avaliacoes" id="avaliacoes">
             <div class="avali-left">
                 <h1>Avaliações da Plataforma</h1>
+                <form method="GET">
+                    <select name="filtro_avaliacoes" onchange="this.form.submit()">
+                        <option value="" selected disabled> Ordenar por </option>
+                        <option value="name"> Código </option>
+                        <option value="date"> Data </option>
+                    </select>
+                </form>
                     <div class="titulos">
                         <label class="txt_codigo">Código</label>
+                        <label class="txt_data">Data</label>
                         <label class="txt_usuario">Usuário</label>
                         <label class="txt_avaliacao">Avaliação</label>
                     </div>
+                    @foreach ($ratings as $rating)
                     <div class="campos">
-                    <input class="codigo" type="text" id="codigo" name="codigo"  value="" disabled>
-                    <input class="usuario" type="text" id="usuario" name="usuario"  value="" disabled>
-                    <input class="avaliacao" type="text" id="avaliacao" name="avaliacao"  value="" disabled>
-                    <button class="contato">Contatar</button>
+                        <input class="codigo" type="text" value="{{ $rating->websiteRatingId }}" disabled>
+                        <input class="data" type="text" value="{{ \Carbon\Carbon::parse($rating->ratingDate)->format('d/m/Y') }}" disabled>
+                        <input class="usuario" type="text" value="{{ $rating->user->name }} {{ $rating->user->lastName }}" disabled>
+                        <input class="avaliacao" type="text" value="{{ $rating->comment }}" disabled>
+                        <div class="estrelas">
+                            <ul class="avaliacao">
+                                @for ($j = 1; $j <= 5; $j++) 
+                                    <li class="star-icon {{ $j <= $rating->starAmount ? 'ativo' : '' }}" data-avaliacao="{{ $j }}">
+                                        <i class="fa {{ $j <= $rating->starAmount ? 'fa-star' : 'fa-star-o' }}"></i>
+                                    </li>
+                                @endfor
+                            </ul>   
+                        </div>
+    
+                        <button class="contato">Contatar</button>
                     </div>
+                    @endforeach
                 
             </div>
 
@@ -53,17 +74,27 @@
         <div class="sugestoes" id="sugestoes">
             <div class="avali-left">
             <h1>Sugestões</h1>
+            <form method="GET">
+                <select name="filtro_sugestoes" onchange="this.form.submit()">
+                    <option value="" selected disabled> Ordenar por </option>
+                    <option value="name"> Código </option>
+                    <option value="date"> Data </option>
+                </select>
+            </form>
                     <div class="titulos">
                         <label class="txt_codigo">Código</label>
+                        <label class="txt_data">Data</label>
                         <label class="txt_usuario">Usuário</label>
                         <label class="txt_sugestao">Sugestão</label>
                     </div>
-                    <div class="campos">
-                    <input class="codigo" type="text" id="codigo" name="codigo"  value="" disabled>
-                    <input class="usuario" type="text" id="usuario" name="usuario"  value="" disabled>
-                    <input class="sugestao" type="text" id="sugestao" name="sugestao"  value="" disabled>
-                    
-                    </div>
+                    @foreach ($suggestions as $suggestion)
+                        <div class="campos">
+                            <input class="codigo" type="text" value="{{ $suggestion->suggestionId }}" disabled>
+                            <input class="data" type="text" value="{{ \Carbon\Carbon::parse($suggestion->suggestionDate)->format('d/m/Y') }}" disabled>
+                            <input class="usuario" type="text" value="{{ $suggestion->user->name }} {{ $suggestion->user->lastName }}" disabled>
+                            <input class="sugestao" type="text" value="{{ $suggestion->suggestion }}" disabled>
+                        </div>
+                    @endforeach
             </div>
 
             <div class="avali-right">
@@ -79,20 +110,30 @@
         <div class="denuncias" id="denuncias">
             <div class="avali-left">
             <h1>Denúncias</h1>
+            <form method="GET">
+                <select name="filtro_denuncias" onchange="this.form.submit()">
+                    <option value="" selected disabled> Ordenar por </option>
+                    <option value="name"> Código </option>
+                    <option value="date"> Data </option>
+                </select>
+            </form>
                     <div class="titulos">
                         <label class="txt_codigo">Código</label>
+                        <label class="txt_data">Data</label>
                         <label class="txt_usuario">Usuário</label>
                         <label class="txt_usuario">Profissional</label>
-                        <label class="txt_sugestao">Denúncia</label>
+                        <label class="txt_denuncia">Denúncia</label>
                     </div>
-                    <div class="campos">
-                    <input class="codigo" type="text" id="codigo" name="codigo"  value="" disabled>
-                    <input class="usuario" type="text" id="usuario" name="usuario"  value="" disabled>
-                    <input class="profissional" type="text" id="profissional" name="profissional"  value="" disabled>
-                    <input class="denuncia" type="text" id="denuncia" name="denuncia"  value="" disabled>
-                    <button class="contato">Avaliar Situação</button>
-
-                    </div>
+                    @foreach ($complaints as $complaint)
+                        <div class="campos">
+                            <input class="codigo" type="text" value="{{ $complaint->complaintId }}" disabled>
+                            <input class="data" type="text" value="{{ \Carbon\Carbon::parse($complaint->complaintDate)->format('d/m/Y') }}" disabled>
+                            <input class="usuario" type="text" value="{{ $complaint->user->name }} {{ $complaint->user->lastName }}" disabled>
+                            <input class="profissional" type="text" value="{{ $complaint->professional->user->name }} {{ $complaint->professional->user->lastName }}" disabled>
+                            <input class="denuncia" type="text" value="{{ $complaint->reason }}" disabled>
+                            <button class="contato">Avaliar Situação</button>
+                        </div>
+                    @endforeach
             </div>
 
             <div class="avali-right">
