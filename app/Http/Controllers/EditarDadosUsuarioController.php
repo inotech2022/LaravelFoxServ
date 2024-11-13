@@ -44,8 +44,9 @@ class EditarDadosUsuarioController extends Controller
             $imageName = time() . '-' . $image->getClientOriginalName();
             $image->move(public_path('image/upload'), $imageName);
             $imagePath = 'image/upload/' . $imageName;
+        }else {
+            $imagePath = $user->profilePic;
         }
-
 
         $user->update([
             'phone' => $request->input('telefone', $user->phone),

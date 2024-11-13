@@ -12,6 +12,9 @@ class ProfissionaisController extends Controller
         $cidades = Address::select('city')->distinct()->get();
 
         $query = vw_feedProf::where('serviceId', $serviceId);
+        $media = $profissional->average ?? 0; 
+        $mediaRedonda = round($media);
+    
 
         if ($request->filled('cidade')) {
             $query->where('city', $request->cidade);
@@ -22,7 +25,6 @@ class ProfissionaisController extends Controller
         }
 
         $professionals = $query->get();
-
-        return view('profissionais', compact('professionals', 'cidades', 'serviceId'));
+        return view('profissionais', compact('professionals', 'cidades', 'serviceId', 'media', 'mediaRedonda'));
     }
 }

@@ -37,7 +37,7 @@ class CadastroProfissionalController extends Controller
         $professional->services()->attach($services);
 
 
-        return redirect()->route('index')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');
+        return redirect()->route('login')->with('success', 'Parabéns, agora você é um profissional em nossa plataforma!');
     }
     public function getSubcategories($id)
 {

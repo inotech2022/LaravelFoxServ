@@ -78,5 +78,5 @@ class CadastroController extends Controller
         //Mail::to($user->email)->send(new ConfirmacaoCadastro($user));
 
         Auth::login($user);
-        return redirect('/')->with('success', 'Registro realizado com sucesso. Por favor, confirme seu e-mail.');
+        return redirect('/login')->with('success', 'Registro realizado com sucesso. Por favor, confirme seu e-mail.');
     }}

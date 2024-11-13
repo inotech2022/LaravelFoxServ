@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.header')
 
 @section('title', 'Home')
 @section('content')
@@ -27,7 +27,7 @@
             <img class="animated" id="img-right-modoEscuro" src="image/home-modoEscuro.svg">
             </div>
         </div>
-<script type='text/javascript'>document.addEventListener('DOMContentLoaded', function () {window.setTimeout(document.querySelector('svg').classList.add('animated'),1000);})</script>
+        <script type='text/javascript'>document.addEventListener('DOMContentLoaded', function () {window.setTimeout(document.querySelector('svg').classList.add('animated'),1000);})</script>
         <div class="servicos">
             <div class="categorias">
                 <h2>Nossos serviços</h2>
@@ -176,7 +176,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/PedroSilva.jpg" class="image-header">
+                                    <img src="image/upload/PedroSilva.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Pedro Silva</h4>
@@ -204,7 +204,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/JuliaGabriele.jpg" class="image-header">
+                                    <img src="image/upload/JuliaGabriele.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Julia Gabriele</h4>
@@ -232,7 +232,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/LucasAlmeida.jpg" class="image-header">
+                                    <img src="image/upload/LucasAlmeida.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Lucas Almeida</h4>
@@ -260,7 +260,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/CamilaSouza.jpg" class="image-header">
+                                    <img src="image/upload/CamilaSouza.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Camila Souza</h4>
@@ -358,5 +358,10 @@
                 </div>
             </div>
         </div>
-        @endsection
 
+        
+        @endsection
+        
+@section('footer')
+@include('layouts.footer')
+@endsection

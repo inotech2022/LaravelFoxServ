@@ -1,6 +1,6 @@
 @extends('layouts.cadastro')
 
-    @section('title', 'Novo Contrato')
+    @section('title', 'Redefinir Senha')
     
 <link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
     @section('content')
