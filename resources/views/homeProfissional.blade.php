@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.header')
 
 @section('title', 'Home')
 @section('nome')
@@ -342,3 +342,6 @@ não sei
                 </div>
             </div>
             @endsection
+@section('footer')
+@include('layouts.footer')
+@endsection

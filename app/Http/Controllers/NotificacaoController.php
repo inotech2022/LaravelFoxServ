@@ -12,9 +12,8 @@ use App\Models\User;
 
 class NotificacaoController extends Controller
 {
-    public function index()
+    public function getNotifications()
     {
-        // Obtém o ID do usuário logado e busca o ID do profissional associado
         $userId = Auth::id();
         $profissional = Professional::where('userId', $userId)->first();
 
@@ -24,17 +23,14 @@ class NotificacaoController extends Controller
 
         $professionalId = $profissional->professionalId;
 
-        // Buscar avaliações do profissional na view vw_ratings
         $avaliacoes = vw_ratings::where('professionalId', $professionalId)
             ->get(['name', 'lastName', 'profilePic']);
 
-        // Buscar curtidas das publicações do profissional na tabela user_publication (tabela associativa)
         $curtidas = User::join('user_publication', 'users.userId', '=', 'user_publication.userId')
             ->join('publications', 'user_publication.publicationId', '=', 'publications.publicationId')
             ->where('publications.professionalId', $professionalId)
             ->get(['users.name', 'users.lastName', 'users.profilePic']);
 
-
-        return view('meuPerfil', compact('curtidas', 'avaliacoes'));
+        return compact('curtidas', 'avaliacoes');
     }
 }

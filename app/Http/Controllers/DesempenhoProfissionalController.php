@@ -11,10 +11,13 @@ use App\Models\Contract;
 use App\Models\Rating; 
 use App\Models\Professional; 
 
-class DesempenhoProfissionalController extends Controller
+class DesempenhoProfissionalController extends NotificacaoController
 {
     public function index()
     {
+
+        $notificacoes = $this->getNotifications();
+
         $userId = Auth::id();
         $professional = Professional::where('userId', $userId)->first();
         $currentMonth = Carbon::now()->month;
@@ -101,7 +104,7 @@ class DesempenhoProfissionalController extends Controller
         'ganhosTotais', 'dataInicio', 'totalContratos', 'totalAvaliacoes', 
         'ganhosAtuais', 'contratosMes', 'avaliacoesMes', 'ganhosMensaisCompletos', 
         'currentDate', 'avaliacoesPorEstrela'
-        ));
+        )+ $notificacoes);
     }
     
 }
