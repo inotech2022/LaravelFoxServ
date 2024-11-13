@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.header')
 
 @section('title', 'Meu Desempenho')
 <link rel="stylesheet" href="{{ asset('css/desempenho.css') }}">
@@ -122,4 +122,7 @@
     });
 </script>
 
+@endsection
+@section('footer')
+@include('layouts.footer')
 @endsection

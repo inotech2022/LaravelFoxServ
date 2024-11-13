@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.header')
 
 @section('title', 'Profissionais')
 
@@ -81,4 +81,7 @@
         @endif
     </div>
 </div>
+@endsection
+@section('footer')
+@include('layouts.footer')
 @endsection
