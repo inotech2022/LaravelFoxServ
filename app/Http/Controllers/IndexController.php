@@ -16,18 +16,22 @@ class IndexController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Valida a entrada
-        $request->validate([
-            'sugestao' => 'required|string|max:255',
-        ]);
+{
+    // Valida a entrada
+    $request->validate([
+        'sugestao' => 'required|string|max:255',
+    ]);
 
-        // Cria um novo registro na tabela "suggestions"
-        $suggestion = new Suggestion();
-        $suggestion->suggestion = $request->input('sugestao');
-        $suggestion->save();
+    // Obtém o ID do usuário logado
+    $userId = Auth::id();
 
-        // Retorna uma resposta, como uma mensagem de sucesso ou redirecionamento
-        return back()->with('success', 'Sugestão recebida com sucesso!');
-    }
+    // Cria um novo registro na tabela "suggestions"
+    $suggestion = new Suggestion();
+    $suggestion->suggestion = $request->input('sugestao');
+    $suggestion->userId = $userId; // Associa o userId
+    $suggestion->save();
+
+    // Retorna uma resposta, como uma mensagem de sucesso ou redirecionamento
+    return back()->with('success', 'Sugestão recebida com sucesso!');
+}
 }

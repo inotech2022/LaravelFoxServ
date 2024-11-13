@@ -11,7 +11,8 @@ class Suggestion extends Model
 
     protected $fillable = [
         'suggestionId',
-        'suggestion'
+        'suggestion',
+        'userId'
     ];
 
     public $timestamps = false; 
