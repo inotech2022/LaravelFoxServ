@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <!-- cabeçalho -->
+    <!-- Cabeçalho -->
     <nav class="nav">
         <div class="container">
             @if (session('tipo') === 'comum')
@@ -78,40 +78,32 @@
                                     description
                                 </span>Meus Contratos</a>
 
-
-                            <li><span class="material-symbols-outlined">
-                                    notifications
-                                </span>Notificações
+                            <!-- Notificações -->
+                            <li>
+                                <span class="material-symbols-outlined">notifications</span> Notificações
                                 <ul>
+                                        @foreach ($curtidas ?? [] as $curtida)
+                                            <li>
+                                                <img class="foto_menu" src="{{ asset($curtida->profilePic) }}" alt="Foto do usuário">
+                                                {{ $curtida->name }} {{ $curtida->lastName }}<br>
+                                                Curtiu sua Publicação
+                                                <span class="material-symbols-outlined">favorite</span>
+                                            </li>
+                                            <hr>
+                                        @endforeach
 
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua
-                                        Publicação<span class="material-symbols-outlined">
-                                            favorite
-                                        </span></li>
-                                    <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu
-                                        serviço<span class="material-symbols-outlined">
-                                            star
-                                        </span></li>
-                                    <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua
-                                        Publicação<span class="material-symbols-outlined">
-                                            favorite
-                                        </span></li>
-                                    <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Avaliou seu
-                                        serviço<span class="material-symbols-outlined">
-                                            star
-                                        </span></li>
-                                    <hr>
-                                    <li><img class="foto_menu" src="image/foto_instagram.jpg"> Usuario <br>Curtiu sua
-                                        Publicação <span class="material-symbols-outlined">
-                                            favorite
-                                        </span></li>
-                                    <hr>
-
-                                </ul>
+                                        @foreach ($avaliacoes ?? [] as $avaliacao)
+                                            <li>
+                                                <img class="foto_menu" src="{{ asset($avaliacao->profilePic) }}" alt="Foto do usuário">
+                                                {{ $avaliacao->name }} {{ $avaliacao->lastName }}<br>
+                                                Avaliou seu serviço
+                                                <span class="material-symbols-outlined">star</span>
+                                            </li>
+                                            <hr>
+                                        @endforeach
+                                    </ul>
                             </li>
+
                             <a class="sair" href="{{ route('logout')}}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
                                     class="material-symbols-outlined">
@@ -152,9 +144,7 @@
         </div>
     </nav>
 
-
     @yield('content')
-
 
 </body>
 

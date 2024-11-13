@@ -24,6 +24,8 @@ use App\Http\Controllers\ProfissionaisController;
 use App\Http\Controllers\RedefinirSenhaController;
 use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
+use App\Http\Controllers\NotificacaoController;
+
 
 // Define a rota principal
 Route::get('/', [IndexController::class, 'index'])-> name('index');
@@ -67,6 +69,7 @@ Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name(
 Route::post('/redefinirSenha', [RedefinirSenhaController::class, 'updatePassword'])->name('redefinirSenha.update');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
 Route::get('/servicos/{serviceId}', [ServicosController::class, 'index'])->name('servicos');
+Route::get('/notificacoes', [NotificacaoController::class, 'index'])->name('notificacoes');
 Route::get('/confirmar-email/{token}', function ($token) {
     $user = User::where('token', $token)->firstOrFail();
     $user->email_verified_at = now();

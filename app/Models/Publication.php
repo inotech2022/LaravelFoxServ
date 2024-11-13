@@ -21,5 +21,9 @@ class Publication extends Model
         'professionalId'
     ];
 
+    public function likedByUsers()
+{
+    return $this->belongsToMany(User::class, 'user_publication', 'publicationId', 'userId');
+}
  
 }
