@@ -90,8 +90,7 @@
                     <input class="usuario" type="text" id="usuario" name="usuario"  value="" disabled>
                     <input class="profissional" type="text" id="profissional" name="profissional"  value="" disabled>
                     <input class="denuncia" type="text" id="denuncia" name="denuncia"  value="" disabled>
-                    <button class="contato">Avaliar Situação</button>
-
+                    <button onclick="window.location='{{ route('denunciaAdm') }}'" class="contato">Avaliar Situação</button>
                     </div>
             </div>
 

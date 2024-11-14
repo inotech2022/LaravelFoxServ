@@ -10,6 +10,7 @@ use App\Http\Controllers\CadastroProfissionalController;
 use App\Http\Controllers\CentralAdministradorController;
 use App\Http\Controllers\ContratoProfissionalController;
 use App\Http\Controllers\ContratoUsuarioController;
+use App\Http\Controllers\DenunciaAdmController;
 use App\Http\Controllers\DesempenhoProfissionalController;
 use App\Http\Controllers\EditarContratoController;
 use App\Http\Controllers\EditarDadosProfissionalController;
@@ -47,6 +48,7 @@ Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'ind
 Route::delete('/contrato/{protocol}', [ContratoProfissionalController::class, 'destroy'])->name('contrato.destroy');
 Route::get('/contrato/{protocol}/gerar-pdf', [ContratoProfissionalController::class, 'gerarPdf'])->name('contrato.gerarPdf');
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
+Route::get('/denunciaAdm', [DenunciaAdmController::class, 'index'])->name('denunciaAdm');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');
 Route::post('editarContrato/{protocol}', [EditarContratoController::class, 'update'])->name('editarContrato.update');
 Route::get('/editarContrato/{protocol}', [EditarContratoController::class, 'index'])->name('editarContrato');
@@ -64,6 +66,7 @@ Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('meuPerfil
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
 Route::post('/novaPublicacao', [NovaPublicacaoController::class, 'store'])->name('novaPublicacao.store');
 Route::get('/perfilProfissional/{professionalId}', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
+Route::post('/perfilProfissional', [PerfilProfissionalController::class, 'addFavorite'])->name('addFavorite');
 Route::get('/profissionais/{serviceId}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::delete('publicacao/{publicationId}', [MeuPerfilController::class, 'destroy'])->name('publicacao.destroy');
 Route::delete('/excluir-conta', [MeuPerfilController::class, 'destroyAccount'])->name('excluirConta');

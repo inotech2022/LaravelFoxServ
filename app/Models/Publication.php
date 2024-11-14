@@ -20,6 +20,9 @@ class Publication extends Model
         'caption',
         'professionalId'
     ];
-
+    public function user_publication()
+    {
+        return $this->belongsToMany(User::class, 'user_publication', 'publicationId', 'userId');
+    }
  
 }

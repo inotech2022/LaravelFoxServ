@@ -23,7 +23,7 @@
     <script src="{{ asset('js/modo_escuro.js') }}"></script>
     <script src="{{ asset('js/modal.js') }}"></script>
     <script src="{{ asset('js/coracao.js') }}"></script>
-    <script src="{{ asset('/js/avali-publi.js') }}"></script> 
+    <script src="{{ asset('js/avali-publi.js') }}"></script> 
         <!-- parte principal -->
         <div class="perfil">
 
@@ -118,11 +118,16 @@
                             <p class="legenda">{{ $publicacao->caption }}</p>
                             <div class="data_like">
                                 <p class="data">{{ \Carbon\Carbon::parse($publicacao->date)->format('d/m/Y') }}</p>
-                                <span class="material-symbols-outlined favorite-icon" id="favoriteIcon"
-                                    onclick="curtir()">
-                                    favorite
-                                </span>
-                                <span id="contador_" style="color: #666; margin-left: 5px;">
+                                
+    <div>
+        <button class="favorite-button" data-id="{{ $publicacao->publicationId }}">
+            @if(in_array($publicacao->publicationId, $isFavorite))
+                Remover dos Favoritos
+            @else
+                Adicionar aos Favoritos
+            @endif
+        </button>
+    </div>
 
                                 </span>
                             </div>
