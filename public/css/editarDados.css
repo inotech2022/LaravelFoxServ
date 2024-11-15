@@ -125,6 +125,13 @@ input[type="checkbox"] {
     flex-direction: column;
 
 }
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 30px;
+}
 .linha{
     display: flex;
     flex-direction: row;
@@ -153,22 +160,29 @@ input[type="checkbox"] {
     outline: none;
     box-sizing: border-box;
 }
-#numero{
-    width: 80px;
-    margin: 0 1px;
+#telefone{
+    width: 250px;
+}
+#cep{
+    width: 250px;
+}
+
+#cidade{
+    width: 220px;
 }
 #uf{
     width: 50px;
     padding: 15px 10px;
 }
-#endereco{
-    width: 300px;
-}
-#cep{
-    width: 200px;
-}
-#cidade{
+#bairro{
     width: 220px;
+}
+#numero{
+    width: 100px;
+    margin: 0 1px;
+}
+#endereco{
+    width: 400px;
 }
 .textfield>label {
     color: #000;
@@ -215,25 +229,51 @@ select {
     align-items: flex-start;
     justify-content: center;
     outline: none;
-}
-.foto_perfil {
-    padding: 5px 5px;
-    width: 99%;
+}#picture__input {
+    display: none;
+  }
+  
+  .picture {
+    width: 140px;
+    height: 230px;
+    aspect-ratio: 16/9;
+    background: #ddd;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-color: #d8d5d55e ;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
     border-radius: 30px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius:8px;
-    -ms-border-radius:8px;
-    -o-border-radius:8px;
-    font-size:14px;
-}
-.foto_perfil>label{
-    border-color: #d8d5d55e ;
-    border-radius: 30px;
-    background-color: #fff;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+  
+  .picture:hover {
+    color: #777;
+    background: #ccc;
+  }
+  
+  .picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+  }
+  
+  .picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .foto_perfil_img {
+    width: 140px; /* Ajuste o tamanho conforme necessário */
+    height: 230px;
+    border-radius: 30px; /* Deixa a imagem circular */
+    object-fit: cover;
 }
 
 

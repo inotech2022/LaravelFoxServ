@@ -28,7 +28,7 @@ body * {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 .logo-header h1 a {
@@ -116,13 +116,20 @@ input[type="checkbox"] {
     margin-bottom: 30px;
 }
 .card-form{
-    width: 60%;
+    width: 75%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    padding-left: 50px;
+}
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 30px;
 }
 .linha{
     display: flex;
@@ -141,7 +148,6 @@ input[type="checkbox"] {
 
 .textfield>input {
     height: 20px;
-    width: 100%;
     border-color: #d8d5d528;
     border-radius: 30px;
     padding: 15px;
@@ -152,13 +158,13 @@ input[type="checkbox"] {
     outline: none;
     box-sizing: border-box;
 }
-#numero{
-    width: 70px;
-    margin: 0 1px;
+#telefone{
+    width: 250px;
 }
 #cep{
-    width: 200px;
+    width: 250px;
 }
+
 #cidade{
     width: 220px;
 }
@@ -166,8 +172,15 @@ input[type="checkbox"] {
     width: 50px;
     padding: 15px 10px;
 }
+#bairro{
+    width: 220px;
+}
+#numero{
+    width: 100px;
+    margin: 0 1px;
+}
 #endereco{
-    width: 300px;
+    width: 400px;
 }
 .textfield>label {
     color: #000;
@@ -193,40 +206,6 @@ input[type="checkbox"] {
 }
 .textfield>input::placeholder {
     color: #858585;
-}
-
-select {
-    width: 99%;
-    height: 20px;
-    padding: 15px;
-    margin-right: 5px;
-    font-size: 14px;
-    border-radius: 30px;
-    background-color:#fff;
-    border-color: #d8d5d55e;
-    color: #000;
-    align-items: flex-start;
-    justify-content: center;
-    outline: none;
-}
-.foto_perfil {
-    padding: 5px 5px;
-    width: 99%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-color: #d8d5d55e ;
-    border-radius: 30px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius:8px;
-    -ms-border-radius:8px;
-    -o-border-radius:8px;
-    font-size:14px;
-}
-.foto_perfil>label{
-    border-color: #d8d5d55e ;
-    border-radius: 30px;
-    background-color: #fff;
 }
 
 
@@ -295,7 +274,52 @@ input[type="submit"] {
     margin-bottom: 10px;
 }
 
-
+#picture__input {
+    display: none;
+  }
+  
+  .picture {
+    width: 140px;
+    height: 230px;
+    aspect-ratio: 16/9;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+  
+  .picture:hover {
+    color: #777;
+    background: #ccc;
+  }
+  
+  .picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+  }
+  
+  .picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .foto_perfil_img {
+    width: 140px; /* Ajuste o tamanho conforme necessário */
+    height: 230px;
+    border-radius: 30px; /* Deixa a imagem circular */
+    object-fit: cover;
+}
 
 
 /* configurações do modo escuro*/

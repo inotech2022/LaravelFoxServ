@@ -44,8 +44,8 @@ class EditarDadosProfissionalController extends Controller
         if (!$user) {
             return redirect()->route('index')->with('error', 'Usuário não encontrado.');
         }
-        if ($request->hasFile('foto_perfil') && $request->file('foto_perfil')->isValid()) {
-            $image = $request->file('foto_perfil');
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $image = $request->file('image');
             $imageName = time() . '-' . $image->getClientOriginalName();
             $image->move(public_path('image/upload'), $imageName);
             $imagePath = 'image/upload/' . $imageName;
