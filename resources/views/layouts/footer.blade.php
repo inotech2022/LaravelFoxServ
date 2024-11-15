@@ -23,7 +23,7 @@
     <div class="footer_center">
         <div onclick="document.location='{{route('index')}}'" class="footer__image">
 
-            <img src="image/logo/foxserv-branco.PNG" alt="FoxServ" class="footer_image">
+            <img src="/image/logo/foxserv-branco.PNG" alt="FoxServ" class="footer_image">
 
             <div class="logo-header">
                 <h1 class="logo"><a href="{{route('index')}}"> Fox<span class="foxserv">Serv</span></a></h1>

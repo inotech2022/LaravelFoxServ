@@ -164,9 +164,9 @@ color: #fff;
   'opsz' 48
 }
 .fa {
-    padding: 20px;
+    padding: 2px;
     font-size: 30px;
-    width: 50px;
+    width: 24px;
     text-align: center;
     text-decoration: none;
   }
@@ -322,6 +322,12 @@ color: #fff;
 }
 .txt_usuario{
     width: 160px;
+    display: flex;
+    align-items: flex-start;
+
+}
+.txt_profissional{
+    width: 200px;
     display: flex;
     align-items: flex-start;
 
@@ -484,9 +490,10 @@ color: #fff;
     background-color: #018d4c;
 }
 /* Estilo para a lista de estrelas de avaliação */
-.avaliacao {
+.avaliacao-estrela {
     list-style: none;
-    padding-left: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin: 0;
     display: flex;
     align-items: center;

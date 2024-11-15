@@ -24,6 +24,7 @@ class AvaliacaoController extends Controller
         ]);
 
         $userId = Auth::id();
+        $user = auth()->user();
         $protocolo = $request->input('protocol');
 
         // Recuperando o professionalId a partir do protocolo na tabela contracts
@@ -44,6 +45,12 @@ class AvaliacaoController extends Controller
         $rating->professionalId = $contract->professionalId; // Salvando o professionalId
         $rating->save();
 
-        return redirect()->route('contratoUsuario')->with('success', 'Avaliação realizada com sucesso.');
+        if ($user->type === 'comum') {
+            return redirect()->route('contratoUsuario')->with('success', 'Avaliação realizada com sucesso.');
+        } elseif ($user->type === 'profissional') {
+            return redirect()->route('contratoProfissional')->with('success', 'Avaliação realizada com sucesso.');
+        }else{
+        return redirect()->route('/')->with('success', 'Avaliação realizada com sucesso.');
+        }
     }
 }

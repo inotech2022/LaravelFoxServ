@@ -163,7 +163,7 @@
         <div class="avaliacoes" id="avaliacoes">
         @if($contratados->isEmpty())
             <div class="naoEncontrada">
-                <h1>Você ainda não possui nenhum contrato</h1>
+                <h1>Você ainda não possui nenhum serviço contratado</h1>
                 <img src="image/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
                 <img src="image/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
             </div>

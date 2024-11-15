@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.header')
 
 @section('title', 'Meus Contratos')
 
@@ -113,4 +113,7 @@
         @endif
     </div>
 </div>
+@endsection
+@section('footer')
+@include('layouts.footer')
 @endsection

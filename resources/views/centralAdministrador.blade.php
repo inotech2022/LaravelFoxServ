@@ -46,15 +46,17 @@
                         <input class="data" type="text" value="{{ \Carbon\Carbon::parse($rating->ratingDate)->format('d/m/Y') }}" disabled>
                         <input class="usuario" type="text" value="{{ $rating->user->name }} {{ $rating->user->lastName }}" disabled>
                         <input class="avaliacao" type="text" value="{{ $rating->comment }}" disabled>
-                        <div class="estrelas">
-                            <ul class="avaliacao">
-                                @for ($j = 1; $j <= 5; $j++) 
-                                    <li class="star-icon {{ $j <= $rating->starAmount ? 'ativo' : '' }}" data-avaliacao="{{ $j }}">
-                                        <i class="fa {{ $j <= $rating->starAmount ? 'fa-star' : 'fa-star-o' }}"></i>
-                                    </li>
-                                @endfor
-                            </ul>   
-                        </div>
+                        <div class="estrela">
+                        <ul class="avaliacao-estrela">
+                            @for ($j = 1; $j <= 5; $j++) 
+                            @if ($j <=$rating->starAmount)
+                                <li class="star-icon ativo" data-avaliacao="{{ $j }}"><i class="fa fa-star"></i></li>
+                            @else
+                                <li class="star-icon" data-avaliacao="{{ $j }}"><i class="fa fa-star-o"></i></li>
+                            @endif
+                            @endfor
+                        </ul>
+                    </div>
     
                         <button class="contato">Contatar</button>
                     </div>
@@ -121,7 +123,7 @@
                         <label class="txt_codigo">Código</label>
                         <label class="txt_data">Data</label>
                         <label class="txt_usuario">Usuário</label>
-                        <label class="txt_usuario">Profissional</label>
+                        <label class="txt_profissional">Profissional</label>
                         <label class="txt_denuncia">Denúncia</label>
                     </div>
                     @foreach ($complaints as $complaint)
