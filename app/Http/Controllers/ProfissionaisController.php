@@ -5,10 +5,12 @@ use App\Models\vw_feedProf;
 use Illuminate\Http\Request;
 use App\Models\Address;
 
-class ProfissionaisController extends Controller
+class ProfissionaisController extends NotificacaoController
 {
     public function index(Request $request, $serviceId) 
     {
+        $notificacoes = $this->getNotifications();
+
         $cidades = Address::select('city')->distinct()->get();
 
         $query = vw_feedProf::where('serviceId', $serviceId);
@@ -25,6 +27,6 @@ class ProfissionaisController extends Controller
         }
 
         $professionals = $query->get();
-        return view('profissionais', compact('professionals', 'cidades', 'serviceId', 'media', 'mediaRedonda'));
+        return view('profissionais', compact('professionals', 'cidades', 'serviceId', 'media', 'mediaRedonda') + $notificacoes);
     }
 }

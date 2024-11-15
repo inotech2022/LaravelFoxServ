@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
             avaliacoes.style.display = "flex";
             sugestoes.style.display = "none";
             denuncias.style.display = "none";
+            localStorage.setItem("ultimaSecao", "avaliacoes"); // Armazena a seção
         }
     }
 
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             avaliacoes.style.display = "none";
             sugestoes.style.display = "flex";
             denuncias.style.display = "none";
+            localStorage.setItem("ultimaSecao", "sugestoes"); // Armazena a seção
         }
     }
 
@@ -28,9 +30,23 @@ document.addEventListener("DOMContentLoaded", function() {
             avaliacoes.style.display = "none";
             sugestoes.style.display = "none";
             denuncias.style.display = "flex";
+            localStorage.setItem("ultimaSecao", "denuncias"); // Armazena a seção
         }
     }
 
+    // Função para restaurar a última seção visualizada
+    function restaurarSecao() {
+        const ultimaSecao = localStorage.getItem("ultimaSecao");
+        if (ultimaSecao === "sugestoes") {
+            funcaoAparecerSugestoes();
+        } else if (ultimaSecao === "denuncias") {
+            funcaoAparecerDenuncias();
+        } else {
+            funcaoAparecerAvaliacoes(); // Padrão para Avaliações
+        }
+    }
+
+    // Configura os eventos de clique para mudar de seção
     if (avali && sugest && denun) {
         avali.addEventListener("click", funcaoAparecerAvaliacoes);
         sugest.addEventListener("click", funcaoAparecerSugestoes);
@@ -38,4 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.error("Um ou mais elementos de botão não foram encontrados.");
     }
+
+    // Chama a função para restaurar a seção ao carregar a página
+    restaurarSecao();
 });

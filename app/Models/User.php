@@ -40,12 +40,14 @@ class User extends Authenticatable
 
 
     public function address()
-{
-    return $this->hasOne(Address::class, 'userId', 'userId'); // Verifique se as chaves estão corretas
-} 
+    {
+        return $this->hasOne(Address::class, 'userId', 'userId'); // Verifique se as chaves estão corretas
+    } 
 
-public function user_publication()
-{
-    return $this->belongsToMany(Publication::class, 'user_publication', 'userId', 'publicationId');
-}
+    public function likedPublications()
+    {
+        return $this->belongsToMany(Publication::class, 'user_publication', 'userId', 'publicationId');
+    }
+
+
 }

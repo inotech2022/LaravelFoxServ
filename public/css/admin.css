@@ -170,7 +170,26 @@ color: #fff;
     text-align: center;
     text-decoration: none;
   }
+  select{
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    justify-content: center;
+    margin-right: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color:#89d0af6c;
+    border-color: #d8d5d55e;
+    color: #000;
+    outline: none;
+    margin-bottom: 50px;
 
+}
+
+.dark select{
+    background-color: #6c618b3b;
+    color: #fff;
+  }
 .controle{
     width: 100vw;
     display: flex;
@@ -290,13 +309,19 @@ color: #fff;
     padding-left: 10px;
 }
 .txt_codigo{
-    width: 100px;
+    width: 70px;
+    display: flex;
+    align-items: flex-start;
+
+}
+.txt_data{
+    width: 110px;
     display: flex;
     align-items: flex-start;
 
 }
 .txt_usuario{
-    width: 200px;
+    width: 160px;
     display: flex;
     align-items: flex-start;
 
@@ -313,7 +338,12 @@ color: #fff;
     align-items: flex-start;
 
 }
+.txt_denuncia{
+    width: 350px;
+    display: flex;
+    align-items: flex-start;
 
+}
 .dark .titulos>input{
     color: #fff;
 }
@@ -326,7 +356,7 @@ color: #fff;
     color: #fff;
 }
 .codigo{
-    width: 100px;
+    width: 70px;
     height: 10px;
     display: flex;
     align-items: flex-start;
@@ -339,9 +369,26 @@ color: #fff;
     font-size: 14px;
     outline: none;
     box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.data{
+    width: 105px;
+    height: 10px;
+    display: flex;
+    align-items: flex-start;
+    border-color: #d8d5d528;
+    border-radius: 30px;
+    padding: 15px;
+    margin-right: 5px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 .usuario{
-    width: 200px;
+    width: 150px;
     height: 10px;
     display: flex;
     align-items: flex-start;
@@ -436,7 +483,25 @@ color: #fff;
 .dark .contato:hover{
     background-color: #018d4c;
 }
+/* Estilo para a lista de estrelas de avaliação */
+.avaliacao {
+    list-style: none;
+    padding-left: 30px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
 
+/* Estilo para cada item de estrela */
+.star-icon {
+    font-size: 24px;
+    color: #f39c12; /* Cor das estrelas não ativas */
+    cursor: pointer;
+}
+
+.star-icon.ativo {
+    color: #f39c12; /* Cor das estrelas ativas */
+}
 
 
 .sugestoes{

@@ -12,10 +12,13 @@ use App\Models\vw_contracts;
 use App\Models\Rating;
 use TCPDF;
 
-class ContratoProfissionalController extends Controller
+class ContratoProfissionalController extends NotificacaoController
 {
     public function index(Request $request)
     {
+
+        $notificacoes = $this->getNotifications();
+
         $userId = Auth::id();
         $professional = Professional::where('userId', $userId)->first();
         
@@ -71,7 +74,7 @@ class ContratoProfissionalController extends Controller
             }
         }
 
-        return view('contratoProfissional', compact('contratos', 'contratados'));
+        return view('contratoProfissional', compact('contratos', 'contratados') + $notificacoes);
     }
     public function gerarPdf($protocol)
     {
@@ -167,5 +170,7 @@ EOD;
         }
 
         return redirect()->route('contratoProfissional')->with('error', 'Contrato não encontrado.');
+
+        
     }
 }

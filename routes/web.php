@@ -26,6 +26,8 @@ use App\Http\Controllers\ProfissionaisController;
 use App\Http\Controllers\RedefinirSenhaController;
 use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
+use App\Http\Controllers\NotificacaoController;
+
 
 // Define a rota principal
 Route::get('/', [IndexController::class, 'index'])-> name('index');
@@ -70,6 +72,7 @@ Route::post('/perfilProfissional', [PerfilProfissionalController::class, 'addFav
 Route::get('/profissionais/{serviceId}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::delete('publicacao/{publicationId}', [MeuPerfilController::class, 'destroy'])->name('publicacao.destroy');
 Route::delete('/excluir-conta', [MeuPerfilController::class, 'destroyAccount'])->name('excluirConta');
+Route::get('/getNotificacoes', [NotificacaoController::class, 'getNotifications'])->name('getNotificacoes');
 Route::get('/redefinirSenha', [RedefinirSenhaController::class, 'index'])->name('redefinirSenha');
 Route::post('/redefinirSenha', [RedefinirSenhaController::class, 'updatePassword'])->name('redefinirSenha.update');
 Route::get('/sejaProfissional', [SejaProfissionalController::class, 'index'])->name('sejaProfissional');
