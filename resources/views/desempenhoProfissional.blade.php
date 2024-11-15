@@ -51,7 +51,7 @@
             <canvas id="pizzaChart"></canvas>
         </section>
         <section class="reviews">
-            <ul>
+            <ul class="star-rating">
                 <li><span style="color: #FF0000;">★</span> 1 Estrela</li>
                 <li><span style="color: #FF7F00;">★</span> 2 Estrelas</li>
                 <li><span style="color: #FFFF00;">★</span> 3 Estrelas</li>
@@ -67,6 +67,9 @@
             <section class="chart">
                 <div class="grafico-container">
                     <div class="valores-laterais">
+                        <div>700</div>
+                        <div>600</div>
+                        <div>500</div>    
                         <div>400</div>
                         <div>300</div>
                         <div>200</div>
