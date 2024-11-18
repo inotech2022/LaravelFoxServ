@@ -22,6 +22,11 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $tipoUsuario = auth()->user()->type; // Captura o tipo
     session(['tipo' => $tipoUsuario]); 
+
+
+    if ($tipoUsuario === 'adm') {
+        return redirect()->route('centralAdministrador');
+    }
             return redirect()->intended('/'); 
             
         }

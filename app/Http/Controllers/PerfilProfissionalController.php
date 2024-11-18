@@ -19,23 +19,28 @@ class PerfilProfissionalController extends Controller
     if (!$profissional) {
         return redirect()->back()->with('error', 'Profissional não encontrado.');
     }
-
+    $userId = Auth::id();
    
     $media = $profissional->average ?? 0; 
     $mediaRedonda = round($media);
     
-    $publicacoes = Publication::where('professionalId', $profissional->professionalId)->get();
+    $publicacoes = Publication::where('professionalId', $profissional->professionalId)
+    ->get()
+    ->map(function ($publicacao) use ($userId) {
+        $publicacao->curtidas = \DB::table('user_publication')
+            ->where('publicationId', $publicacao->publicationId)
+            ->count();
+
+        $publicacao->curtida = \DB::table('user_publication')
+            ->where('userId', $userId)
+            ->where('publicationId', $publicacao->publicationId)
+            ->exists();
+
+        return $publicacao;
+    });
         $avaliacoes = vw_ratings::where('professionalId', $profissional->professionalId)->get();
         $servicos = vw_feedProf::getServicosPorProfissional($profissional->professionalId);
         $tipoServicos = vw_feedProf::getCategoriaPorProfissional($profissional->professionalId);
-        
-        $publicationIds = $publicacoes->pluck('publicationId')->toArray();
-
-        $isFavorite = Auth::user()
-            ->user_publication() // supondo que esta é a relação de favoritos
-            ->whereIn('user_publication.publicationId', $publicationIds) // especificando a tabela 'user_publication'
-            ->pluck('user_publication.publicationId') // especificando a tabela na coluna do pluck
-            ->toArray();
 
         return view('perfilProfissional', [
             'profissional' => $profissional,
@@ -45,50 +50,54 @@ class PerfilProfissionalController extends Controller
             'mediaRedonda' => $mediaRedonda,
             'servicos' => $servicos,
             'tipoServicos' => $tipoServicos,
-            'isFavorite'=>$isFavorite,
         ]);
 }
-public function addFavorite(Request $request)
+public function toggleLike(Request $request)
 {
-    $user = Auth::user(); // Pegando o usuário autenticado
+    // Valida se os dados necessários foram enviados
+    $request->validate([
+        'publicationId' => 'required|exists:publications,publicationId',
+    ]);
 
-    if (!$user) {
-        return response()->json([
-            'success' => false,
-            'message' => 'Usuário não autenticado. Por favor, faça login para favoritar publicações.'
-        ], 401);
-    }
+    $userId = Auth::id(); // Obtém o ID do usuário logado
+    $publicationId = $request->input('publicationId');
 
-    $publicationId = $request->input('publicationId'); // ID da publicação a ser favoritada
+    // Verifica se o usuário já curtiu a publicação
+    $curtida = \DB::table('user_publication')
+        ->where('userId', $userId)
+        ->where('publicationId', $publicationId)
+        ->first();
 
-    // Verificar se a publicação existe
-    $publication = Publication::find($publicationId);
-
-    if (!$publication) {
-        return response()->json([
-            'success' => false,
-            'message' => 'Publicação não encontrada.'
-        ], 404);
-    }
-
-    // Verificar se já está favoritado
-    $isFavorite = $user->user_publication()->where('publicationId', $publicationId)->exists();
-
-    if ($isFavorite) {
-        // Se já for favorito, remover
-        $user->user_publication()->detach($publicationId); // Remove o favorito
-        $message = 'Publicação removida dos favoritos.';
+    if ($curtida) {
+        // Remover a curtida
+        \DB::table('user_publication')
+            ->where('userId', $userId)
+            ->where('publicationId', $publicationId)
+            ->delete();
+        $curtido = false;
     } else {
-        // Se não for favorito, adicionar
-        $user->user_publication()->attach($publicationId); // Adiciona o favorito
-        $message = 'Publicação adicionada aos favoritos.';
+        // Adicionar a curtida
+        \DB::table('user_publication')->insert([
+            'userId' => $userId,
+            'publicationId' => $publicationId
+        ]);
+        $curtido = true;
     }
 
+    // Contar curtidas após a ação
+    $contador = \DB::table('user_publication')
+        ->where('publicationId', $publicationId)
+        ->count();
+
+    // Retornar a resposta para o JavaScript
     return response()->json([
-        'success' => true,
-        'message' => $message
+        'curtidas' => $contador,
+        'curtido' => $curtido,
     ]);
 }
+
+
+
 
 
 public function store(Request $request)

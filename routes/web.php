@@ -68,7 +68,7 @@ Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('meuPerfil
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
 Route::post('/novaPublicacao', [NovaPublicacaoController::class, 'store'])->name('novaPublicacao.store');
 Route::get('/perfilProfissional/{professionalId}', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
-Route::post('/perfilProfissional', [PerfilProfissionalController::class, 'addFavorite'])->name('addFavorite');
+Route::post('/toggle-like', [PerfilProfissionalController::class, 'toggleLike'])->name('toggle.like');
 Route::get('/profissionais/{serviceId}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::delete('publicacao/{publicationId}', [MeuPerfilController::class, 'destroy'])->name('publicacao.destroy');
 Route::delete('/excluir-conta', [MeuPerfilController::class, 'destroyAccount'])->name('excluirConta');

@@ -202,7 +202,7 @@ color: #fff;
   }
 
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
 
   .dark .foxserv:hover{
@@ -210,7 +210,7 @@ color: #fff;
   }
   .dark .logo-header a.current,
   .dark .logo-header a:hover {
-      color: #00ff88;
+      color: #46c285;
   }
 
   .dark .right{
@@ -240,5 +240,5 @@ color: #fff;
     background-color: #51486994;
  }
  .dark .servico:hover{
-    background-color: #00ff88;
+    background-color: #46c285;
  }

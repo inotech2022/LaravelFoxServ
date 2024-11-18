@@ -21,7 +21,6 @@
 </head>
 
 <body>
-<script src="/js/modo_escuro.js"></script>
     <!-- Cabeçalho -->
     <nav class="nav">
         <div class="container">

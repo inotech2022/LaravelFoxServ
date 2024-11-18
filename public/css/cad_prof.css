@@ -390,7 +390,7 @@ color: #fff;
   }
 
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
 
   .dark .foxserv:hover{
@@ -398,7 +398,7 @@ color: #fff;
   }
   .dark .logo-header a.current,
   .dark .logo-header a:hover {
-      color: #00ff88;
+      color: #46c285;
   }
 
   .dark .right{
@@ -432,13 +432,13 @@ color: #fff;
     border:none;
 }
 .dark .material-symbols-outlined{
-    background-color: #00ff88;
+    background-color: #46c285;
 }
 .dark input[type="submit"]{
-    background-color: #00ff88;
+    background-color: #46c285;
 }
 .dark .btn-login{
-    background-color: #00ff88;
+    background-color: #46c285;
 }
 .dark .btn-login:hover {
     background-color: #018d4c;
@@ -448,7 +448,7 @@ color: #fff;
 }
 
 .dark .cadastrar_se {
-    color: #00ff88;
+    color: #46c285;
 }
 
 .dark .img-right-modoClaro{

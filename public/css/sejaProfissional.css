@@ -239,7 +239,7 @@ color: #fff;
   }
 
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
 
   .dark .foxserv:hover{
@@ -247,20 +247,20 @@ color: #fff;
   }
   .dark .logo-header a.current,
   .dark .logo-header a:hover {
-      color: #00ff88;
+      color: #46c285;
   }
   .dark .botao>a{
 color: #fff;
   }
 .dark button{
-    background-color: #00ff88;
+    background-color: #46c285;
 }
 .dark .card, .dark .card2{
     background-color: #201B2C;
-    border-color: #00ff88;
+    border-color: #46c285;
 }
 .dark .icone{
-    background-color: #00ff88;
+    background-color: #46c285;
 }
 .dark .texto>h1{
     color: #fff;

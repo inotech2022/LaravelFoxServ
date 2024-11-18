@@ -638,10 +638,10 @@ flex-direction: column;
     color:#fff;
   }
 .dark  .btn-flutuante{
-  background-color: #00ff88;
+  background-color: #46c285;
 }
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
   .dark .foxserv:hover{
     color: #fff;
@@ -651,16 +651,16 @@ flex-direction: column;
   }
   .dark .nav a.current,
   .dark .nav a:hover {
-      color: #00ff88;
+      color: #46c285;
   }
   .dark .editar{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .senha{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .contratos{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .editar:hover,
   .dark .contratos:hover,
@@ -672,10 +672,10 @@ background-color: #008b4a;
 background-color: #008b4a;
   }
   .dark .publi{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .avali{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .card_perfil{
     background-color: #6c618b2c;
@@ -684,5 +684,5 @@ background-color: #008b4a;
     background-color: #6c618b2c;
   }
   .dark .aspas>.material-symbols-outlined{
-    color: #00ff88;
+    color: #46c285;
   }

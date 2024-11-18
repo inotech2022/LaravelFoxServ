@@ -634,7 +634,7 @@ hr {
 }
 
 .dark .foxserv{
-  color: #00ff88;
+  color: #46c285;
 }
 .dark .foxserv:hover{
   color: #fff;
@@ -644,7 +644,7 @@ hr {
 }
 .dark .nav a.current,
 .dark .nav a:hover {
-    color: #00ff88;
+    color: #46c285;
 }
 .dark .inicio-left>p{
   color: #fff;
@@ -653,7 +653,7 @@ hr {
   background-color: #43395D;
 }
 .dark .pesquisa button{
-  background-color: #00ff88;
+  background-color: #46c285;
 }
 .dark .pesquisa button:hover{
   background-color: #008a49;
@@ -669,16 +669,16 @@ hr {
     color: #fff;
 }
 .dark .sugestao input[type="submit"]{
-  background-color: #00ff88;
+  background-color: #46c285;
 }
 .dark .sugestao input[type="submit"]:hover{
   background-color: #008a49;
 }
 .dark .avaliacoes>h2{
-  color: #00ff88;
+  color: #46c285;
 }
 .dark .aspas>.material-symbols-outlined{
-  color: #00ff88;
+  color: #46c285;
 }
 .dark .pergunta{
   color: #fff;
@@ -717,5 +717,5 @@ width: 360px;
 }
 
 .dark button{
-    background-color: #00ff88;
+    background-color: #46c285;
 }
