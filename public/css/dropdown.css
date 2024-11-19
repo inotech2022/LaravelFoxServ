@@ -75,7 +75,9 @@
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     max-width: 40px;
+    min-width: 40px;
     max-height: 40px;
+    min-height: 40px;
     margin-right: 5px;
 }
 
