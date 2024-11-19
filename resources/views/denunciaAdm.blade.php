@@ -34,8 +34,9 @@
             </div>
 
             <!-- Avaliações recebidas -->
-            @foreach ($ratings as $rating)
+           <h2>Avaliações Recebidas</h2>
                 <div class="card-aval">
+                @foreach ($ratings as $rating)
                     <div class="header-aval">
                         <img src="/{{ $rating->profilePic }}" alt="Foto do Cliente">
                         <div class="info-aval">
@@ -59,8 +60,9 @@
                     <div class="aval">
                         <p>{{ $rating->comment }}</p>
                     </div>
+                    @endforeach
+
                 </div>
-            @endforeach
         </div>
 
         <div class="right">

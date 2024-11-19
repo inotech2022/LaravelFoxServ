@@ -58,7 +58,7 @@
                         </ul>
                     </div>
     
-                        <button class="contato">Contatar</button>
+                        <button onclick="window.location.href='mailto:{{ $rating->user->email }}'"  class="contato">Contatar</button>
                     </div>
                     @endforeach
                 

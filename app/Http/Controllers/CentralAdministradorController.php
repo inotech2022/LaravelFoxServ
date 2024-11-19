@@ -14,7 +14,7 @@ class CentralAdministradorController extends Controller
     public function index(Request $request)
     {
         // Inicializar query para sugestões com relação de usuário
-        $suggestionsQuery = Suggestion::with('user:userId,name,lastName');
+        $suggestionsQuery = Suggestion::with('user:userId,name,lastName,phone');
 
         // Filtro específico para sugestões
         if ($request->has('filtro_sugestoes')) {
