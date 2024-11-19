@@ -70,7 +70,7 @@ Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name
 Route::post('/novaPublicacao', [NovaPublicacaoController::class, 'store'])->name('novaPublicacao.store');
 Route::get('/perfilProfissional/{professionalId}', [PerfilProfissionalController::class, 'index'])->name('perfilProfissional');
 Route::post('/toggle-like', [PerfilProfissionalController::class, 'toggleLike'])->name('toggle.like');
-Route::get('/profissionais/{serviceId}', [ProfissionaisController::class, 'index'])->name('profissionais');
+Route::get('/profissionais/{serviceId?}', [ProfissionaisController::class, 'index'])->name('profissionais');
 Route::delete('publicacao/{publicationId}', [MeuPerfilController::class, 'destroy'])->name('publicacao.destroy');
 Route::delete('/excluir-conta', [MeuPerfilController::class, 'destroyAccount'])->name('excluirConta');
 Route::get('/getNotificacoes', [NotificacaoController::class, 'getNotifications'])->name('getNotificacoes');
@@ -86,3 +86,5 @@ Route::get('/confirmar-email/{token}', function ($token) {
 
     return redirect('/')->with('success', 'E-mail confirmado com sucesso!');
 });
+
+

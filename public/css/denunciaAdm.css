@@ -307,8 +307,13 @@ color: #fff;
     justify-content: flex-start;
     margin: 5px;
     padding-left: 0;
+    list-style: none;
   }
-
+  .estrela-av li {
+    list-style: none;
+    padding: 0;
+    margin: 1px;
+}
   .avaliacao {
     display: inline-flex;
     text-align-last: left;
@@ -325,9 +330,7 @@ color: #fff;
     display: flex;
     align-items: center;
 }
-::marker {
-    display: none;
-}
+
 /* Estilo para cada item de estrela */
 .star-icon {
     font-size: 24px;

@@ -7,39 +7,55 @@ use App\Models\Address;
 
 class ProfissionaisController extends NotificacaoController
 {
-    public function index(Request $request, $serviceId)
-    {
-        // Obter notificações
-        $notificacoes = $this->getNotifications();
+    public function index(Request $request, $serviceId = null)
+{
+    $searchTerm = $request->input('nomeServico'); // Busca por nome do profissional ou serviço
+    $cidade = $request->input('cidade');           // Filtro de cidade
+    $media = $request->input('media');             // Filtro de avaliação
 
-        if (!is_array($notificacoes)) {
-            $notificacoes = [];
-        }
+    // Criar a consulta inicial
+    $query = vw_feedProf::query();
 
-        // Obter cidades
-        $cidades = Address::select('city')->distinct()->get();
-
-        // Query para buscar profissionais
-        $query = vw_feedProf::where('serviceId', $serviceId);
-
-        if ($request->filled('cidade')) {
-            $query->where('city', $request->cidade);
-        }
-
-        if ($request->filled('media')) {
-            $query->where('average', '>=', $request->media);
-        }
-
-        // Obter profissionais e arredondar a média
-        $professionals = $query->get();
-        $professionals->each(function ($prof) {
-            $prof->averageRounded = round($prof->average); // Adiciona o campo arredondado
+    // Verifique se a variável $searchTerm existe
+    if ($searchTerm) {
+        $query->where(function ($query) use ($searchTerm) {
+            // Nome do profissional
+            $query->where('name', 'LIKE', '%' . $searchTerm . '%')
+                  // Nome do serviço
+                  ->orWhere('serviceName', 'LIKE', '%' . $searchTerm . '%')
+                  // Tipo de serviço
+                  ->orWhere('serviceTypeName', 'LIKE', '%' . $searchTerm . '%'); // Use o nome correto da coluna
         });
-
-        // Retornar view
-        return view('profissionais', array_merge(
-            compact('professionals', 'cidades', 'serviceId'),
-            $notificacoes
-        ));
     }
+
+    // Filtro por serviceId (se disponível)
+    if ($serviceId) {
+        $query->where('serviceId', $serviceId);
+    }
+
+    // Filtro por cidade
+    if ($cidade) {
+        $query->where('city', $cidade);
+    }
+
+    // Filtro por avaliação (média)
+    if ($media) {
+        $query->where('average', '>=', $media);
+    }
+
+    // Selecionar os profissionais de forma distinta para evitar duplicação
+    $professionals = $query->distinct('professionalId')->get();
+
+    // Adicionar o campo arredondado para cada profissional
+    $professionals->each(function ($prof) {
+        $prof->averageRounded = round($prof->average); // Adiciona o campo arredondado
+    });
+
+    // Obter as cidades para o filtro
+    $cidades = Address::select('city')->distinct()->get();
+
+    // Retornar a view com os profissionais e filtros
+    return view('profissionais', compact('professionals', 'cidades', 'cidade', 'media', 'serviceId'));
+}
+
 }

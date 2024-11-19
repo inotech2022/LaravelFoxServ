@@ -9,10 +9,12 @@ use App\Models\Suggestion;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
 
-        return view('index');
+        $searchTerm = $request->input('nomeServico'); // termo de pesquisa
+    $serviceId = $request->input('serviceId');
+        return view('index', compact('searchTerm', 'serviceId'));
     }
 
     public function store(Request $request)
