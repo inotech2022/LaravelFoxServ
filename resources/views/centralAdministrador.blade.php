@@ -133,7 +133,7 @@
                             <input class="usuario" type="text" value="{{ $complaint->user->name }} {{ $complaint->user->lastName }}" disabled>
                             <input class="profissional" type="text" value="{{ $complaint->professional->user->name }} {{ $complaint->professional->user->lastName }}" disabled>
                             <input class="denuncia" type="text" value="{{ $complaint->reason }}" disabled>
-                            <button class="contato">Avaliar Situação</button>
+                            <button onclick="document.location='/denunciaAdm/{{ $complaint->professionalId }}'" class="contato">Avaliar Situação</button>
                         </div>
                     @endforeach
             </div>
