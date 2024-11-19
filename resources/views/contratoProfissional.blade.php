@@ -5,7 +5,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('/css/contratoProfissional.css') }}">
-<link rel="stylesheet" href="{{ asset('/css/modal.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 <script src="{{ asset('js/modal.js') }}" defer></script>
 <script src="{{ asset('js/avali-publi.js') }}" defer></script>
 
@@ -131,18 +131,25 @@
                             </button>
 
                             <!-- Modal de Confirmação -->
-                            <div class="modal" id="modal-{{ $contrato->protocol }}">
-                                <div class="modal-content">
-                                    <h2>Confirmação</h2>
-                                    <p>Tem certeza de que deseja excluir este contrato?</p>
-                                    <form method="POST" action="{{ route('contrato.destroy', ['protocol' => $contrato->protocol]) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn-confirmar">Sim</button>
-                                        <button type="button" class="btn-cancelar" onclick="fechaModal('modal-{{ $contrato->protocol }}')">Não</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <div id="modal-{{ $contrato->protocol }}" class="modal">
+    <div class="alert-modal">
+        <div class="modal-header">
+            <h1><span class="material-symbols-outlined">warning</span></h1>
+        </div>
+        <div class="modal-body">
+            <h2>Tem certeza que deseja excluir este contrato?</h2>
+        </div>
+        <div class="modal-footer">
+            <!-- Formulário de exclusão do contrato -->
+            <form method="POST" action="{{ route('contrato.destroy', ['protocol' => $contrato->protocol]) }}" style="display: inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn-modal">Sim</button>
+            </form>
+            <button class="btn-modal" onclick="closeModal('modal-{{ $contrato->protocol }}')">Cancelar</button>
+        </div>
+    </div>
+</div>
 
                             <!-- Formulário de exclusão oculto -->
                             <form id="deleteForm-{{ $contrato->protocol }}" method="POST" action="{{ route('contrato.destroy', ['protocol' => $contrato->protocol]) }}" style="display: none;">

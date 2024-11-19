@@ -1,10 +1,12 @@
 @extends('layouts.cadastro')
 
-@section('title', 'Novo Contrato')
+@section('title', 'Editar Contrato')
 
 <link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
 
 @section('content')
+
+
 <form class="card-form" action="{{ route('editarContrato.update', ['protocol' => $contract->protocol]) }})}}" method="POST" enctype="multipart/form-data">
     @csrf<!-- Isso indica que será um POST para atualizar o contrato -->
 

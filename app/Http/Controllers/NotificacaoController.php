@@ -24,12 +24,12 @@ class NotificacaoController extends Controller
         $professionalId = $profissional->professionalId;
 
         $avaliacoes = vw_ratings::where('professionalId', $professionalId)
-            ->get(['name', 'lastName', 'profilePic']);
+            ->get(['name', 'lastName', 'profilePic', 'ratingDate']);
 
         $curtidas = User::join('user_publication', 'users.userId', '=', 'user_publication.userId')
             ->join('publications', 'user_publication.publicationId', '=', 'publications.publicationId')
             ->where('publications.professionalId', $professionalId)
-            ->get(['users.name', 'users.lastName', 'users.profilePic']);
+            ->get(['users.name', 'users.lastName', 'users.profilePic', 'user_publication.likeDate']);
 
         return compact('curtidas', 'avaliacoes');
     }

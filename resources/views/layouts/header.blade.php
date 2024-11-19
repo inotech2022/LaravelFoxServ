@@ -88,8 +88,8 @@
                                             <li>
                                                 <img class="foto_menu" src="{{ asset($curtida->profilePic) }}" alt="Foto do usuário">
                                                 {{ $curtida->name }} {{ $curtida->lastName }}<br>
-                                                Curtiu sua Publicação<br>
-                                                
+                                                Curtiu sua Publicação
+                                                {{ \Carbon\Carbon::parse($curtida->likeDate)->format('d/m/Y') }}
                                                 <span class="material-symbols-outlined">favorite</span>
                                             </li>
                                             <hr>
@@ -99,8 +99,8 @@
                                             <li>
                                                 <img class="foto_menu" src="{{ asset($avaliacao->profilePic) }}" alt="Foto do usuário">
                                                 {{ $avaliacao->name }} {{ $avaliacao->lastName }}<br>
-                                                Avaliou seu serviço<br>
-                                                {{ $avaliacao->ratingDate }}
+                                                Avaliou seu serviço <br>
+                                               {{ \Carbon\Carbon::parse($avaliacao->ratingDate)->format('d/m/Y') }}
                                                 <span class="material-symbols-outlined">star</span>
                                             </li>
                                             <hr>
