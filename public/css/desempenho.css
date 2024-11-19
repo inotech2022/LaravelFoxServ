@@ -177,7 +177,7 @@ input[type="checkbox"] {
 .card h2 {
     font-size: 30px;
     margin: 5px;
-    color: #00FF88;
+    color: #46c285;
 }
 .reviews{
     background-color: #514869;
@@ -245,7 +245,7 @@ h3{
 
 .barra-altura {
     width: 100%;
-    background-color: #00FF88;
+    background-color: #46c285;
     border-radius: 5px;
     position: relative;
     display: flex;
@@ -346,10 +346,10 @@ h3{
     color:#fff;
   }
 .dark  .btn-flutuante{
-  background-color: #00ff88;
+  background-color: #46c285;
 }
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
   .dark .foxserv:hover{
     color: #fff;
@@ -358,7 +358,7 @@ h3{
     background-color: #181420;
   }
   .dark .nav a.current:hover {
-      color: #00ff88;
+      color: #46c285;
   }
 
 

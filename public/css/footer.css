@@ -120,9 +120,9 @@
 background-color: #181420;
 }
 .dark .footer__link:hover {
-    color: #00ff88;
+    color: #46c285;
 }
 .dark .footer__image a.current,
 .dark .footer__image a:hover {
-    color: #00ff88;
+    color: #46c285;
 }

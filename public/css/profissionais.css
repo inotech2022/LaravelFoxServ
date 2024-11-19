@@ -414,7 +414,7 @@ font-size: 12px;
   }
   
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
   .dark .foxserv:hover{
     color: #fff;
@@ -424,7 +424,7 @@ font-size: 12px;
   }
   .dark .nav a.current,
   .dark .nav a:hover {
-      color: #00ff88;
+      color: #46c285;
   }
   .dark .profile-desc{
       color:#fff;
@@ -433,27 +433,27 @@ font-size: 12px;
     background-color: #6c618b3b;
   }
   .dark .img-profile{
-    border: 4px solid #00ff88;
+    border: 4px solid #46c285;
   }
   .dark .btn-perfil{
-    background-color: #00ff88;
-    border: #00ff88;
+    background-color: #46c285;
+    border: #46c285;
   }
  .dark .btn-perfil:hover{
     background-color: #008b4a;
-    border: #00ff88;
+    border: #46c285;
   }
   .dark .filtro{
     background-color: #6c618b3b;
   }
   .dark .cidade>p{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .estrela>p{
-    background-color: #00ff88;
+    background-color: #46c285;
   }
   .dark .titulo>h1{
-    color: #00ff88;
+    color: #46c285;
   }
   .dark .img-right-modoClaro{
     display: none;

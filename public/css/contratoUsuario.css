@@ -360,7 +360,7 @@ option{
   }
 
   .dark .foxserv{
-    color: #00ff88;
+    color: #46c285;
   }
   .dark .foxserv:hover{
     color: #fff;
@@ -370,12 +370,12 @@ option{
   }
   .dark .nav a.current,
   .dark .nav a:hover {
-      color: #00ff88;
+      color: #46c285;
   }
 
   .dark .btn-pdf{
-    background-color: #00ff88;
-    border: #00ff88;
+    background-color: #46c285;
+    border: #46c285;
   }
   .dark select{
     background-color: #6c618b3b;
@@ -385,16 +385,16 @@ option{
     color: #000;
   }
   .dark .titulo>h1{
-    color: #00ff88;
+    color: #46c285;
   }
 .dark .card_contrato{
     background-color: #6c618b1e;
 }
 .dark .icon{
-    color: #00ff88;
+    color: #46c285;
 }
 .dark .info-titulo{
-    color: #00ff88;
+    color: #46c285;
 }
 .dark .info-texto{
     color: #fff;
@@ -408,5 +408,5 @@ option{
     display: flex;
   }
   .dark  .btn-flutuante{
-    background-color: #00ff88;
+    background-color: #46c285;
   }

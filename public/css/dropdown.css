@@ -81,7 +81,7 @@
 
 
  .dark .menu{
-  background-color: #00ff88;
+  background-color: #46c285;
   }
 .dark .dropdown-content{
     background-color: #181420;
@@ -94,7 +94,7 @@
   }
   .dark .dropdown-content ul li:hover{
     background-color: #181420;
-    color:#00ff88;
+    color:#46c285;
   }
   .dropdown-content ul li:hover{
     color:#89D0AF;
@@ -122,10 +122,10 @@
   background-color: #181420;
 }
 .dark .menu{
-  background-color: #00ff88;
+  background-color: #46c285;
 }
 .dark .menu:hover{
-  background-color: #00ff88;
+  background-color: #46c285;
 }
 
 .menu{

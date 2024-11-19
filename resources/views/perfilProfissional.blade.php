@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/contatos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
     <link rel="icon" href="logo/lilas-2.PNG">
-    
-    <script src="js/avali-publi.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/avali-publi.js') }}" defer></script>
     
     
 
@@ -20,10 +20,9 @@
 @section('content')
 
     <main>
-    <script src="{{ asset('js/modo_escuro.js') }}"></script>
+    <script src="/js/curtida.js"></script>
     <script src="{{ asset('js/modal.js') }}"></script>
-    <script src="{{ asset('js/coracao.js') }}"></script>
-    <script src="{{ asset('js/avali-publi.js') }}"></script> 
+    <script src="/js/coracao.js"></script>
         <!-- parte principal -->
         <div class="perfil">
 
@@ -61,11 +60,11 @@
                     @foreach ($servicos as $servicos)
                     <div class="serv-tip">
                     
-        <p class="tip-serv">  {{ $servicos->serviceName }}  </p>
+                    <p class="tip-serv">  {{ $servicos->serviceName }}  </p>
         
     
-</div>
-@endforeach
+                    </div>
+                    @endforeach
                     <p class="descricao"> {{ $profissional->description }} </p>
                 </div>
 
@@ -118,18 +117,16 @@
                             <p class="legenda">{{ $publicacao->caption }}</p>
                             <div class="data_like">
                                 <p class="data">{{ \Carbon\Carbon::parse($publicacao->date)->format('d/m/Y') }}</p>
+                                <span 
+                            class="material-symbols-outlined favorite-icon {{ $publicacao->curtida ? 'selected' : '' }}" 
+                            id="coracao_{{ $publicacao->publicationId }}"
+                            onclick="curtir({{ $publicacao->publicationId }})">
+                            favorite
+                        </span>
+                        <span id="contador_{{ $publicacao->publicationId }}" style="color: #666; margin-left: 5px;">
+                            {{ $publicacao->curtidas }}
+                        </span>
                                 
-    <div>
-        <button class="favorite-button" data-id="{{ $publicacao->publicationId }}">
-            @if(in_array($publicacao->publicationId, $isFavorite))
-                Remover dos Favoritos
-            @else
-                Adicionar aos Favoritos
-            @endif
-        </button>
-    </div>
-
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -263,4 +260,7 @@
             </div>
         </div>
     </div>
+
+
+
 @endsection
