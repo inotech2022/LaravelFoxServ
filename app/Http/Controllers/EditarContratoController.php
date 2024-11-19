@@ -25,31 +25,34 @@ class EditarContratoController extends Controller
     }
 
     public function update(Request $request, $protocol)
-    {
-        $validated = $request->validate([
-            'idServico' => 'required|exists:services,serviceId',
-            'valor' => 'required|numeric',
-            'dataInicial' => 'required|date',
-            'dataFinal' => 'required|date|after_or_equal:dataInicial',
-            'descricao' => 'required|max:100',
-        ]);
+{
+    $validated = $request->validate([
+        'idServico' => 'nullable|exists:services,serviceId',
+        'valor' => 'required|numeric',
+        'dataInicial' => 'required|date',
+        'dataFinal' => 'required|date|after_or_equal:dataInicial',
+        'descricao' => 'required|max:100',
+    ]);
 
-        $contract = Contract::where('protocol', $protocol)->first();
+    $contract = Contract::where('protocol', $protocol)->first();
 
-        if (!$contract) {
-            return redirect()->back()->with('error', 'Contrato não encontrado.');
-        }
-
-        // Atualizar valores forçando o update com atributos "sujos"
-        $contract->serviceId = $request->input('idServico');
-        $contract->price = $request->input('valor');
-        $contract->startDate = date('Y-m-d', strtotime($request->input('dataInicial')));
-        $contract->endDate = date('Y-m-d', strtotime($request->input('dataFinal')));
-        $contract->description = $request->input('descricao');
-        
-        // Forçar o update
-        $contract->update();
-
-        return redirect()->route('contratoProfissional')->with('success', 'Contrato atualizado com sucesso.');
+    if (!$contract) {
+        return redirect()->back()->with('error', 'Contrato não encontrado.');
     }
+
+    // Atualizar somente os campos modificados
+    if ($request->filled('idServico')) {
+        $contract->serviceId = $request->input('idServico');
+    }
+
+    $contract->price = $request->input('valor');
+    $contract->startDate = date('Y-m-d', strtotime($request->input('dataInicial')));
+    $contract->endDate = date('Y-m-d', strtotime($request->input('dataFinal')));
+    $contract->description = $request->input('descricao');
+
+    $contract->save();
+
+    return redirect()->route('contratoProfissional')->with('success', 'Contrato atualizado com sucesso.');
+}
+
 }
