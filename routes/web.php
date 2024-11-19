@@ -50,7 +50,8 @@ Route::get('/contratoProfissional', [ContratoProfissionalController::class, 'ind
 Route::delete('/contrato/{protocol}', [ContratoProfissionalController::class, 'destroy'])->name('contrato.destroy');
 Route::get('/contrato/{protocol}/gerar-pdf', [ContratoProfissionalController::class, 'gerarPdf'])->name('contrato.gerarPdf');
 Route::get('/contratoUsuario', [ContratoUsuarioController::class, 'index'])->name('contratoUsuario');
-Route::get('/denunciaAdm', [DenunciaAdmController::class, 'index'])->name('denunciaAdm');
+Route::get('/denunciaAdm/{id}', [DenunciaAdmController::class, 'index'])->name('denunciaAdm');
+Route::delete('/banir-profissional/{id}', [DenunciaAdmController::class, 'destroyAccount'])->name('banir.profissional');
 Route::get('/desempenhoProfissional', [DesempenhoProfissionalController::class, 'index'])->name('desempenhoProfissional');
 Route::post('editarContrato/{protocol}', [EditarContratoController::class, 'update'])->name('editarContrato.update');
 Route::get('/editarContrato/{protocol}', [EditarContratoController::class, 'index'])->name('editarContrato');

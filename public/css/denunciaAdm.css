@@ -163,13 +163,6 @@ color: #fff;
   'GRAD' 0,
   'opsz' 48
 }
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-  }
 
 
   .denuncias{
@@ -288,27 +281,25 @@ color: #fff;
     flex-direction: row;
     align-items: center;
 }
-.star-icon {
 
-    list-style-type: none;
-    border: 1px solid rgba(255, 255, 255, 0);
-    color: #ffe500;
-    font-size: 25px;
-    /* alterar o tamanho das estrelas */
-  }
-  .estrela {
+.aval{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 350px;
+}
+.estrelas {
     width: 100%;
+    margin-top: -5px;
+    flex-direction: column;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    text-align-last:left;
-  
-  }
-  .star-icon::before {
-    content: "\2605";
-  }
-  
-  .estrela-av{
+    align-items: center;
+    text-align-last:center;
+
+}
+
+.estrela-av{
     display: inline-flex;
     width: 100%;
     align-items: center;
@@ -317,11 +308,35 @@ color: #fff;
     margin: 5px;
     padding-left: 0;
   }
-.aval{
+
+  .avaliacao {
+    display: inline-flex;
+    text-align-last: left;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 10px 20px;
+    align-items:center;
+}
+/* Estilo para a lista de estrelas de avaliação */
+.avaliacao {
+    list-style: none;
+    padding-left: 30px;
+    margin: 0;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 350px;
+    align-items: center;
+}
+::marker {
+    display: none;
+}
+/* Estilo para cada item de estrela */
+.star-icon {
+    font-size: 24px;
+    color: #f39c12; /* Cor das estrelas não ativas */
+    cursor: pointer;
+}
+
+.star-icon.ativo {
+    color: #f39c12; /* Cor das estrelas ativas */
 }
 .right{
     width: 47vw;
