@@ -45,12 +45,8 @@ class AvaliacaoController extends Controller
         $rating->professionalId = $contract->professionalId; // Salvando o professionalId
         $rating->save();
 
-        if ($user->type === 'comum') {
-            return redirect()->route('contratoUsuario')->with('success', 'Avaliação realizada com sucesso.');
-        } elseif ($user->type === 'profissional') {
-            return redirect()->route('contratoProfissional')->with('success', 'Avaliação realizada com sucesso.');
-        }else{
-        return redirect()->route('/')->with('success', 'Avaliação realizada com sucesso.');
-        }
+        return redirect()->route('avaliacao', ['protocol' => $contract->protocol])
+                 ->with('success', 'Avaliação realizada com sucesso.')
+                 ->with('type', $user->type);
     }
 }

@@ -45,7 +45,6 @@ class ProfissionaisController extends NotificacaoController
 
     
     $professionals = $query->distinct('professionalId')->get();
-
     
     $professionals->each(function ($prof) {
         $prof->averageRounded = round($prof->average); 

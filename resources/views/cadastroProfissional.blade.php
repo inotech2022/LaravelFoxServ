@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/cad_prof.css">
     <link rel="icon" href="{{ asset('logo/lilas-2.PNG') }}">
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
     <script src="{{ asset('js/limiteTexto.js') }}" defer></script>
@@ -17,7 +19,27 @@
 </head>
 
 <body>
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/login";
+    }
+});
 
+</script>
+@endif
     <div class="main_gradiente">
         <div class="main">
             <div class="left">

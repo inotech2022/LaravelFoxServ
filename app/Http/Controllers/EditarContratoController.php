@@ -52,7 +52,7 @@ class EditarContratoController extends Controller
 
     $contract->save();
 
-    return redirect()->route('contratoProfissional')->with('success', 'Contrato atualizado com sucesso.');
+    return redirect()->route ('editarContrato', ['protocol' => $contract->protocol])->with('success', 'Contrato atualizado com sucesso.');
 }
 
 }

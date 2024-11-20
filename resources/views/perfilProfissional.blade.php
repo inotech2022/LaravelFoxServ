@@ -18,7 +18,24 @@
 
 
 @section('content')
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+});
 
+</script>
+@endif
+   
     <main>
     <script src="/js/curtida.js"></script>
     <script src="{{ asset('js/modal.js') }}"></script>

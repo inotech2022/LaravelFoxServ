@@ -6,10 +6,29 @@
 
 <link rel="stylesheet" href="{{ asset('/css/contratoProfissional.css') }}">
 <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+<link rel="stylesheet" href="{{ asset('css/alert.css') }}">
 <script src="{{ asset('js/modal.js') }}" defer></script>
+<script src="{{ asset('js/sweetalert2.js') }}"></script>
 <script src="{{ asset('js/avali-publi.js') }}" defer></script>
 
 <main>
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+});
+
+</script>
+@endif
     <div class="principal">
         <div class="topo">
             <div class="titulo">

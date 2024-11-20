@@ -7,7 +7,27 @@
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 
 @section('content')
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/meuPerfil";
+    }
+});
 
+</script>
+@endif
 <form class="card-form" action="{{ route('editarDadosProfissional.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <h1>Editar Dados</h1>

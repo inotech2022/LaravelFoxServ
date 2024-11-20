@@ -91,7 +91,7 @@ class DenunciaAdmController extends Controller
             });
 
             \Log::info("Exclusão concluída com sucesso.");
-            return redirect()->route('centralAdministrador', ['id' => $profissional->professionalId])
+            return redirect()->route('denunciaAdm', ['id' => $profissional->professionalId])
                 ->with('success', 'Conta excluída com sucesso!');
         } catch (\Exception $e) {
             \Log::error("Erro durante exclusão: " . $e->getMessage());

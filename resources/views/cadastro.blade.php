@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/cad_usuario.css') }}">
     <link rel="icon" href="{{ asset('logo/lilas-2.PNG') }}">
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
     <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
-    <script src="{{ asset('js/cep.js') }}" defer></script>
+    <script src="{{ asset('js/cep.js') }}" defer></script>    
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -20,7 +22,27 @@
 </head>
 
 <body>
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/login";
+    }
+});
 
+</script>
+@endif
     <div class="main_gradiente">
         <div class="main">
             <div class="left">

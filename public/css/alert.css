@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
+
+.my-swal-popup {
+    border-radius: 15px !important;
+    background: #e0d7f7 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.my-swal-title {
+    color: #000 !important;
+    font-size: 24px !important;
+    font-family: 'Baloo Thambi 2', sans-serif !important;
+}
+
+.my-swal-text {
+    color: #000 !important;
+    font-size: 16px !important;
+    font-family: 'Baloo Thambi 2', sans-serif !important;
+}
+
+.my-swal-button {
+    background-color: #89d0af !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+}
+
+.my-swal-button:hover {
+    background-color: #5c9178 !important;
+}
+
+.dark .my-swal-popup {
+    background-color: #201B2C !important;
+}
+
+.dark .my-swal-title {
+    color: #fff !important;
+}
+
+.dark .my-swal-text {
+    color: #fff !important;
+}
+.dark div:where(.swal2-container) .swal2-html-container {
+    color: #fff !important;
+}
+.dark .my-swal-button {
+    background-color: #46c285 !important;
+}
+.dark .my-swal-button:hover {
+    background-color: #018d4c !important;
+}
+
+
+/* Estilo para o ícone do SweetAlert */
+.swal2-icon {
+    background-color: transparent !important; /* Remove a cor de fundo padrão */
+    border: none !important; /* Remove a borda ao redor do ícone */
+}
+
+div:where(.swal2-icon).swal2-success {
+    background-color: transparent !important; /* Remove o fundo do ícone */
+}
+
+div:where(.swal2-icon).swal2-success [class^="swal2-success-circular-line"] {
+    background-color: transparent !important; /* Remove o fundo das partes circulares */
+}
+div:where(.swal2-icon).swal2-success .swal2-success-fix {
+    background-color: transparent !important; /* Remove o fundo das partes circulares */
+
+}
+
+.swal2-icon.swal2-error {
+    color: #e74c3c !important; /* Cor personalizada para o ícone de erro */
+}
+
+.swal2-icon.swal2-warning {
+    color: #f1c40f !important; /* Cor personalizada para o ícone de aviso */
+}
+
+/* Remove possíveis sombras internas no ícone */
+.swal2-icon::before, .swal2-icon::after {
+    background-color: transparent !important;
+}

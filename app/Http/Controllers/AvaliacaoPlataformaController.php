@@ -34,6 +34,6 @@ class AvaliacaoPlataformaController extends Controller
         $websiteRating->save();
 
         // Redireciona com sucesso
-        return redirect()->route('index')->with('success', 'Avaliação salva com sucesso!');
+        return redirect()->route('avaliacaoPlataforma')->with('success', 'Avaliação salva com sucesso!');
     }
 }

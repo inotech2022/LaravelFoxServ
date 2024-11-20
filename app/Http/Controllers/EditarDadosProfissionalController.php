@@ -76,6 +76,6 @@ class EditarDadosProfissionalController extends Controller
             ]
         );
         
-        return redirect()->route('index')->with('success', 'Dados atualizados com sucesso!');
+        return redirect()->route('editarDadosProfissional')->with('success', 'Dados atualizados com sucesso!');
     }
 }

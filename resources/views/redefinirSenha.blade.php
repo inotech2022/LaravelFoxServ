@@ -5,6 +5,29 @@
 <link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
     @section('content')
 
+    @if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/";
+    }
+});
+
+</script>
+@endif
+   
+
     @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

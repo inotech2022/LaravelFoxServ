@@ -5,9 +5,29 @@
 <link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
 
 @section('content')
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/contratoProfissional";
+    }
+});
 
+</script>
+@endif
 
-<form class="card-form" action="{{ route('editarContrato.update', ['protocol' => $contract->protocol]) }})}}" method="POST" enctype="multipart/form-data">
+<form class="card-form" action="{{ route('editarContrato.update', ['protocol' => $contract->protocol]) }}" method="POST" enctype="multipart/form-data">
     @csrf<!-- Isso indica que será um POST para atualizar o contrato -->
 
     <h1>Editar Contrato</h1>
@@ -67,4 +87,10 @@
     <a class="voltar" href="{{ route('contratoProfissional') }}">Voltar</a>
 
 </form>
+</div>
+        <div class="right">
+            <img src="/image/avaliaçao-modoClaro.png" class="img-right-modoClaro">
+            <img src="/image/avaliaçao-modoEscuro.png" class="img-right-modoEscuro">
+        </div>
+    </div>
 @endsection

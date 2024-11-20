@@ -4,12 +4,15 @@
             <div class="inicio-left">
                 <h1 class="frase"> Cadastre seus serviços </br> e descubra novas formas </br> de conexão </h1>
                 <p>Analise as categorias disponíveis</p>
-                <div class="pesquisa">
-                    <input type="text" placeholder="Buscar serviço...">
-                    <button><span class="material-symbols-outlined">
-                        search
-                        </span></button>
-                </div>
+                <form class="card-form" action="{{ route('profissionais', ['serviceId' => $serviceId ?? '']) }}" method="GET">
+    <div class="pesquisa">
+        <input type="text" id="servico" name="nomeServico" placeholder="Buscar serviço, profissional ou tipo..." value="{{ request('nomeServico') }}">
+        
+        <button type="submit" name="submit" id="submit">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+    </div>
+</form>
             </div>
             <div class="inicio-right">
                 <img class="animated" id="img-right-modoClaro" src="image/home-modoClaro.svg">
@@ -28,7 +31,7 @@
                         </div>
                         <h3>Família</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=1"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 1) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -40,7 +43,7 @@
                         </div>
                         <h3>Educação</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=2"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 2) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -52,7 +55,7 @@
                         </div>
                         <h3>Tecnologia</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=3"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 3) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -64,7 +67,7 @@
                         </div>
                         <h3>Reparos</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=4"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 4) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -76,7 +79,7 @@
                         </div>
                         <h3>Ass. Técnica</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=5"> Acessar </a> <span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 5) }}"> Acessar </a> <span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -88,7 +91,7 @@
                         </div>
                         <h3>Moda</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=6"> Acessar </a> <span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 6) }}"> Acessar </a> <span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -100,7 +103,7 @@
                         </div>
                         <h3>Saúde</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=7"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 7) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -112,7 +115,7 @@
                         </div>
                         <h3>Artesanato</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=8"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 8) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -124,7 +127,7 @@
                         </div>
                         <h3>Beleza</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=9"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 9) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
@@ -136,35 +139,36 @@
                         </div>
                         <h3>Eventos</h3>
                         <div class="acessar">
-                            <a href="servicos.php?tipoServico=10"> Acessar </a><span class="material-symbols-outlined">
+                            <a href="{{ route('servicos', 10) }}"> Acessar </a><span class="material-symbols-outlined">
                                 arrow_forward
                             </span>
                         </div>
                     </div>
                 </div>
-                <form class="sugestao" action="{{route('index')}}" method="POST" enctype="multipart/form-data">
+                <form class="sugestao" action="{{ route('sugestao') }}" method="POST">
+                    @csrf
                     <p>Não encontrou o serviço que está procurando?</p>
                     <input type="text" class="sugestao" id="sugestao" name="sugestao" placeholder="Deixe aqui a sua sugestão...">
-                    <input type="submit" class="submit" name="submit" value=">"></input>
+                    <input type="submit" class="submit" name="submit" value=">">
                 </form>
             </div>
         </div>
-            <div class="avaliacoes">
-                <h2>O que estão falando sobre a plataforma:</h2>
-                <div class="avaliacao">
-                    <div class="left-img">
-                        <img src="image/comentarios-modoClaro.png" class="img-avaliacao-modoClaro">
-                        <img src="image/comentario-modoEscuro.png" class="img-avaliacao-ModoEscuro">
-                        <div class="botao">
-                <button onclick="document.location='avaliPlat.php'">Avalie a plataforma</button>
+        <div class="avaliacoes">
+            <h2>O que estão falando sobre a plataforma:</h2>
+            <div class="avaliacao">
+                <div class="left-img">
+                    <img src="image/comentarios-modoClaro.png" class="img-avaliacao-modoClaro">
+                    <img src="image/comentario-modoEscuro.png" class="img-avaliacao-ModoEscuro">
+                    <div class="botao">
+                <button onclick="document.location='{{route('avaliacaoPlataforma')}}'">Avalie a plataforma</button>
             </div>
-                    </div>
-                    <div class="right-av">
-                                           <div class="cards">
+                </div>
+                <div class="right-av">
+                                       <div class="cards">
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/PedroSilva.jpg" class="image-header">
+                                    <img src="image/upload/PedroSilva.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Pedro Silva</h4>
@@ -192,7 +196,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/JuliaGabriele.jpg" class="image-header">
+                                    <img src="image/upload/JuliaGabriele.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Julia Gabriele</h4>
@@ -220,7 +224,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/LucasAlmeida.jpg" class="image-header">
+                                    <img src="image/upload/LucasAlmeida.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Lucas Almeida</h4>
@@ -248,7 +252,7 @@
                         <div class="card-av">
                             <div class="av-header">
                                 <div class="header-img">
-                                    <img src="upload/CamilaSouza.jpg"" class="image-header">
+                                    <img src="image/upload/CamilaSouza.jpg" class="image-header">
                                 </div>
                                 <div class="header-info">
                                     <h4>Camila Souza</h4>
@@ -272,12 +276,12 @@
                             <div class="comentario">
                                 <p>Estou muito satisfeito com o profissional contratado e o serviço prestado e definitivamente usarei a plataforma novamente.</p>
                             </div>
-                            </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
+        </div>
 
             <div class="faq">
                 <div class="faq-card">

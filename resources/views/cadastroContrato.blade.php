@@ -3,10 +3,42 @@
     @section('title', 'Novo Contrato')
     
 <link rel="stylesheet" href="{{ asset('css/cad_servico.css') }}">
+<link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+
     @section('content')
+    
+    
+    @if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/contratoProfissional";
+    }
+});
 
+</script>
+@endif
 
-        
+@if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <a>{{ $error }}</a>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <form action="{{ route('cadastroContrato.store') }}" method="POST" class="card-form" enctype="multipart/form-data">
         <h1>Novo Contrato</h1>
         <h2>Preencha os campos para gerar o contrato do serviço</h2>
@@ -65,8 +97,8 @@
         </form>
         </div>
         <div class="right">
-            <img src="image/avaliaçao-modoClaro.png" class="img-right-modoClaro">
-            <img src="image/avaliaçao-modoEscuro.png" class="img-right-modoEscuro">
+            <img src="/image/avaliaçao-modoClaro.png" class="img-right-modoClaro">
+            <img src="/image/avaliaçao-modoEscuro.png" class="img-right-modoEscuro">
         </div>
     </div>
     @endsection

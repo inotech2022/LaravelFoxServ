@@ -4,9 +4,31 @@
     
 <link rel="stylesheet" href="{{ asset('css/novoPost.css') }}">
     @section('content')
+
+
     <script src="/js/novoPost.js" defer></script>
     <script src="/js/limiteTexto.js" defer></script>
-    
+    @if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+}).then((result) => {
+    if (result.isConfirmed) { // Certifica que o botão foi clicado
+        window.location.href = "/meuPerfil";
+    }
+});
+
+</script>
+@endif
    
     <form action="{{ route('novaPublicacao.store') }}" class="card-form" method="POST" enctype="multipart/form-data">
     @csrf
@@ -31,7 +53,7 @@
     <div class="botao">
         <input type="submit" name="submit" class="btn-login" id="submit" value="Publicar">
     </div>
-    <a class="voltar" href="{{ route('homeProfissional') }}">Voltar</a>
+    <a class="voltar" href="{{ route('index') }}">Voltar</a>
 </form>
         </div>
         <div class="right">

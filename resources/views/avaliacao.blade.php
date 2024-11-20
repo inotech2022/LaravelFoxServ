@@ -6,6 +6,35 @@
 <link rel="stylesheet" href="{{ asset('css/avaliacao.css') }}">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     @section('content')
+
+    @if(session('success') && session('type'))
+    <script>
+    Swal.fire({
+        title: 'Sucesso!',
+        text: "{{ session('success') }}",
+        icon: 'success',
+        confirmButtonText: 'OK',
+        customClass: {
+            popup: 'my-swal-popup',
+            title: 'my-swal-title',
+            text: 'my-swal-text',
+            confirmButton: 'my-swal-button',
+        }
+    }).then((result) => {
+        if (result.isConfirmed) { // Certifica que o botão foi clicado
+            let userType = "{{ session('type') }}"; // Obtém o tipo de usuário da sessão
+            if (userType === 'comum') {
+                window.location.href = "/contratoUsuario";
+            } else if (userType === 'profissional') {
+                window.location.href = "/contratoProfissional";
+            } else {
+                window.location.href = "/";
+            }
+        }
+    });
+    </script>
+@endif
+
             <form class="card-form" action="{{ route('avaliacao') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <h1>Avalie o profissional</h1>

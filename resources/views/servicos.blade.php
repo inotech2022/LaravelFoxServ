@@ -20,11 +20,9 @@
     <div class="main">
         <div class="left">
             <div class="logo-header">
-                @if (session('tipo') === 'comum')
+                
                 <h1 class="logo"><a href="{{route('index')}}">Fox<span class="foxserv">Serv</span></a></h1>
-                @elseif (session('tipo') === 'profissional')
-                <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
-                @endif
+               
                 <div class="modo_escuro">
                     <input type="checkbox" name="change-theme" id="change-theme" />
                     <label for="change-theme">

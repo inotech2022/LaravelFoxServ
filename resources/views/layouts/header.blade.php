@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/dropdown.css">
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     @yield('css')
     <link rel="icon" href="/logo/lilas-2.PNG">
@@ -24,14 +26,8 @@
     <!-- Cabeçalho -->
     <nav class="nav">
         <div class="container">
-            @if (session('tipo') === 'comum')
-            <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
-            @elseif (session('tipo') === 'profissional')
-            <h1 class="logo"><a href="{{ route('homeProfissional') }}">Fox<span class="foxserv">Serv</span></a></h1>
-            @else
-            <h1 class="logo"><a href="{{ route('login') }}">Fox<span class="foxserv">Serv</span></a></h1>
-            @endif
-            
+           
+            <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>            
             
             @auth
             <ul>
@@ -73,7 +69,7 @@
                             <a href="{{ route('meuPerfil')}}"><span class="material-symbols-outlined">
                                     person
                                 </span>Meu Perfil</a>
-                            <a href="{{ route('homeProfissional')}}"><span class="material-symbols-outlined">
+                            <a href="{{ route('index')}}"><span class="material-symbols-outlined">
                                     home
                                 </span>Home</a>
                             <a href="{{ route('contratoProfissional')}}"><span class="material-symbols-outlined">

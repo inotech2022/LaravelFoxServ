@@ -67,6 +67,6 @@ class EditarDadosUsuarioController extends Controller
         );
 
         
-        return redirect()->route('index')->with('success', 'Dados atualizados com sucesso!');
+        return redirect()->route('editarDadosUsuario')->with('success', 'Dados atualizados com sucesso!');
     }
 }

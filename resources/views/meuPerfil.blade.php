@@ -13,6 +13,23 @@
 
 @section('content')
 <main>
+@if(session('success'))
+    <script>
+   Swal.fire({
+    title: 'Sucesso!',
+    text: "{{ session('success') }}",
+    icon: 'success',
+    confirmButtonText: 'OK',
+    customClass: {
+        popup: 'my-swal-popup',
+        title: 'my-swal-title',
+        text: 'my-swal-text',
+        confirmButton: 'my-swal-button',
+    }
+});
+
+</script>
+@endif
     <!-- parte principal -->
     <div class="perfil">
         <!-- informações do profissional -->

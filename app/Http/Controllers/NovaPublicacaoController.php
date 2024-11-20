@@ -47,7 +47,7 @@ class NovaPublicacaoController extends Controller
             'date' => now(),
         ]);
 
-        return redirect()->route('meuPerfil', ['professionalId' => $professional->professionalId])
+        return redirect()->route('novaPublicacao')
             ->with('success', 'Publicação criada com sucesso!');
     }
 }

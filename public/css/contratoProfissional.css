@@ -74,7 +74,7 @@ main{
     height: 13%;
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     transition: all 0.3s ease-in-out;
 }
 
@@ -193,7 +193,7 @@ input[type="checkbox"] {
 .publicacoes{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content:flex-end;
   flex-wrap: wrap;
   flex-direction: row;
@@ -204,7 +204,7 @@ input[type="checkbox"] {
 .avaliacoes{
   display: none;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content:center;
   flex-wrap: wrap;
   flex-direction: row;

@@ -35,6 +35,6 @@ class IndexController extends Controller
     $suggestion->save();
 
     // Retorna uma resposta, como uma mensagem de sucesso ou redirecionamento
-    return back()->with('success', 'Sugestão recebida com sucesso!');
+    return redirect()->route('index')->with('success', 'Sugestão recebida com sucesso!');
 }
 }
