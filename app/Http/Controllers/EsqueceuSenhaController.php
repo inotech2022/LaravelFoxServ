@@ -8,6 +8,6 @@ class EsqueceuSenhaController extends Controller
 {
     public function index()
     {
-        return view('esqueceuSenha'); // View para o formulário de cadastro
+        return view('esqueceuSenha'); 
     }
 }

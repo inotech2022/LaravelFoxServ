@@ -8,6 +8,6 @@ class SejaProfissionalController extends Controller
 {
     public function index()
     {
-        return view('sejaProfissional'); // View para o formulário de cadastro
+        return view('sejaProfissional'); 
     }
 }

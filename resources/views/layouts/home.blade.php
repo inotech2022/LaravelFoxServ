@@ -5,7 +5,7 @@
     <p>Te conectamos com profissionais <br> qualificados e confiáveis</p>
     <form class="card-form" action="{{ route('profissionais', ['serviceId' => $serviceId ?? '']) }}" method="GET">
     <div class="pesquisa">
-        <input type="text" id="servico" name="nomeServico" placeholder="Buscar serviço, profissional ou tipo..." value="{{ request('nomeServico') }}">
+        <input type="text" id="servico" name="nomeServico" placeholder="Buscar serviço, profissional ou categoria..." value="{{ request('nomeServico') }}">
         
         <button type="submit" name="submit" id="submit">
             <span class="material-symbols-outlined">search</span>

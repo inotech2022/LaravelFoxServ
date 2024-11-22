@@ -23,8 +23,8 @@
         <div class="left">
             <div class="logo-header">
 
-          
-    <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
+
+                <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
 
                 <div class="modo_escuro">
                     <input type="checkbox" name="change-theme" id="change-theme" />
@@ -33,7 +33,7 @@
                         <i class="bi bi-moon"></i></label>
                 </div>
             </div>
-                @yield('content')
+            @yield('content')
 </body>
 
 </html>

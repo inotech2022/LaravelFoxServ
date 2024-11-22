@@ -40,7 +40,7 @@ class EditarContratoController extends Controller
         return redirect()->back()->with('error', 'Contrato não encontrado.');
     }
 
-    // Atualizar somente os campos modificados
+   
     if ($request->filled('idServico')) {
         $contract->serviceId = $request->input('idServico');
     }

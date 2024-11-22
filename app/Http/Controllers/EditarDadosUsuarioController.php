@@ -10,10 +10,10 @@ class EditarDadosUsuarioController extends Controller
 {
     public function index()
     {
-        // Carrega o usuário com o endereço associado
+        
         $user = User::with('address')->find(Auth::id());
 
-        // Verifica se o usuário e o endereço foram carregados
+        
         if (!$user) {
             return redirect()->route('index')->with('error', 'Usuário não encontrado.');
         }

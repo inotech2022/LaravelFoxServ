@@ -54,29 +54,29 @@ class PerfilProfissionalController extends Controller
 }
 public function toggleLike(Request $request)
 {
-    // Valida se os dados necessários foram enviados
+    
     $request->validate([
         'publicationId' => 'required|exists:publications,publicationId',
     ]);
 
-    $userId = Auth::id(); // Obtém o ID do usuário logado
+    $userId = Auth::id();
     $publicationId = $request->input('publicationId');
 
-    // Verifica se o usuário já curtiu a publicação
+
     $curtida = \DB::table('user_publication')
         ->where('userId', $userId)
         ->where('publicationId', $publicationId)
         ->first();
 
     if ($curtida) {
-        // Remover a curtida
+
         \DB::table('user_publication')
             ->where('userId', $userId)
             ->where('publicationId', $publicationId)
             ->delete();
         $curtido = false;
     } else {
-        // Adicionar a curtida
+
         \DB::table('user_publication')->insert([
             'userId' => $userId,
             'publicationId' => $publicationId
@@ -84,12 +84,12 @@ public function toggleLike(Request $request)
         $curtido = true;
     }
 
-    // Contar curtidas após a ação
+
     $contador = \DB::table('user_publication')
         ->where('publicationId', $publicationId)
         ->count();
 
-    // Retornar a resposta para o JavaScript
+
     return response()->json([
         'curtidas' => $contador,
         'curtido' => $curtido,
@@ -98,11 +98,9 @@ public function toggleLike(Request $request)
 
 
 
-
-
 public function store(Request $request)
     {
-        // Validar os dados
+        
         $request->validate([
             'motivo' => 'required_without:outroMotivo',
             'outroMotivo' => 'required_if:motivo,outro',
@@ -110,10 +108,10 @@ public function store(Request $request)
             'userId' => 'required|exists:users,userId',
         ]);
 
-        // Definir o motivo
+        
         $reason = $request->motivo === 'outro' ? $request->outroMotivo : $request->motivo;
 
-        // Criar a denúncia
+        
         Complaint::create([
             'reason' => $reason,
             'complaintDate' => now(),

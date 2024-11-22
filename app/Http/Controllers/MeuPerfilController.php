@@ -50,22 +50,22 @@ class MeuPerfilController extends Controller
 
     public function destroy($publicationId)
     {
-        // Pega o profissional autenticado
+        
         $userId = Auth::id();
         $profissional = vw_feedProf::where('userId', $userId)->first();
     
-        // Verifica se a publicação existe e está associada ao profissional autenticado
+        
         $publicacao = Publication::where('publicationId', $publicationId)
             ->where('professionalId', $profissional->professionalId)
             ->first();
     
-        // Se a publicação existir, exclui
+        
         if ($publicacao) {
             $publicacao->delete();
             return redirect()->back()->with('success', 'Publicação excluída com sucesso!');
         }
     
-        // Caso contrário, retorna erro
+        
         return redirect()->back()->with('error', 'Publicação não encontrada ou não autorizada.');
     }
 
@@ -80,14 +80,14 @@ class MeuPerfilController extends Controller
 
         try {
             \DB::transaction(function () use ($profissional, $userId) {
-                // Excluir registros em ordem correta com verificações para contratos
+                
                 \DB::table('complaints')->where('professionalId', $profissional->professionalId)->delete();
                 \DB::table('publications')->where('professionalId', $profissional->professionalId)->delete();
                 \DB::table('ratings')->where('professionalId', $profissional->professionalId)->delete();
                 
-                // Excluir contratos como profissional
+                
                 \DB::table('contracts')->where('professionalId', $profissional->professionalId)->delete();
-                // Excluir contratos como cliente
+                
                 \DB::table('contracts')->where('userId', $userId)->delete();
 
                 \DB::table('service_professionals')->where('professionalId', $profissional->professionalId)->delete();
@@ -96,7 +96,7 @@ class MeuPerfilController extends Controller
                 \DB::table('users')->where('userId', $userId)->delete();
             });
 
-            Auth::logout(); // Desloga o usuário
+            Auth::logout(); 
             return redirect('/')->with('success', 'Conta excluída com sucesso!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Erro ao excluir a conta.');

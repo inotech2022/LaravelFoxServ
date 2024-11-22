@@ -26,16 +26,16 @@
     <!-- Cabeçalho -->
     <nav class="nav">
         <div class="container">
-           
-            <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>            
-            
+
+            <h1 class="logo"><a href="{{ route('index') }}">Fox<span class="foxserv">Serv</span></a></h1>
+
             @auth
             <ul>
                 <div class="dropdown">
                     <button class="menu"><img class="foto_menu" src="/{{ Auth::user()->profilePic }}"> Olá,
                         {{Auth::user()->name}}<span class="material-symbols-outlined">
                             expand_more
-                        </span> 
+                        </span>
                     </button>
                     <div class="dropdown-content">
                         @if (session('tipo') === 'comum')
@@ -80,28 +80,30 @@
                             <li>
                                 <span class="material-symbols-outlined">notifications</span> Notificações
                                 <ul>
-                                        @foreach ($curtidas ?? [] as $curtida)
-                                            <li>
-                                                <img class="foto_menu" src="{{ asset($curtida->profilePic) }}" alt="Foto do usuário">
-                                                {{ $curtida->name }} {{ $curtida->lastName }}<br>
-                                                Curtiu sua Publicação
-                                                {{ \Carbon\Carbon::parse($curtida->likeDate)->format('d/m/Y') }}
-                                                <span class="material-symbols-outlined">favorite</span>
-                                            </li>
-                                            <hr>
-                                        @endforeach
+                                    @foreach ($curtidas ?? [] as $curtida)
+                                    <li>
+                                        <img class="foto_menu" src="{{ asset($curtida->profilePic) }}"
+                                            alt="Foto do usuário">
+                                        {{ $curtida->name }} {{ $curtida->lastName }}<br>
+                                        Curtiu sua Publicação
+                                        {{ \Carbon\Carbon::parse($curtida->likeDate)->format('d/m/Y') }}
+                                        <span class="material-symbols-outlined">favorite</span>
+                                    </li>
+                                    <hr>
+                                    @endforeach
 
-                                        @foreach ($avaliacoes ?? [] as $avaliacao)
-                                            <li>
-                                                <img class="foto_menu" src="{{ asset($avaliacao->profilePic) }}" alt="Foto do usuário">
-                                                {{ $avaliacao->name }} {{ $avaliacao->lastName }}<br>
-                                                Avaliou seu serviço <br>
-                                               {{ \Carbon\Carbon::parse($avaliacao->ratingDate)->format('d/m/Y') }}
-                                                <span class="material-symbols-outlined">star</span>
-                                            </li>
-                                            <hr>
-                                        @endforeach
-                                    </ul>
+                                    @foreach ($avaliacoes ?? [] as $avaliacao)
+                                    <li>
+                                        <img class="foto_menu" src="{{ asset($avaliacao->profilePic) }}"
+                                            alt="Foto do usuário">
+                                        {{ $avaliacao->name }} {{ $avaliacao->lastName }}<br>
+                                        Avaliou seu serviço <br>
+                                        {{ \Carbon\Carbon::parse($avaliacao->ratingDate)->format('d/m/Y') }}
+                                        <span class="material-symbols-outlined">star</span>
+                                    </li>
+                                    <hr>
+                                    @endforeach
+                                </ul>
                             </li>
 
                             <a class="sair" href="{{ route('logout')}}"
@@ -131,7 +133,7 @@
                                 login
                             </span> Entrar </a>
                         @endauth
-                        
+
                     </div>
                     <div>
                         <input type="checkbox" name="change-theme" id="change-theme" />
@@ -139,7 +141,7 @@
                             <i class="bi bi-sun"></i>
                             <i class="bi bi-moon"></i></label>
                     </div>
-                </div> 
+                </div>
             </ul>
         </div>
     </nav>
@@ -148,4 +150,5 @@
 
 </body>
 @yield('footer')
+
 </html>

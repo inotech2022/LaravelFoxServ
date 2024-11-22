@@ -11,13 +11,13 @@ class EditarDadosProfissionalController extends Controller
 {
     public function index()
     {
-        // Carrega o usuário com o endereço associado
+        
         $user = User::with('address')->find(Auth::id());
         $professional = Professional::where('userId', $user->userId)->first();
 
 
 
-        // Verifica se o usuário e o endereço foram carregados
+        
         if (!$user) {
             return redirect()->route('index')->with('error', 'Usuário não encontrado.');
         }
@@ -63,7 +63,7 @@ class EditarDadosProfissionalController extends Controller
             'description' => $request->input('descricao', $professional->description),
         ]);
 
-        // Atualiza ou cria o endereço
+        
         $user->address()->updateOrCreate(
             [],
             [

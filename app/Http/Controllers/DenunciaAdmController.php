@@ -46,7 +46,7 @@ class DenunciaAdmController extends Controller
 
         try {
             \DB::transaction(function () use ($profissional) {
-                // Excluir avaliações relacionadas aos contratos
+                
                 \Log::info("Excluindo avaliações relacionadas a contratos...");
                 \DB::table('ratings')
                     ->whereIn('protocol', function ($query) use ($profissional) {
@@ -57,11 +57,11 @@ class DenunciaAdmController extends Controller
                     })
                     ->delete();
 
-                // Excluir denúncias
+                
                 \Log::info("Excluindo denúncias...");
                 \DB::table('complaints')->where('professionalId', $profissional->professionalId)->delete();
 
-                // Excluir publicações e associações na tabela user_publication
+                
                 \Log::info("Excluindo publicações e suas associações...");
                 \DB::table('user_publication')->whereIn('publicationId', function ($query) use ($profissional) {
                     $query->select('publicationId')
@@ -71,21 +71,21 @@ class DenunciaAdmController extends Controller
 
                 \DB::table('publications')->where('professionalId', $profissional->professionalId)->delete();
 
-                // Excluir contratos
+                
                 \Log::info("Excluindo contratos...");
                 \DB::table('contracts')->where('professionalId', $profissional->professionalId)->delete();
                 \DB::table('contracts')->where('userId', $profissional->userId)->delete();
 
-                // Excluir serviços
+                
                 \Log::info("Excluindo serviços...");
                 \DB::table('service_professionals')->where('professionalId', $profissional->professionalId)->delete();
 
-                // Excluir dados do profissional
+                
                 \Log::info("Excluindo dados do profissional...");
                 \DB::table('professionals')->where('professionalId', $profissional->professionalId)->delete();
                 \DB::table('addresses')->where('userId', $profissional->userId)->delete();
 
-                // Excluir usuário
+                
                 \Log::info("Excluindo usuário...");
                 \DB::table('users')->where('userId', $profissional->userId)->delete();
             });

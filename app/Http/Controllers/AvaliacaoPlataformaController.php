@@ -14,26 +14,26 @@ class AvaliacaoPlataformaController extends Controller
         return view('avaliacaoPlataforma');
     }
 
-    // Processa e salva a avaliação
+    
     public function store(Request $request)
     {
-        // Validação dos dados
+        
         $request->validate([
             'estrela' => 'required|integer|between:1,5',
             'comentario' => 'required|string|max:100',
         ]);
 
-        // Criação da avaliação
+        
         $websiteRating = new WebsiteRating();
         $websiteRating->starAmount = $request->input('estrela');
         $websiteRating->comment = $request->input('comentario');
         $websiteRating->ratingDate = now();
-        $websiteRating->userId = Auth::id();  // Salvando o ID do usuário logado
+        $websiteRating->userId = Auth::id();  
 
-        // Salva no banco de dados
+        
         $websiteRating->save();
 
-        // Redireciona com sucesso
+        
         return redirect()->route('avaliacaoPlataforma')->with('success', 'Avaliação salva com sucesso!');
     }
 }

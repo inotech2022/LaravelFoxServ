@@ -1,18 +1,18 @@
 function excluirConta(idUsuario, idProfissional) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) { // Verifica se a requisição foi concluída
-            console.log('Status:', this.status); // Log do status da requisição
-            console.log('Response:', this.responseText); // Log da resposta do servidor
+        if (this.readyState == 4) { 
+            console.log('Status:', this.status); 
+            console.log('Response:', this.responseText); 
 
-            if (this.status == 200) { // Verifica se a requisição foi bem-sucedida
+            if (this.status == 200) { 
                 if (this.responseText.trim() === "Conta excluída com sucesso!") {
-                    window.location.href = "login.php"; // Redireciona para a página de login
+                    window.location.href = "login.php"; 
                 } else {
-                    alert("Erro: " + this.responseText); // Exibe mensagem de erro
+                    alert("Erro: " + this.responseText); 
                 }
             } else {
-                alert("Erro na requisição: " + this.status); // Exibe código de status se a requisição falhar
+                alert("Erro na requisição: " + this.status); 
             }
         }
     };

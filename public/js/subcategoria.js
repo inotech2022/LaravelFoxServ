@@ -2,7 +2,7 @@ $(document).ready(function() {
     function loadSubcategories(selectElement, targetSelect) {
         const typeServiceId = $(selectElement).val();
         if (typeServiceId) {
-            $(targetSelect).empty().append('<option value="" selected disabled>Escolha a Subcategoria</option>'); // Limpa e adiciona opção padrão
+            $(targetSelect).empty().append('<option value="" selected disabled>Escolha a Subcategoria</option>'); 
             $('.carregando' + targetSelect.slice(-1)).show(); 
 
             $.ajax({
@@ -10,7 +10,7 @@ $(document).ready(function() {
                 method: 'GET',
                 success: function(data) {
                     $.each(data, function(index, subcategory) {
-                        $(targetSelect).append('<option value="' + subcategory.serviceId + '">' + subcategory.serviceName + '</option>'); // Altere aqui
+                        $(targetSelect).append('<option value="' + subcategory.serviceId + '">' + subcategory.serviceName + '</option>'); 
                     });
                 },
                 error: function(xhr, status, error) {

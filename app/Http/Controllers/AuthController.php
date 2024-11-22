@@ -20,7 +20,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            $tipoUsuario = auth()->user()->type; // Captura o tipo
+            $tipoUsuario = auth()->user()->type; 
     session(['tipo' => $tipoUsuario]); 
 
 

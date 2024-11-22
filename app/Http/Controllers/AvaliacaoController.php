@@ -27,11 +27,10 @@ class AvaliacaoController extends Controller
         $user = auth()->user();
         $protocolo = $request->input('protocol');
 
-        // Recuperando o professionalId a partir do protocolo na tabela contracts
         $contract = Contract::where('protocol', $protocolo)->first();
 
         if (!$contract) {
-            // Caso o protocolo não exista, redireciona com erro
+            
             return redirect()->route('contratoUsuario')->with('error', 'Protocolo não encontrado.');
         }
 
@@ -42,7 +41,7 @@ class AvaliacaoController extends Controller
         $rating->ratingDate = now(); 
         $rating->userId = $userId; 
         $rating->protocol = $protocolo; 
-        $rating->professionalId = $contract->professionalId; // Salvando o professionalId
+        $rating->professionalId = $contract->professionalId; 
         $rating->save();
 
         return redirect()->route('avaliacao', ['protocol' => $contract->protocol])

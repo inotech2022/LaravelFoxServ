@@ -39,7 +39,7 @@ class ContratoProfissionalController extends NotificacaoController
         $contratos = $contratos->get();
         $dataAtual = now();
 
-        // Define o status do contrato
+        
         foreach ($contratos as $contrato) {
             if ($contrato->endDate < $dataAtual) {
                 $contrato->statusContrato = 'Finalizado';
@@ -78,7 +78,7 @@ class ContratoProfissionalController extends NotificacaoController
     }
     public function gerarPdf($protocol)
     {
-        // Recuperar contrato e dados do profissional
+        
         $contrato = vw_contracts::where('protocol', $protocol)->first();
         if (!$contrato) {
             return redirect()->route('contratoProfissional')->with('error', 'Contrato não encontrado');
@@ -90,16 +90,16 @@ class ContratoProfissionalController extends NotificacaoController
             return redirect()->route('contratoProfissional')->with('error', 'Você não tem permissão para acessar este contrato.');
         }
 
-        // Formatar as datas para o formato brasileiro (dd/mm/aaaa)
+        
         $dataInicialFormatada = date('d/m/Y', strtotime($contrato->startDate));
         $dataFinalFormatada = date('d/m/Y', strtotime($contrato->endDate));
 
-        // Gerar PDF
+        
         $pdf = new TCPDF();
         $pdf->SetTitle('Contrato');
         $pdf->AddPage();
 
-        // Inserir o conteúdo do contrato
+        
         $pdf->SetFont('Helvetica', 'B', 16);
         $pdf->Cell(0, 10, 'CONTRATO DE PRESTAÇÃO DE SERVIÇOS', 0, 1, 'C');
         $pdf->Ln(10);

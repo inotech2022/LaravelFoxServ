@@ -1,4 +1,4 @@
-<?PHP
+<?php
 namespace App\Http\Controllers;
 
 use App\Models\vw_feedProf;
