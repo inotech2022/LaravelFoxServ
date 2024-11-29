@@ -137,7 +137,7 @@
                                 <span 
                             class="material-symbols-outlined favorite-icon {{ $publicacao->curtida ? 'selected' : '' }}" 
                             id="coracao_{{ $publicacao->publicationId }}"
-                            onclick="curtir({{ $publicacao->publicationId }})">
+                            onclick="curtir({{ $publicacao->publicationId }}, {{ auth()->id() }})">
                             favorite
                         </span>
                         <span id="contador_{{ $publicacao->publicationId }}" style="color: #666; margin-left: 5px;">

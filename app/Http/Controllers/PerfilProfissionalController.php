@@ -57,9 +57,10 @@ public function toggleLike(Request $request)
     
     $request->validate([
         'publicationId' => 'required|exists:publications,publicationId',
+        'userId' => 'required|exists:users,userId',
     ]);
 
-    $userId = Auth::id();
+    $userId = $request->input('userId');
     $publicationId = $request->input('publicationId');
 
 
