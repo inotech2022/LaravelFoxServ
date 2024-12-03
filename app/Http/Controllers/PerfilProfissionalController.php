@@ -11,10 +11,13 @@ use App\Models\Rating;
 use App\Models\vw_ratings;
 use App\Models\Complaint;
 
-class PerfilProfissionalController extends Controller
+class PerfilProfissionalController extends NotificacaoController
 {
     public function index($professionalId)
 {
+    $notificacoes = $this->getNotifications();
+
+
     $profissional = vw_feedProf::where('professionalId', $professionalId)->first(); 
     if (!$profissional) {
         return redirect()->back()->with('error', 'Profissional não encontrado.');
@@ -50,7 +53,7 @@ class PerfilProfissionalController extends Controller
             'mediaRedonda' => $mediaRedonda,
             'servicos' => $servicos,
             'tipoServicos' => $tipoServicos,
-        ]);
+        ] + $notificacoes);
 }
 public function toggleLike(Request $request)
 {

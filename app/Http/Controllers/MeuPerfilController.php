@@ -16,10 +16,12 @@ use App\Models\Contract;
 use App\Models\Service_Professional;
 use App\Models\Rating;
 
-class MeuPerfilController extends Controller
+class MeuPerfilController extends NotificacaoController
 {
     public function index()
     {
+        $notificacoes = $this->getNotifications();
+
         $userId = Auth::id(); 
 
         $profissional = vw_feedProf::where('userId', $userId)->first();
@@ -45,7 +47,7 @@ class MeuPerfilController extends Controller
             'mediaRedonda' => $mediaRedonda,
             'servicos' => $servicos,
             'tipoServicos' => $tipoServicos,
-        ]);
+        ] + $notificacoes);
     }
 
     public function destroy($publicationId)

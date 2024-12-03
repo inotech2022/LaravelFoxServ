@@ -9,6 +9,8 @@ class ProfissionaisController extends NotificacaoController
 {
     public function index(Request $request, $serviceId = null)
 {
+    $notificacoes = $this->getNotifications();
+
     $searchTerm = $request->input('nomeServico'); 
     $cidade = $request->input('cidade');           
     $media = $request->input('media'); 
@@ -54,7 +56,7 @@ class ProfissionaisController extends NotificacaoController
     $cidades = Address::select('city')->distinct()->get();
 
    
-    return view('profissionais', compact('professionals', 'cidades', 'cidade', 'media', 'serviceId'));
+    return view('profissionais', compact('professionals', 'cidades', 'cidade', 'media', 'serviceId') + $notificacoes);
 }
 
 }

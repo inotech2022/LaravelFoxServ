@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Suggestion;
 
-class IndexController extends Controller
+class IndexController extends NotificacaoController
 {
     public function index(Request $request)
     {
+        $notificacoes = $this->getNotifications();
 
         $searchTerm = $request->input('nomeServico'); 
     $serviceId = $request->input('serviceId');
-        return view('index', compact('searchTerm', 'serviceId'));
+        return view('index', compact('searchTerm', 'serviceId') + $notificacoes);
     }
 
     public function store(Request $request)
