@@ -4,15 +4,18 @@
             <div class="inicio-left">
     <h1 class="frase">Os melhores serviços pelos<br> melhores preços</h1>
     <p>Te conectamos com profissionais <br> qualificados e confiáveis</p>
+   
+                        
     <form class="card-form" action="{{ route('profissionais', ['serviceId' => $serviceId ?? '']) }}" method="GET">
     <div class="pesquisa">
         <input type="text" id="servico" name="nomeServico" placeholder="Buscar serviço, profissional ou categoria..." value="{{ request('nomeServico') }}">
         
-        <button type="submit" name="submit" id="submit">
+        <button type="submit" class="submit"  name="submit" id="submit">
             <span class="material-symbols-outlined">search</span>
         </button>
     </div>
 </form>
+
 
 
 </div>
@@ -150,12 +153,18 @@
                         </div>
                     </div>
                 </div>
+                
                 <form class="sugestao" action="{{ route('sugestao') }}" method="POST">
                     @csrf
                     <p>Não encontrou o serviço que está procurando?</p>
                     <input type="text" class="sugestao" id="sugestao" name="sugestao" placeholder="Deixe aqui a sua sugestão...">
-                    <input type="submit" class="submit" name="submit" value=">">
+                    <button type="submit" class="submit" name="submit">
+    <span class="material-symbols-outlined">
+        arrow_forward
+    </span>
+</button>
                 </form>
+                
             </div>
         </div>
         <div class="avaliacoes">

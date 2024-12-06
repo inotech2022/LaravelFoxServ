@@ -19,7 +19,7 @@ class NotificacaoController extends Controller
         $profissional = Professional::where('userId', $userId)->first();
 
         if (!$profissional) {
-            return redirect()->route('home')->with('error', 'Profissional não encontrado.');
+            return redirect()->route('index')->with('error', 'Profissional não encontrado.');
         }
 
         $professionalId = $profissional->professionalId;

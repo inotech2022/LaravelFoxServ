@@ -124,6 +124,7 @@
 
 
                         @else
+                        <div class="semLogin">
                         <a class="sejaProf" href="{{ route('index') }}" class="current">Home</a>
                         <a class="sejaProf" href="{{ route('cadastro') }}">Cadastre-se</a>
 
@@ -132,6 +133,8 @@
                         <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
                                 login
                             </span> Entrar </a>
+                        </div>
+                        
                         @endauth
 
                     </div>

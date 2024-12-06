@@ -475,7 +475,11 @@ flex-direction: column;
     padding: 0 10px;
 }
  .lixo{
+
      cursor: pointer;
+ }
+ .dark .lixo{
+  color: #fff;
  }
  /* card de publicaçao*/
 .card_perfil{

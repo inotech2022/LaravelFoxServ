@@ -14,7 +14,11 @@ body {
     max-width: 100%;
     background-color: #ffffff;
 }
-
+.divLike{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
 main{
     width: fit-content;
     align-items: center;

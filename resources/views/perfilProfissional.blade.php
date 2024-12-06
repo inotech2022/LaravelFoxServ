@@ -120,8 +120,8 @@
                     @if($publicacoes->isEmpty())
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma publicação</h1>
-                        <img src="image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
-                        <img src="image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
+                        <img src="../image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
+                        <img src="../image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
 
                     </div>
                     @else
@@ -134,6 +134,7 @@
                             <p class="legenda">{{ $publicacao->caption }}</p>
                             <div class="data_like">
                                 <p class="data">{{ \Carbon\Carbon::parse($publicacao->date)->format('d/m/Y') }}</p>
+                                <div class="divLike">
                                 <span 
                             class="material-symbols-outlined favorite-icon {{ $publicacao->curtida ? 'selected' : '' }}" 
                             id="coracao_{{ $publicacao->publicationId }}"
@@ -143,6 +144,8 @@
                         <span id="contador_{{ $publicacao->publicationId }}" style="color: #666; margin-left: 5px;">
                             {{ $publicacao->curtidas }}
                         </span>
+                                </div>
+                                
                                 
                             </div>
                         </div>
@@ -156,8 +159,8 @@
                     @if($avaliacoes->isEmpty())
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma avaliação</h1>
-                        <img src="image/avali-modoClaro.png" class="naoEncontrado-modoClaro">
-                        <img src="image/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
+                        <img src="../image/avali-modoClaro.png" class="naoEncontrado-modoClaro">
+                        <img src="../image/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
 
                     </div>
                     @else
