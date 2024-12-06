@@ -197,7 +197,10 @@ input[type="checkbox"] {
 .textfield>input::placeholder {
     color: #858585;
 }
-
+.required{
+    color: #ff0000;
+    font-weight:bold;
+}
 select {
     width: 99%;
     height: 20px;

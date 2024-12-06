@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<script src="/js/faq.js" defer></script>
         <div class="inicio">
             <div class="inicio-left">
     <h1 class="frase">Os melhores serviços pelos<br> melhores preços</h1>
@@ -335,7 +336,7 @@
                             </span>
                         </div>
                         <div class="resposta">
-                            <p>A avaliação é realizada a partir do seu contrato com o profissional, basta acessar a aba "<a class="link_resposta" href="contrato_cliente.php">Meus Serviços Contratados</a>" e escolher o serviço que deseja avaliar.</p>
+                            <p>A avaliação é realizada a partir do seu contrato com o profissional, basta acessar a aba "<a class="link_resposta" href= "{{route('contratoUsuario')}}" >Meus Serviços Contratados</a>" e escolher o serviço que deseja avaliar.</p>
                         </div>
                     </div>
                     <hr>

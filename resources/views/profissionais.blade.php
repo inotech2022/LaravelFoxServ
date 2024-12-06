@@ -64,22 +64,21 @@
                             <div class="descricao">
                                 <p class="profile-desc">{{ $professional->description }}</p>
                             </div>
-                            <ul class="avaliacao">
-                                @foreach ($professionals as $professional)
-                                    @for ($j = 1; $j <= 5; $j++)
-                                        @if ($j <= $professional->averageRounded)
-                                            <li class="star-icon ativo" data-avaliacao="{{ $j }}">
-                                                <i class="fa fa-star"></i>
-                                            </li>
-                                        @else
-                                            <li class="star-icon" data-avaliacao="{{ $j }}">
-                                                <i class="fa fa-star-o"></i>
-                                            </li>
-                                        @endif
-                                    @endfor
-                                    <label class="media">{{ number_format($professional->average, 1, ',', '.') }}</label>
-                                @endforeach
-                            </ul>
+                        <ul class="avaliacao">
+                            @for ($j = 1; $j <= 5; $j++)
+                                @if ($j <= $professional->averageRounded)
+                                    <li class="star-icon ativo" data-avaliacao="{{ $j }}">
+                                        <i class="fa fa-star"></i>
+                                    </li>
+                                @else
+                                    <li class="star-icon" data-avaliacao="{{ $j }}">
+                                        <i class="fa fa-star-o"></i>
+                                    </li>
+                                @endif
+                            @endfor
+                            <label class="media">{{ number_format($professional->average, 1, ',', '.') }}</label>
+                        </ul>
+
                         </div>
                     </div>
                     <button onclick="document.location='/perfilProfissional/{{ $professional->professionalId }}'" class="btn-perfil">Ver perfil</button>

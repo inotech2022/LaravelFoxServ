@@ -51,19 +51,19 @@
             <h1>Redefinir Senha</h1>
                 <div class="linha">
                     <div class="textfield">
-                        <label for="senha_antiga">Senha Antiga</label>
+                        <label for="senha_antiga">Senha Antiga<span class="required"> * </span></label>
                         <input type="password" name="current_password" placeholder="digite sua senha antiga" required
                             maxlength="30" minlength="8">
                     </div>
                 </div>
                 <div class="linha">
                     <div class="textfield">
-                        <label for="senha">Nova Senha</label>
+                        <label for="senha">Nova Senha<span class="required"> * </span></label>
                         <input type="password" name="new_password" placeholder="insira sua nova senha" required maxlength="30"
                             minlength="8">
                     </div>
                     <div class="textfield">
-                        <label for="senha2">Confirme a senha</label>
+                        <label for="senha2">Confirme a senha<span class="required"> * </span></label>
                         <input type="password" name="new_password_confirmation" placeholder="confirme sua senha" required maxlength="30"
                             minlength="8">
                     </div>

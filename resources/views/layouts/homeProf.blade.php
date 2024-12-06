@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-
+<script src="/js/faq.js" defer></script>
         <div class="inicio">
             <div class="inicio-left">
                 <h1 class="frase"> Cadastre seus serviços </br> e descubra novas formas </br> de conexão </h1>
