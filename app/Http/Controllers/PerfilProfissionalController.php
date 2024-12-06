@@ -45,16 +45,34 @@ class PerfilProfissionalController extends NotificacaoController
         $servicos = vw_feedProf::getServicosPorProfissional($profissional->professionalId);
         $tipoServicos = vw_feedProf::getCategoriaPorProfissional($profissional->professionalId);
 
-        return view('perfilProfissional', [
-            'profissional' => $profissional,
-            'publicacoes' => $publicacoes,
-            'avaliacoes' => $avaliacoes,
-            'media' => $media,
-            'mediaRedonda' => $mediaRedonda,
-            'servicos' => $servicos,
-            'tipoServicos' => $tipoServicos,
-        ] + $notificacoes);
-}
+        if (auth()->check() && auth()->user()->type === 'profissional') { 
+            $notificacoesArray = is_array($notificacoes) ? $notificacoes : $notificacoes->toArray();
+            $dados = [
+                'profissional' => $profissional,
+                'publicacoes' => $publicacoes,
+                'avaliacoes' => $avaliacoes,
+                'media' => $media,
+                'mediaRedonda' => $mediaRedonda,
+                'servicos' => $servicos,
+                'tipoServicos' => $tipoServicos,
+            ] + $notificacoes;
+        } else {
+            $dados = [
+                'profissional' => $profissional,
+                'publicacoes' => $publicacoes,
+                'avaliacoes' => $avaliacoes,
+                'media' => $media,
+                'mediaRedonda' => $mediaRedonda,
+                'servicos' => $servicos,
+                'tipoServicos' => $tipoServicos,
+            ];
+        }
+    
+            return view('perfilProfissional', $dados );
+        }
+
+        
+
 public function toggleLike(Request $request)
 {
     

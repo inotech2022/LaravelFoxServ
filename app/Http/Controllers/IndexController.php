@@ -15,7 +15,15 @@ class IndexController extends NotificacaoController
 
         $searchTerm = $request->input('nomeServico'); 
     $serviceId = $request->input('serviceId');
-        return view('index', compact('searchTerm', 'serviceId') + $notificacoes);
+
+    if (auth()->check() && auth()->user()->type === 'profissional') { 
+        $notificacoesArray = is_array($notificacoes) ? $notificacoes : $notificacoes->toArray();
+        $dados = compact('searchTerm', 'serviceId') + $notificacoesArray;
+    } else {
+        $dados = compact('searchTerm', 'serviceId');
+    }
+
+        return view('index', $dados );
     }
 
     public function store(Request $request)
