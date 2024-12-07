@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+    <link rel="icon" href="{{ asset('/image/logo/lilas-2.PNG') }}">
     <script src="/js/modo_escuro.js" defer></script>
     <script src="/js/limiteTexto.js" defer></script>
     <script src="{{ asset('js/sweetalert2.js') }}"></script>

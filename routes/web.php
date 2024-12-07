@@ -27,10 +27,12 @@ use App\Http\Controllers\RedefinirSenhaController;
 use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
 use App\Http\Controllers\NotificacaoController;
+use App\Http\Controllers\PoliticaPrivacidadeController;
 
 
 // Define a rota principal
 Route::get('/', [IndexController::class, 'index'])-> name('index');
+Route::get('/politicaPrivacidade', [PoliticaPrivacidadeController::class, 'index'])-> name('politicaPrivacidade');
 Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
 Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');

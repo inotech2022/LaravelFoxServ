@@ -11,7 +11,7 @@
     <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     @yield('css')
-    <link rel="icon" href="/logo/lilas-2.PNG">
+    <link rel="icon" href="{{ asset('/image/logo/lilas-2.PNG') }}">
     <script src="/js/modo_escuro.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
