@@ -11,6 +11,7 @@
     <link rel="icon" href="logo/lilas-2.PNG">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/avali-publi.js') }}" defer></script>
+    <script src="{{ asset('js/copiar.js') }}" ></script>
     
     
 
@@ -120,8 +121,8 @@
                     @if($publicacoes->isEmpty())
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma publicação</h1>
-                        <img src="../image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
-                        <img src="../image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
+                        <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/publicacao+-+modoClaro.png" class="naoEncontrado-modoClaro">
+                        <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/publicacao+-+modoEscuro.png" class="naoEncontrado-modoEscuro">
 
                     </div>
                     @else
@@ -159,8 +160,8 @@
                     @if($avaliacoes->isEmpty())
                     <div class="naoEncontrada">
                         <h1>O profissional não possui nenhuma avaliação</h1>
-                        <img src="../image/avali-modoClaro.png" class="naoEncontrado-modoClaro">
-                        <img src="../image/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
+                        <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avali-modoClaro.png" class="naoEncontrado-modoClaro">
+                        <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
 
                     </div>
                     @else
@@ -223,15 +224,16 @@
                                 <span class="material-symbols-outlined">
                                     message
                                 </span> WhatsApp</a>
-                        <a class="btn-modal"> <span class="material-symbols-outlined">
-                                    phone
-                                </span>
-                                {{ $profissional->phone }}
-                            </a>
+                                <a class="btn-modal" id="copyPhoneButton">
+    <span class="material-symbols-outlined">phone</span>
+    <span id="phoneNumber">{{ $profissional->phone }}</span>
+</a>
+
                             <a class="btn-modal" href="mailto:{{ $profissional->email }}">
     <span class="material-symbols-outlined">email</span> Enviar Email
 </a>
                     </div>
+                    <p id="feedback" style="display: none; color: #46c285;">Número copiado!</p>
                     <button class="cancelar-cont" onclick="closeModal('dv-modal')"><span
                             class="material-symbols-outlined">
                             cancel

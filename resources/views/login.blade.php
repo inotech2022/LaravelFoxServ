@@ -68,8 +68,8 @@
                 </form>
             </div>
             <div class="right">
-                <img src="{{ asset('image/login-modoClaro.png') }}" class="img-right-modoClaro">
-                <img src="{{ asset('image/login-modoEscuro.png') }}" class="img-right-modoEscuro">
+                <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/login-modoClaro.png') }}" class="img-right-modoClaro">
+                <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/login-modoEscuro.png') }}" class="img-right-modoEscuro">
             </div>
         </div>
     </div>

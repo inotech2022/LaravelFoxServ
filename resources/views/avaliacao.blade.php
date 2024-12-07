@@ -84,8 +84,8 @@
             </form>
         </div>
         <div class="right">
-            <img src="image/avaliaçao-modoClaro.png" class="img-right-modoClaro">
-            <img src="image/avaliaçao-modoEscuro.png" class="img-right-modoEscuro">
+            <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avalia%C3%A7ao-modoClaro.png" class="img-right-modoClaro">
+            <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avalia%C3%A7ao-modoEscuro.png" class="img-right-modoEscuro">
         </div>
     </div>
 @endsection

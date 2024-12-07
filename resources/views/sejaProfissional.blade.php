@@ -78,8 +78,8 @@
             </div>
         </div>
         <div class="right">
-            <img src="image/telaEstatica-modoClaro.svg" class="img-right-modoClaro">
-            <img src="image/telaEstatica-modoEscuro.svg" class="img-right-modoEscuro">
+            <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/telaEstatica-modoClaro.svg" class="img-right-modoClaro">
+            <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/telaEstatica-modoEscuro.svg" class="img-right-modoEscuro">
             <div class="botao">
                 <button onclick="document.location='{{ route('cadastroProfissional') }}'">Quero ser profissional!</button>
                 <a href="{{route('index')}}">Não, obrigado.</a>

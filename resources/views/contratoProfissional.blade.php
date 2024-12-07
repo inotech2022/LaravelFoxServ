@@ -43,8 +43,8 @@
                 </form>
             </div>
             <div class="image">
-                <img src="image/contratos-modoClaro.png" class="img-right-modoClaro">
-                <img src="image/contratos-modoEscuro.png" class="img-right-modoEscuro">
+                <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoClaro.png" class="img-right-modoClaro">
+                <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoEscuro.png" class="img-right-modoEscuro">
             </div>
         </div>
 
@@ -64,8 +64,8 @@
             @if($contratos->isEmpty())
                 <div class="naoEncontrada">
                     <h1>Você ainda não possui nenhum contrato</h1>
-                    <img src="image/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
-                    <img src="image/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
                 </div>
             @else
                 @foreach($contratos as $contrato)
@@ -190,8 +190,8 @@
         @if($contratados->isEmpty())
             <div class="naoEncontrada">
                 <h1>Você ainda não possui nenhum serviço contratado</h1>
-                <img src="image/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
-                <img src="image/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
+                <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/vazio-modoClaro.png" class="naoEncontrado-modoClaro">
+                <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/vazio-modoEscuro.png" class="naoEncontrado-modoEscuro">
             </div>
         @else
             @foreach($contratados as $contratado)
@@ -240,7 +240,7 @@
                             </div>
                             <div class="texto">
                                 <div class="info-titulo">Valor</div>
-                                <div class="info-texto">R$ {{ number_format($contrato->price, 2, ',', '.') }}</div>
+                                <div class="info-texto">R$ {{ number_format($contratado->price, 2, ',', '.') }}</div>
                             </div>
                         </div>
                         <div class="info">

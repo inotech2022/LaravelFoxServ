@@ -148,8 +148,8 @@
             </div>
 
             <div class="right">
-                <img src="image/cadastro-modoClaro.png" class="img-right-modoClaro">
-                <img src="image/cadastro-modoEscuro.png" class="img-right-modoEscuro">
+                <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/cadastro-modoClaro.png" class="img-right-modoClaro">
+                <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/cadastro-modoEscuro.png" class="img-right-modoEscuro">
             </div>
         </div>
     </div>

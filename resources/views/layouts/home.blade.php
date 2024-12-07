@@ -23,8 +23,8 @@
 
 
             <div class="inicio-right">
-                <img class="animated" id="img-right-modoClaro" src="image/home-modoClaro.svg">
-            <img class="animated" id="img-right-modoEscuro" src="image/home-modoEscuro.svg">
+                <img class="animated" id="img-right-modoClaro" src="https://foxservbucket.s3.us-east-1.amazonaws.com/home-modoClaro.svg">
+            <img class="animated" id="img-right-modoEscuro" src="https://foxservbucket.s3.us-east-1.amazonaws.com/home-modoEscuro.svg">
             </div>
         </div>
         <script type='text/javascript'>document.addEventListener('DOMContentLoaded', function () {window.setTimeout(document.querySelector('svg').classList.add('animated'),1000);})</script>
@@ -34,8 +34,8 @@
                 <div class="cards">
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/familia-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/familia-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/familia-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/familia-modoEscuro.png">
                         </div>
                         <h3>Família</h3>
                         <div class="acessar">
@@ -46,8 +46,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/educacao-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/educacao-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/educacao-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/educacao-modoEscuro.png">
                         </div>
                         <h3>Educação</h3>
                         <div class="acessar">
@@ -58,8 +58,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/tecnologia-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/tecnologia-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/tecnologia-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/tecnologia-modoEscuro.png">
                         </div>
                         <h3>Tecnologia</h3>
                         <div class="acessar">
@@ -70,8 +70,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/reparos-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/reparos-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/reparos-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/reparos-modoEscuro.png">
                         </div>
                         <h3>Reparos</h3>
                         <div class="acessar">
@@ -82,8 +82,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/assTec-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/assTec-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/assTec-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/assTec-modoEscuro.png">
                         </div>
                         <h3>Ass. Técnica</h3>
                         <div class="acessar">
@@ -94,8 +94,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/moda-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/moda-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/moda-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/moda-modoEscuro.png">
                         </div>
                         <h3>Moda</h3>
                         <div class="acessar">
@@ -106,8 +106,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/saude-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/saude-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/saude-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/saude-modoEscuro.png">
                         </div>
                         <h3>Saúde</h3>
                         <div class="acessar">
@@ -118,8 +118,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/artesanato-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/artesanato-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/artesanato-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/artesanato-modoEscuro.png">
                         </div>
                         <h3>Artesanato</h3>
                         <div class="acessar">
@@ -130,8 +130,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/beleza-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/beleza-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/beleza-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/beleza-modoEscuro.png">
                         </div>
                         <h3>Beleza</h3>
                         <div class="acessar">
@@ -142,8 +142,8 @@
                     </div>
                     <div class="card">
                         <div class="icon">
-                            <img class="img_icon-modoClaro " src="image/eventos-modoClaro.png">
-                            <img class="img_icon-modoEscuro " src="image/eventos-modoEscuro.png">
+                            <img class="img_icon-modoClaro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/eventos-modoClaro.png">
+                            <img class="img_icon-modoEscuro " src="https://foxservbucket.s3.us-east-1.amazonaws.com/eventos-modoEscuro.png">
                         </div>
                         <h3>Eventos</h3>
                         <div class="acessar">
@@ -153,26 +153,24 @@
                         </div>
                     </div>
                 </div>
-                
                 <form class="sugestao" action="{{ route('sugestao') }}" method="POST">
                     @csrf
                     <p>Não encontrou o serviço que está procurando?</p>
                     <input type="text" class="sugestao" id="sugestao" name="sugestao" placeholder="Deixe aqui a sua sugestão...">
                     <button type="submit" class="submit" name="submit">
-    <span class="material-symbols-outlined">
-        arrow_forward
-    </span>
-</button>
+                            <span class="material-symbols-outlined">
+                                arrow_forward
+                            </span>
+                    </button>
                 </form>
-                
             </div>
         </div>
         <div class="avaliacoes">
             <h2>O que estão falando sobre a plataforma:</h2>
             <div class="avaliacao">
                 <div class="left-img">
-                    <img src="image/comentarios-modoClaro.png" class="img-avaliacao-modoClaro">
-                    <img src="image/comentario-modoEscuro.png" class="img-avaliacao-ModoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/comentarios-modoClaro.png" class="img-avaliacao-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/comentario-modoEscuro.png" class="img-avaliacao-ModoEscuro">
                     <div class="botao">
                 <button onclick="document.location='{{route('avaliacaoPlataforma')}}'">Avalie a plataforma</button>
             </div>

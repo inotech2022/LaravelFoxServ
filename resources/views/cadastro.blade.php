@@ -167,8 +167,8 @@
                 </form>
             </div>
             <div class="right">
-            <img src="{{ asset('image/cadastro-modoClaro.png') }}" class="img-right-modoClaro">
-            <img src="{{ asset('image/cadastro-modoEscuro.png') }}" class="img-right-modoEscuro">
+            <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/cadastro-modoClaro.png') }}" class="img-right-modoClaro">
+            <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/cadastro-modoEscuro.png') }}" class="img-right-modoEscuro">
             </div>
         </div>
     </div>

@@ -115,14 +115,18 @@
                                 @csrf
                             </form>
                         </ul>
+                        @elseif (session('tipo') === 'adm')
+                        <a class="sair" href="{{ route('logout')}}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
+                                    class="material-symbols-outlined">
+                                    logout
+                                </span>Sair</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         @endif
                         @endauth
                         @auth
-                        <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
-                                login
-                            </span> Sair </a>
-
-
                         @else
                         <div class="semLogin">
                         <a class="sejaProf" href="{{ route('index') }}" class="current">Home</a>

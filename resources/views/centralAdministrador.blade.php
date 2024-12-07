@@ -66,8 +66,8 @@
 
             <div class="avali-right">
                 <div class="image">
-                    <img src="image/contratos-modoClaro.png" class="img-right-modoClaro">
-                    <img src="image/contratos-modoEscuro.png" class="img-right-modoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoClaro.png" class="img-right-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoEscuro.png" class="img-right-modoEscuro">
                 </div>
             </div>
         </div>
@@ -101,8 +101,8 @@
 
             <div class="avali-right">
                 <div class="image">
-                    <img src="image/contratos-modoClaro.png" class="img-right-modoClaro">
-                    <img src="image/contratos-modoEscuro.png" class="img-right-modoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoClaro.png" class="img-right-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoEscuro.png" class="img-right-modoEscuro">
                 </div>                                  
             </div>
         </div>
@@ -140,8 +140,8 @@
 
             <div class="avali-right">
                 <div class="image">
-                    <img src="image/contratos-modoClaro.png" class="img-right-modoClaro">
-                    <img src="image/contratos-modoEscuro.png" class="img-right-modoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoClaro.png" class="img-right-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/contratos-modoEscuro.png" class="img-right-modoEscuro">
                 </div>     
             </div>
         </div>

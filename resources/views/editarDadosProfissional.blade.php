@@ -127,8 +127,8 @@
             </div>
 
         <div class="right">
-            <img src="image/editarDados-modoClaro.png" class="img-right-modoClaro">
-            <img src="image/editarDados-modoEscuro.png" class="img-right-modoEscuro">
+            <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/editarDados-modoClaro.png" class="img-right-modoClaro">
+            <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/editarDados-modoEscuro.png" class="img-right-modoEscuro">
         </div>
     </div>
 @endsection
