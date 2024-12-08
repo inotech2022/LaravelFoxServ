@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_publication', function (Blueprint $table) {
-            $table->bigIncrements('likeId');
+            $table->unsignedInteger('likeId')->autoIncrement();
             $table->unsignedInteger('publicationId');
             $table->foreign('publicationId')->references('publicationId')->on('publications')->onDelete('cascade');
             $table->unsignedInteger('userId');
