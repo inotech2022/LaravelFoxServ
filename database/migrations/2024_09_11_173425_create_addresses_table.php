@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId')->constrained('users'); // Fazendo referência à tabela users
+            $table->unsignedInteger('userId'); 
+            $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
             $table->string('zipCode');
             $table->string('uf');
             $table->string('city');
