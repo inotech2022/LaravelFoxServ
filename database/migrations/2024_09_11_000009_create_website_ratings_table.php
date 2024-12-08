@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('website_ratings', function (Blueprint $table) {
+        Schema::create('websiteRatings', function (Blueprint $table) {
             $table->unsignedInteger('websiteRatingId')->autoIncrement();
             $table->string('starAmount');
             $table->string('comment');
             $table->date('ratingDate');
-            $table->timestamps();
+            
         });
     }
 
