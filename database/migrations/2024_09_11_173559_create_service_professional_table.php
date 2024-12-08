@@ -11,11 +11,11 @@ return new class extends Migration
     {
         Schema::create('service_professionals', function (Blueprint $table) {
             $table->bigIncrements('servProfId');
-            $table->unsignedBigInteger('professionalId');
+            $table->unsignedInteger('professionalId');
             $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
-            $table->unsignedBigInteger('serviceId');
+            $table->unsignedInteger('serviceId');
             $table->foreign('serviceId')->references('serviceId')->on('services')->onDelete('cascade');
-            $table->unsignedBigInteger('serviceTypeId');
+            $table->unsignedInteger('serviceTypeId');
             $table->foreign('serviceTypeId')->references('serviceTypeId')->on('serviceTypes')->onDelete('cascade');
             $table->timestamps();
         });
