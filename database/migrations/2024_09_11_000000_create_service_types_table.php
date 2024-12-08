@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('serviceTypeName');
             $table->string('lightPic');
             $table->string('darkPic');
-            $table->timestamps();
+           
         });
     }
 
