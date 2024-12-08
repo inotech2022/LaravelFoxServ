@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('user_publication', function (Blueprint $table) {
             $table->bigIncrements('likeId');
-            $table->unsignedBigInteger('publicationId');
+            $table->unsignedInteger('publicationId');
             $table->foreign('publicationId')->references('publicationId')->on('publications')->onDelete('cascade');
-            $table->unsignedBigInteger('userId');
+            $table->unsignedInteger('userId');
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
             $table->timestamps();         
         });
