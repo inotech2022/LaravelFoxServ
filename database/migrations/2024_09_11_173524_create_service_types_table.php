@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('serviceTypes', function (Blueprint $table) {
-            $table->bigIncrements('serviceTypeId');
+        Schema::create('serviceTypes', function (Blueprint $table) {            
+            $table->unsignedInteger('serviceTypeId')->autoIncrement();
             $table->string('serviceTypeName');
             $table->string('lightPic');
             $table->string('darkPic');
