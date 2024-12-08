@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->bigIncrements('ratingId');
             $table->string('starAmount');
-            $table->strinng('comment');
+            $table->string('comment');
             $table->date('ratingDate');
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
