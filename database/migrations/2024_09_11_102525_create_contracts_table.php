@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('contracts', function (Blueprint $table) {
-            $table->bigIncrements('protocol');
+            $table->unsignedInteger('protocol')->autoIncrement();
             $table->date('registrationDate');
             $table->date('startDate');
             $table->date('endDate');
