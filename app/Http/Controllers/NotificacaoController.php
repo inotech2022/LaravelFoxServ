@@ -17,18 +17,20 @@ class NotificacaoController extends Controller
     {
         $userId = Auth::id();
         $profissional = Professional::where('userId', $userId)->first();
-
+    
         if (!$profissional) {
             return redirect()->route('index')->with('error', 'Profissional não encontrado.');
         }
-
+    
         $professionalId = $profissional->professionalId;
-
+    
         $avaliacoes = vw_ratings::where('professionalId', $professionalId)
+            ->orderBy('ratingDate', 'desc') 
             ->get(['name', 'lastName', 'profilePic', 'ratingDate']);
-
+    
         $curtidas = vw_likes::where('professionalId', $professionalId)
-        ->get(['name', 'lastName', 'profilePic', '.likeDate']);
+            ->orderBy('likeDate', 'desc') 
+            ->get(['name', 'lastName', 'profilePic', 'likeDate']);
         
         return compact('curtidas', 'avaliacoes');
     }
