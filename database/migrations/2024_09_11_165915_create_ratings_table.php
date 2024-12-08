@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ratings', function (Blueprint $table) {
-            $table->bigIncrements('ratingId');
+            $table->unsignedInteger('ratingId')->autoIncrement();
             $table->string('starAmount');
             $table->string('comment');
             $table->date('ratingDate');
