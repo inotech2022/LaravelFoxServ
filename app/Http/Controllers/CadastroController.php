@@ -69,7 +69,7 @@ class CadastroController extends Controller
             'uf' => $request->uf,
             'city' => $request->cidade,
             'district' => $request->bairro,
-            'street' => $request->endereco,
+            'address' => $request->endereco,
             'number' => $request->numero,
         ]);
 
