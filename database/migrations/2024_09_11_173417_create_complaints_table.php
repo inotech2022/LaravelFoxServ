@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('complaintId');
             $table->string('reason');
             $table->date('complaintDate');
-            $table->string('otherReason');
+            $table->string('otherReason')->nullable();
             $table->unsignedInteger('userId');
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
             $table->unsignedInteger('professionalId');
