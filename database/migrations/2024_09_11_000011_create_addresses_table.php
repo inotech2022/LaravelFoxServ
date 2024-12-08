@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('district');
             $table->string('address');
             $table->string('number')->nullable();
-            $table->timestamps(); // Se quiser usar timestamps
+            
         });
 
     }
