@@ -57,7 +57,6 @@ class CadastroController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->senha),
             'profilePic' => $imagePath,
-            'token' => bin2hex(random_bytes(50)),
             'type' => 'comum',
         ]);
         $userId = User::orderBy('userId', 'DESC')->first()->userId;
