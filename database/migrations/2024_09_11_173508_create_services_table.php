@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('serviceId');
             $table->string('serviceName');
-            $table->unsignedBigInteger('serviceTypeId');
+            $table->unsignedInteger('serviceTypeId');
             $table->foreign('serviceTypeId')->references('serviceTypeId')->on('serviceTypes')->onDelete('cascade');
             $table->timestamps();
         });
