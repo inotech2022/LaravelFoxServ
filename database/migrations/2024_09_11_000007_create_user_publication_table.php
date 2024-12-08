@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('publicationId')->references('publicationId')->on('publications')->onDelete('cascade');
             $table->unsignedInteger('userId');
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
-                   
+            $table->timestamp('likeDate')->useCurrent();   
         });
     }
 
