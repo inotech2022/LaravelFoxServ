@@ -20,12 +20,12 @@ return new class extends Migration
             $table->date('ratingDate');
             $table->unsignedInteger('userId'); 
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
+            $table->unsignedInteger('professionalId');
+            $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
             $table->unsignedInteger('protocol');
             $table->foreign('protocol')->references('protocol')->on('contracts')->onDelete('cascade');
-            
         });
     }
-
     /**
      * Reverse the migrations.
      *
