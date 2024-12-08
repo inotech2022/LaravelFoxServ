@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('starAmount');
             $table->string('comment');
             $table->date('ratingDate');
-            $table->unsignedBigInteger('userId');
+            $table->unsignedInteger('userId'); 
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('protocol');
             $table->foreign('protocol')->references('protocol')->on('contracts')->onDelete('cascade');
