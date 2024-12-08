@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('complaints', function (Blueprint $table) {
-            $table->bigIncrements('complaintId');
+            $table->unsignedInteger('complaintId')->autoIncrement();
             $table->string('reason');
             $table->date('complaintDate');
             $table->string('otherReason')->nullable();
