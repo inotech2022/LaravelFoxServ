@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('suggestions', function (Blueprint $table) {
             $table->unsignedInteger('suggestionId')->autoIncrement();
             $table->string('suggestion');
-            $table->timestamps();
+            
         });
     }
 
