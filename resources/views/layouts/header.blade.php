@@ -11,7 +11,7 @@
     <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet" />
     @yield('css')
-    <link rel="icon" href="/logo/lilas-2.PNG">
+    <link rel="icon" href="{{ asset('/image/logo/lilas-2.PNG') }}">
     <script src="/js/modo_escuro.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
@@ -115,15 +115,20 @@
                                 @csrf
                             </form>
                         </ul>
+                        @elseif (session('tipo') === 'adm')
+                        <a class="sair" href="{{ route('logout')}}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
+                                    class="material-symbols-outlined">
+                                    logout
+                                </span>Sair</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         @endif
                         @endauth
                         @auth
-                        <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
-                                login
-                            </span> Sair </a>
-
-
                         @else
+                        <div class="semLogin">
                         <a class="sejaProf" href="{{ route('index') }}" class="current">Home</a>
                         <a class="sejaProf" href="{{ route('cadastro') }}">Cadastre-se</a>
 
@@ -132,6 +137,8 @@
                         <a class="login" href="{{ route('login') }}"><span class="material-symbols-outlined">
                                 login
                             </span> Entrar </a>
+                        </div>
+                        
                         @endauth
 
                     </div>

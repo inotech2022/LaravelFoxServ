@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/cad_usuario.css') }}">
-    <link rel="icon" href="{{ asset('logo/lilas-2.PNG') }}">
+    <link rel="icon" href="{{ asset('/image/logo/lilas-2.PNG') }}">
     <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
     <script src="{{ asset('js/modo_escuro.js') }}" defer></script>
     <script src="{{ asset('js/cep.js') }}" defer></script>    
@@ -36,7 +36,7 @@
         confirmButton: 'my-swal-button',
     }
 }).then((result) => {
-    if (result.isConfirmed) { // Certifica que o botão foi clicado
+    if (result.isConfirmed) { 
         window.location.href = "/login";
     }
 });
@@ -167,8 +167,8 @@
                 </form>
             </div>
             <div class="right">
-            <img src="{{ asset('image/cadastro-modoClaro.png') }}" class="img-right-modoClaro">
-            <img src="{{ asset('image/cadastro-modoEscuro.png') }}" class="img-right-modoEscuro">
+            <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/cadastro-modoClaro.png') }}" class="img-right-modoClaro">
+            <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/cadastro-modoEscuro.png') }}" class="img-right-modoEscuro">
             </div>
         </div>
     </div>

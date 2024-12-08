@@ -46,6 +46,13 @@
     <div class="linha">
     <div class="coluna">
     <h4>Gráfico de Avaliações por Estrela</h4>
+    @if($avaliacoes->isEmpty())
+                <div class="naoEncontrada">
+                    <h1>Você ainda não possui nenhuma avaliação</h1>
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avali-modoClaro.png" class="naoEncontrado-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
+                </div>
+                @else
     <div class="pizza-e-legenda">
         <section class="pizza-chart">
             <canvas id="pizzaChart"></canvas>
@@ -60,6 +67,7 @@
             </ul>
         </section>
     </div>
+    @endif
 </div>
 
         <div class="coluna">

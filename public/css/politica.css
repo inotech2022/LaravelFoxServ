@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
+@import url('dropdown.css');
+
+body {
+    margin: 0;
+    font-family: 'Baloo Thambi 2', sans-serif;
+    color: #000;
+    background:linear-gradient(to right, #685e85, #9786c475);
+    max-width: 100%;
+    padding-top: 100px;
+}
+
+.semLogin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.foxserv {
+    color: #6C618B;
+    font-size: 40px;
+  }
+
+.foxserv:hover {
+    color: #fff;
+    transition: 0.5s;
+}
+
+.main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+}
+
+.nav {
+    z-index: 1;
+    position: fixed;
+    background-color: #89D0AF;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 13%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+input[type="checkbox"] {
+    display: none;
+  }
+
+  .bi {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 30px;
+  }
+
+  .bi-moon {
+    display: none;
+  }
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+}
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav h1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 15px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav h1 a:hover {
+    color: #6C618B;
+}
+
+.sejaProf {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 7px 15px;
+    justify-content:center;
+    align-content:center;
+}
+.sejaProf .material-symbols-outlined{
+
+    margin-right: 10px;
+}
+.sejaProf:hover {
+    color: #6C618B;
+}
+.nav .active .container {
+    padding: 10px 0;
+}
+.img_logo{
+    height: 70%;
+    width: 55px;
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+  .logo-header{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  }
+  .logo.current,
+.logo:hover {
+    color: #6C618B;
+}
+.nav a.current{
+    color: #6C618B;
+}
+
+.login {
+    display: flex;
+  text-decoration: none;
+  margin-right: 10px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  height: 50px;
+  width: fit-content;
+  align-items: center;
+  text-transform: uppercase;
+  text-align-last: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.login:hover {
+    color: #6C618B;
+}
+.linha{
+    color: #fff;
+    }
+    .material-symbols-outlined {
+    
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
+    }
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+      }
+    
+    
+.privacy-policy {
+    background: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-policy h2 {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #89D0AF;
+    padding-bottom: 5px;
+}
+
+.privacy-policy p {
+    margin-top: 1rem;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.dark {
+    background:linear-gradient(to right, #181420, #181420);
+    color: #fff;
+}
+.dark .privacy-policy{
+    background-color: #6C618B;
+}
+.dark .bi-sun {
+  display: none;
+}
+
+.dark .bi-moon {
+  display: block;
+  color:#fff;
+}
+.dark .foxserv {
+    color: #46c285;
+}
+
+.dark .foxserv:hover {
+    color: #fff;
+}
+
+.dark .nav {
+    background-color: #181420;
+}
+
+.dark .nav a.current,
+.dark .nav a:hover {
+    color: #46c285;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

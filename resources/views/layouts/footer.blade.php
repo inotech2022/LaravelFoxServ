@@ -7,9 +7,9 @@
                 </svg>
                 @inotech_ds
             </a>
-            <a class="footer__link" href="mailto:tccinotec@gmail.com" target="__blank">
+            <a class="footer__link" href="mailto:suporte@foxserv.site" target="__blank">
                 <span class="material-symbols-outlined"> mail </span>
-                tccinotec@gmail.com
+                suporte@foxserv.site
             </a>
         </div>
     </div>
@@ -35,9 +35,9 @@
     
     <div class="footer_right">
         <div class="footer__links_right">
-            <a class="footer__link" href="mailto:tccinotec@gmail.com" target="__blank">
-                <span class="material-symbols-outlined"> help </span>
-                Precisa de Ajuda?
+            <a class="footer__link" href="{{route('politicaPrivacidade')}}" target="__blank">
+                <span class="material-symbols-outlined"> lock </span>
+                Politica de Privacidade
             </a>
         </div>
     </div>

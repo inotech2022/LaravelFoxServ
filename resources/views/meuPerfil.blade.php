@@ -124,8 +124,8 @@
                 @if($publicacoes->isEmpty())
                 <div class="naoEncontrada">
                     <h1>Faça a sua primeira publicação</h1>
-                    <img src="image/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
-                    <img src="image/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/publicacao - modoClaro.png" class="naoEncontrado-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/publicacao - modoEscuro.png" class="naoEncontrado-modoEscuro">
                 </div>
                 @else
                 @foreach($publicacoes as $publicacao)
@@ -152,8 +152,8 @@
                 @if($avaliacoes->isEmpty())
                 <div class="naoEncontrada">
                     <h1>Você ainda não possui nenhuma avaliação</h1>
-                    <img src="image/avali-modoClaro.png" class="naoEncontrado-modoClaro">
-                    <img src="image/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avali-modoClaro.png" class="naoEncontrado-modoClaro">
+                    <img src="https://foxservbucket.s3.us-east-1.amazonaws.com/avali-modoEscuro.png" class="naoEncontrado-modoEscuro">
                 </div>
                 @else
                 @foreach($avaliacoes as $avaliacao)

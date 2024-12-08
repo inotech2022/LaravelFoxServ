@@ -12,7 +12,12 @@ body {
     max-width: 100%;
     background-color: #fff;
 }
+.semLogin{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
+}
 main{
     width: 100%;
     align-items: center;
@@ -158,7 +163,7 @@ input[type="checkbox"] {
 .login:hover{
     color:#6C618B;
 }
-.linha>p:hover{
+.linha{
 color: #fff;
 }
 .material-symbols-outlined {
@@ -428,14 +433,17 @@ width: 40%;
     display: flex;
     flex-direction: row;
   }
-button{
-    width: 90%;
-    padding: 16px 0px;
+.sugestao button{
+    width: 50px;
+    height: 50px;
+    padding: 5px;
     margin-bottom: 5px;
     border: none;
-    border-radius: 30px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     outline: none;
-    text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
     color: #fff;
@@ -443,6 +451,30 @@ button{
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00ff8021;
 
+}
+
+button{
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  outline: none;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #fff;
+  background: #89d0af;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #00ff8021;
+}
+button:hover{
+  background-color: #436656;
+}
+.dark button:hover{
+  background-color: #46c285;
 }
   .left-img{
     display: flex;

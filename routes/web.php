@@ -27,19 +27,26 @@ use App\Http\Controllers\RedefinirSenhaController;
 use App\Http\Controllers\SejaProfissionalController;
 use App\Http\Controllers\ServicosController;
 use App\Http\Controllers\NotificacaoController;
+use App\Http\Controllers\PoliticaPrivacidadeController;
 
 
 // Define a rota principal
 Route::get('/', [IndexController::class, 'index'])-> name('index');
-Route::post('/', [IndexController::class, 'store'])-> name('sugestao');
+Route::get('/politicaPrivacidade', [PoliticaPrivacidadeController::class, 'index'])-> name('politicaPrivacidade');
+Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
+Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
+Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');
+Route::get('/esqueceuSenha', [EsqueceuSenhaController::class, 'index'])->name('esqueceuSenha');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form'); 
+Route::post('/login', [AuthController::class, 'login'])->name('login'); 
+
+Route::middleware('auth')->group(function () {
+    Route::post('/', [IndexController::class, 'store'])-> name('sugestao');
 Route::post('/denuncia', [PerfilProfissionalController::class, 'store'])->name('denuncia.store');
 Route::get('/avaliacao', [AvaliacaoController::class, 'create'])->name('avaliacao');
 Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao');
 Route::get('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'create'])->name('avaliacaoPlataforma');
 Route::post('/avaliacaoPlataforma', [AvaliacaoPlataformaController::class, 'store'])->name('avaliacao.salvar');
-Route::get('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
-Route::post('/cadastro', [CadastroController::class, 'store'])->name('cadastro.store');
-Route::get('/confirmar', [CadastroController::class, 'confirmEmail'])->name('confirm.email');
 Route::get('/cadastroContrato', [CadastroContratoController::class, 'create'])->name('cadastroContrato');
 Route::post('/cadastroContrato', [CadastroContratoController::class, 'store'])->name('cadastroContrato.store');
 Route::get('/cadastroProfissional', [CadastroProfissionalController::class, 'create'])->name('cadastroProfissional');
@@ -59,11 +66,6 @@ Route::post('/editarDadosProfissional', [EditarDadosProfissionalController::clas
 Route::get('/editarDadosProfissional', [EditarDadosProfissionalController::class, 'index'])->name('editarDadosProfissional');
 Route::get('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'index'])->name('editarDadosUsuario');
 Route::post('/editarDadosUsuario', [EditarDadosUsuarioController::class, 'update'])->name('editarDadosUsuario.update');
-Route::get('/esqueceuSenha', [EsqueceuSenhaController::class, 'index'])->name('esqueceuSenha');
-Route::get('/homeProfissional', [HomeProfissionalController::class, 'index'])->name('homeProfissional');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form'); 
-Route::post('/login', [AuthController::class, 'login'])->name('login'); 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/meuPerfil', [MeuPerfilController::class, 'index'])->name('meuPerfil');
 Route::get('/novaPublicacao', [NovaPublicacaoController::class, 'create'])->name('novaPublicacao');
@@ -86,5 +88,5 @@ Route::get('/confirmar-email/{token}', function ($token) {
 
     return redirect('/')->with('success', 'E-mail confirmado com sucesso!');
 });
-
+});
 

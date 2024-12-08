@@ -46,8 +46,8 @@
         @if($professionals->isEmpty())
             <div class="naoEncontrada">
                 <h1>Não existem profissionais disponíveis nessa categoria</h1>
-                <img src="{{ asset('image/publicacao - modoClaro.png') }}" class="naoEncontrado-modoClaro">
-                <img src="{{ asset('image/publicacao - modoEscuro.png') }}" class="naoEncontrado-modoEscuro">
+                <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/publicacao+-+modoClaro.png') }}" class="naoEncontrado-modoClaro">
+                <img src="{{ asset('https://foxservbucket.s3.us-east-1.amazonaws.com/publicacao+-+modoEscuro.png') }}" class="naoEncontrado-modoEscuro">
             </div>
         @else
             @foreach($professionals as $professional)

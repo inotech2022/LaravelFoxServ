@@ -9,7 +9,15 @@ body {
     padding-bottom: 0px;
     max-height: fit-content;
 }
-
+.carregando1{
+    color: red;
+}
+.carregando2{
+    color: red;
+}
+.carregando3{
+    color: red;
+}
 body * {
     box-sizing: border-box;
 }
