@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('caption');
             $table->unsignedInteger('professionalId');
             $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
-            $table->timestamps();    
+              
         });
     }
 
