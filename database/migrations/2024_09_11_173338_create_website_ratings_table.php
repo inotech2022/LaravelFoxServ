@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('website_ratings', function (Blueprint $table) {
             $table->bigIncrements('websiteRatingId');
             $table->string('starAmount');
-            $table->strinng('comment');
+            $table->string('comment');
             $table->date('ratingDate');
             $table->timestamps();
         });
