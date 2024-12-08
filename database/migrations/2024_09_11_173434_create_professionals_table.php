@@ -16,7 +16,7 @@
             Schema::create('professionals', function (Blueprint $table) {
                 $table->bigIncrements('professionalId');
                 $table->string('description');
-                $table->unsignedBigInteger('userId');
+                $table->unsignedInteger('userId');
                 $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
                 $table->timestamps();    
             });
