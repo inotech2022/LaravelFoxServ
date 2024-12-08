@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<main>
+<main class="main">
     <div class="privacy-policy">
         <h2>POLÍTICA DE PRIVACIDADE – FOXSERV</h2>
         <p>
@@ -106,7 +106,7 @@
             Caso tenha dúvidas ou preocupações sobre esta Política de Privacidade, entre em contato conosco pelo e-mail <strong>suporte@foxserv.com</strong> ou pelo nosso canal de atendimento no site.
         </p>
 
-        <p><strong>Data de atualização:</strong> [Inserir data mais recente de atualização]</p>
+        <p><strong>Data de atualização:</strong> 08/12/2024</p>
         <p>Agradecemos por confiar na FoxServ.</p>
     </div>
 </main>
