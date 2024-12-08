@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('profilePic')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('type', ['admin', 'user']);
+            $table->enum('type', ['adm', 'comum', 'profissional']);
             $table->boolean('status')->default(true);
         });
 
