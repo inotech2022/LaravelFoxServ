@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('ratingDate');
             $table->unsignedInteger('userId'); 
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('protocol');
+            $table->unsignedInteger('protocol');
             $table->foreign('protocol')->references('protocol')->on('contracts')->onDelete('cascade');
             $table->timestamps();
         });
