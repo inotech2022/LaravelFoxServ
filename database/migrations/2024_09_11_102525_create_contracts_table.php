@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('endDate');
             $table->decimal('price', 8, 2);
             $table->string('description');
-            $table->unsignedBigInteger('userId');
+            $table->unsignedInteger('userId');            
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('professionalId');
             $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
