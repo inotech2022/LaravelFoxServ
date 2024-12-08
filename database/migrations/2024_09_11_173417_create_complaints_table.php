@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('reason');
             $table->date('complaintDate');
             $table->string('otherReason');
-            $table->unsignedBigInteger('userId');
+            $table->unsignedInteger('userId');
             $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('professionalId');
             $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
