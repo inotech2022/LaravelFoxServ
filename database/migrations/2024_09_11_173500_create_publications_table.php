@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('image');
             $table->string('caption');
-            $table->unsignedBigInteger('professionalId');
+            $table->unsignedInteger('professionalId');
             $table->foreign('professionalId')->references('professionalId')->on('professionals')->onDelete('cascade');
             $table->timestamps();    
         });
