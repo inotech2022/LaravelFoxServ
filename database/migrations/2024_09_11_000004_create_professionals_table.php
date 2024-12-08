@@ -18,7 +18,7 @@
                 $table->string('description');
                 $table->unsignedInteger('userId');
                 $table->foreign('userId')->references('userId')->on('users')->onDelete('cascade');
-                $table->timestamps();    
+                 
             });
         }
 
